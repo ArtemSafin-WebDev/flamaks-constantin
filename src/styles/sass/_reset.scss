@@ -1,0 +1,26 @@
+html * {max-height:100000000px;}
+html img {max-height:none;}
+* { margin:0; padding:0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box; outline:none; outline-style:none;
+  -ms-text-size-adjust:none; -webkit-text-size-adjust:none; -o-text-size-adjust:none; text-size-adjust:none; /*transform:perspective;*/}
+html, body {height:100%;  width:100%;}
+li { list-style:none;}
+a img {border:none;}
+a { text-decoration:none; color:inherit;}
+a[href^="tel:"],a[href^="mailto:"] {white-space:nowrap;}
+input, select, button {border:none; outline:none;  box-shadow: none; -webkit-box-shadow: none;
+  -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+textarea { border:none; outline:none; resize:none;}
+input[type="file"], /* FF, IE7+, chrome (except button) */
+input[type="file"]::-webkit-file-upload-button {cursor: pointer; } /* chromes and blink button */
+input[type="submit"], input[type="text"],input[type="email"],input[type="tel"],input[type="password"] {-webkit-appearance:none; -moz-appearance:none;}
+
+
+
+
+
+
+
+
+
+
+
