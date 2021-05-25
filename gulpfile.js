@@ -18,8 +18,7 @@ let path = {
         js: [
             `${srcFolder}/js-scripts/*.js`
         ],
-        img: `${srcFolder}/images/src/**/*.{jpg,jpeg,gif,ico,png,svg,webp}`,
-        // img: `${srcFolder}/images/src/**/*`,
+        img: `${srcFolder}/images/src/**/*.{jpg,jpeg,gif,ico,png,webp}`,
         fonts: `${srcFolder}/fonts/**/*.{eot,otf,ttf,woff,woff2}`,
         libs: `${srcFolder}/libs/**/*`
     },
@@ -37,7 +36,7 @@ let path = {
         html: `${srcFolder}/**/*.html`,
         css: `${srcFolder}/styles/sass/**/*.{scss, sass}`,
         js: `${srcFolder}/js-scripts/**/*.js`,
-        img: `${srcFolder}/images/src/**/*.{jpg,jpeg,gif,ico,png,svg,webp}`,
+        img: `${srcFolder}/images/src/**/*`,
         libs: `${srcFolder}/libs/**/*`
     },
     clean: [
@@ -184,8 +183,15 @@ function images() {
             optimizationLevel: 5,
             svgoPlugins: [
                 {removeViewBox: false},
-                {cleanupIDs: false}
-            ]
+                {cleanupIDs: false},
+                {removeUselessDefs: false},
+                {convertPathData: false },
+                {mergePaths: false },
+                {removeXMLProcInst: false },
+                {minifyStyles: false},
+                {removeUselessStrokeAndFill: false },
+                {removeHiddenElements: false}
+            ],
         }))
         .pipe(dest(`${srcFolder}/images/dist/`))
         .pipe(dest(path.build.img))
@@ -211,12 +217,28 @@ function copyLibs() {
         .pipe(dest(path.build.libs))
 }
 
+function copyImg() {
+    return src(`${srcFolder}/images/src/**/*`)
+        .pipe(newer(`${srcFolder}/images/dist/`))
+        .pipe(dest(`${srcFolder}/images/dist/`))
+        .pipe(dest(path.build.img))
+        .pipe(browserSync.stream())
+}
+
+function copySvg() {
+    return src(`${srcFolder}/images/src/**/*`)
+        .pipe(newer(`${srcFolder}/images/dist/*`))
+        .pipe(dest(`${srcFolder}/images/dist/`))
+        .pipe(dest(path.build.img))
+        .pipe(browserSync.stream())
+}
+
 function watchFiles() {
     watch([path.watch.html], html);
     watch([path.watch.css], css);
     watch([path.watch.js], js);
     watch([path.watch.libs], copyLibs);
-    watch([path.watch.img], images);
+    watch([path.watch.img], copyImg);
 }
 
 
@@ -231,16 +253,17 @@ function cleanFonts() {
 }
 
 
-const building = series( clean, cleanImages, cleanFonts, parallel( buildCSS, buildJS, images, copyFonts, copyLibs, html ));
-const watching =  parallel( series( clean, cleanFonts, cleanImages, parallel(css, js, html,  copyLibs, copyFonts, images )) , watchFiles, fnBrowserSync);
+const building = series( clean, cleanImages, cleanFonts, parallel( buildCSS, buildJS, images, copyFonts, copyLibs, copySvg, html ));
+const watching =  parallel( series( clean, cleanFonts, cleanImages, parallel(css, js, html,  copyLibs, copyFonts, copyImg )) , watchFiles, fnBrowserSync);
 const fontsBuild = series( cleanFonts, fonts );
-const imagesBuild = series( cleanImages, images );
+const imagesBuild = series( cleanImages, images, copySvg );
 
 exports.build = building;
 exports.watch = watching;
 exports.imgbuild = imagesBuild;
 exports.fontsbuild = fontsBuild;
 exports.fontscopy = copyFonts;
+exports.svgcopy = copySvg;
 exports.default = building;
 
 

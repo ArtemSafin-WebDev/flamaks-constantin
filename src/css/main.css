@@ -45,7 +45,8 @@ html img {
   /*transform:perspective;*/
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -63,11 +64,14 @@ a {
   color: inherit;
 }
 
-a[href^="tel:"], a[href^="mailto:"] {
+a[href^="tel:"],
+a[href^="mailto:"] {
   white-space: nowrap;
 }
 
-input, select, button {
+input,
+select,
+button {
   border: none;
   outline: none;
   box-shadow: none;
@@ -87,12 +91,18 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 /* chromes and blink button */
-input[type="submit"], input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+
+input[type="submit"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-html, body {
+html,
+body {
   font-size: 10px;
   font-family: "Intro", sans-serif;
   color: #2A2626;
@@ -346,7 +356,8 @@ html, body {
   height: 4.6rem;
 }
 
-.btn-menu:before, .btn-menu:after {
+.btn-menu:before,
+.btn-menu:after {
   content: "";
   position: absolute;
   display: block;
@@ -817,7 +828,8 @@ html, body {
   right: 0;
 }
 
-.accordion-control:after, .accordion-control:before {
+.accordion-control:after,
+.accordion-control:before {
   content: "";
   display: block;
   position: absolute;
