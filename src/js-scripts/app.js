@@ -85,38 +85,40 @@ const doAccordionApp = function () {
     }
 };
 
-const $techSlider = $('.tech-slider');
-$techSlider.each(function (idx, item) {
-    const $slider = $(item);
 
-    const $techSliderTabs = $slider.find('.tech-slider-tab');
+const doTechSlider = function () {
+    const $techSlider = $('.tech-slider');
+    $techSlider.each(function (idx, item) {
+        const $slider = $(item);
 
-    $techSliderTabs.on('click', ' .tech-section-head', function (evt) {
+        const $techSliderTabs = $slider.find('.tech-slider-tab');
 
-        if (($slider).hasClass('tech-animated')) return false;
+        $techSliderTabs.on('click', ' .tech-section-head', function (evt) {
+
+            if (($slider).hasClass('tech-animated')) return false;
 
 
-        const $thisTab = $(this).closest('.tech-slider-tab');
+            const $thisTab = $(this).closest('.tech-slider-tab');
 
-        if ( $thisTab.hasClass('tech-slider-tab-active') ) return false;
-        $techSliderTabs.removeClass('tech-slider-tab-active');
-        $thisTab.addClass('tech-slider-tab-active');
+            if ( $thisTab.hasClass('tech-slider-tab-active') ) return false;
+            $techSliderTabs.removeClass('tech-slider-tab-active');
+            $thisTab.addClass('tech-slider-tab-active');
 
-        const $techSliderMediaCover = $slider.find('.tech-slider-media .tech-slider-media-cover');
-        const width = $techSliderMediaCover.width();
+            const $techSliderMediaCover = $slider.find('.tech-slider-media .tech-slider-media-cover');
+            const width = $techSliderMediaCover.width();
 
-        const $techSectionTitle =  $slider.find('.tech-slider-media  .tech-section-title');
-        const $techSectionDescriptionContent =  $slider.find('.tech-slider-media  .tech-section-description');
+            const $techSectionTitle =  $slider.find('.tech-slider-media  .tech-section-title');
+            const $techSectionDescriptionContent =  $slider.find('.tech-slider-media  .tech-section-description');
 
-        /* получить контент таба */
+            /* получить контент таба */
 
-        const imgHtml = $thisTab.find('.tech-slider-tab-img-container').html();
-        const titleHtml = $thisTab.find('.tech-slider-tab-title').html();
-        const descHtml = $thisTab.find('.tech-slider-tab-description').html();
+            const imgHtml = $thisTab.find('.tech-slider-tab-img-container').html();
+            const titleHtml = $thisTab.find('.tech-slider-tab-title').html();
+            const descHtml = $thisTab.find('.tech-slider-tab-description').html();
 
-        /*подготовить контент для вывода*/
+            /*подготовить контент для вывода*/
 
-        const prepImg = `
+            const prepImg = `
         <div class="tech-section-cover-frame new">
             <div class="tech-section-cover-frame-wrap " style="width:${width}px">
               ${imgHtml}
@@ -124,57 +126,106 @@ $techSlider.each(function (idx, item) {
         </div>
     `;
 
-        const prepTitle = `
+            const prepTitle = `
         <div class="tech-section-title-content new">
             ${titleHtml}
         </div>
     `;
-        const prepDesc = `
+            const prepDesc = `
         <div class="tech-section-description-content new">
             ${descHtml}
         </div>
     `;
 
 
-        $techSliderMediaCover.append(prepImg);
-        $techSectionTitle.append(prepTitle);
-        $techSectionDescriptionContent.append(prepDesc);
+            $techSliderMediaCover.append(prepImg);
+            $techSectionTitle.append(prepTitle);
+            $techSectionDescriptionContent.append(prepDesc);
 
-        const setTimeDelayStart = setTimeout(function () {
-            $slider
-                .addClass('tech-animated')
-                .addClass('tech-animated-start');
-            const setTimeDelayEnd = setTimeout(function () {
+            const setTimeDelayStart = setTimeout(function () {
                 $slider
-                    .removeClass('tech-animated-start')
-                    .addClass('tech-animated-end');
+                    .addClass('tech-animated')
+                    .addClass('tech-animated-start');
+                const setTimeDelayEnd = setTimeout(function () {
+                    $slider
+                        .removeClass('tech-animated-start')
+                        .addClass('tech-animated-end');
 
-                const setTimeDelayFinish = setTimeout(function () {
+                    const setTimeDelayFinish = setTimeout(function () {
 
-                    $slider.find(`
+                        $slider.find(`
                     .tech-section-title-content:not(.new), 
                     .tech-section-description-content:not(.new), 
                     .tech-section-cover-frame:not(.new)`).remove();
 
-                    $slider.find(`
+                        $slider.find(`
                     .tech-section-title-content, 
                     .tech-section-description-content,  
                     .tech-section-cover-frame`).removeClass('new');
 
-                    $slider
-                        .removeClass('tech-animated-end')
-                        .removeClass('tech-animated');
+                        $slider
+                            .removeClass('tech-animated-end')
+                            .removeClass('tech-animated');
 
-                    clearTimeout(setTimeDelayStart);
-                    clearTimeout(setTimeDelayEnd);
-                    clearTimeout(setTimeDelayFinish);
+                        clearTimeout(setTimeDelayStart);
+                        clearTimeout(setTimeDelayEnd);
+                        clearTimeout(setTimeDelayFinish);
+                    }, 400)
                 }, 400)
-            }, 400)
-        }, 50)
+            }, 50)
 
+        });
     });
+};
 
-});
+
+const doSliderTrust = function () {
+    const $trustSlider = $('.trust-slider');
+
+    const sliderOptions = {
+        dots: false,
+        arrows: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        fade: false,
+        autoplay: false,
+        autoplaySpeed:5000,
+        pauseOnHover:false,
+        lazyLoad: 'ondemand',
+    };
+
+    $trustSlider.each(function (idx, item) {
+        const $slider = $(item);
+        const $sliderWrap = $slider.closest('.slider-wrap');
+        const $prevArrow = $sliderWrap.find('.btn-slider.prev');
+        const $nextArrow = $sliderWrap.find('.btn-slider.next');
+
+        const newOptions = Object.assign(sliderOptions, {
+            prevArrow: $prevArrow,
+            nextArrow: $nextArrow,
+        });
+
+        $slider.slick(newOptions);
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -182,4 +233,7 @@ $techSlider.each(function (idx, item) {
 $(document).ready(function () {
     doPageMainSlider('.main-page-slider');
     doAccordionApp();
+    doTechSlider();
+    doSliderTrust();
+
 })
