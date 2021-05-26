@@ -1,4 +1,7 @@
 .idea
 node_modules
 dist
+src/images/dist
 px_perfect
+src/css
+src/js
