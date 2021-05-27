@@ -3,7 +3,6 @@ const numToStr = function (num) {
         return `0${num}`;
     }
     return num;
-
 }
 const doPageMainSlider = function(selector) {
     const $pageMainSlider = $(selector);
@@ -211,6 +210,32 @@ const doSliderTrust = function () {
     });
 }
 
+const doUserSelect = function (selector) {
+    const userSelect = $(selector);
+    if (userSelect.length) {
+        userSelect.select2({
+            minimumResultsForSearch: 2,
+        });
+    }
+}
+
+const doElementFullHeight = function (selector, minMedia = 0) {
+    if ($(window).width() < minMedia)  return false;
+    const elementFullHeightList = $(selector);
+    if (elementFullHeightList.length > 0) {
+        const winHeight = $(window).height();
+        console.log( winHeight);
+        elementFullHeightList.each(function (idx, item) {
+            $(item).height(winHeight);
+        })
+    }
+
+
+}
+
+
+
+
 
 
 
@@ -235,5 +260,8 @@ $(document).ready(function () {
     doAccordionApp();
     doTechSlider();
     doSliderTrust();
+    doUserSelect('.custom-select');
+
+    doElementFullHeight('.block-full-height')
 
 })
