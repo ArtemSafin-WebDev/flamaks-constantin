@@ -1,0 +1,41 @@
+
+<div id="px_block"></div>
+<div id="px_btn"></div>
+
+<style>
+    #px_block { position: absolute; top: 0; left: 0; background-position: 0 50%; width: 100%; pointer-events: none; -webkit-pointer-events:none; height:50000px; z-index: 500; display: none;}
+    .px_active  #px_block { display: block;}
+    #px_btn { width: 20px; height: 20px; background: red; position: fixed; bottom: 10px; left: 10px; cursor: pointer; z-index: 501;}
+</style>
+<script>
+
+    (function($){
+        const options = {
+            url: "images/dist/px-modal-search.jpg",
+            bg_top:"0",
+            bg_left:"50%",
+            opacity:".5",
+            top: '-0px',
+            left: '0px',
+            state:1//1 - on, 0 - off
+        };
+        function init_px (options) {
+            var px_block =  $("#px_block");
+            px_block.css({
+                "background" : "url("+ options.url +") no-repeat "+ options.bg_left + " " + options.bg_top + "/ auto auto",
+                "opacity": options.opacity,
+                "top":options.top,
+                "left":options.left
+            });
+            if(options.state) {
+                $('body').addClass('px_active');
+            }
+        }
+        init_px (options);
+        $("#px_btn").on('click', function(){
+            $('body').toggleClass('px_active');
+        });
+    })(jQuery);
+</script>
+
+

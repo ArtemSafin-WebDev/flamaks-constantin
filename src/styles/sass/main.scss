@@ -181,6 +181,11 @@ html, body {
   }
 }
 
+.text-h4 {
+  font:700 3.5rem/3.8rem $font-family-base;
+  text-transform: uppercase;
+}
+
 
 
 
@@ -3388,6 +3393,11 @@ html, body {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: nowrap;
+  height: 100%;
+  overflow: auto;
+
+  position: relative;
+  z-index: 5;
 
   .fx-0 {
     width: 100%;
@@ -3397,6 +3407,7 @@ html, body {
     width: 100%;
     flex: 1 1 auto;
   }
+
 }
 
 .page-modal-header {
@@ -3530,13 +3541,13 @@ html, body {
 
 .main-menu-item {
   &:nth-child(n+2) {
-    margin-top: 6rem;
+    margin-top: 5.5rem;
   }
 }
 
 .page-menu-wrap {
-  padding-top: 14rem;
-  padding-left: 20rem;
+  padding-top: 10rem;
+  padding-right: 13rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -3550,18 +3561,25 @@ html, body {
 
 .alt-menu-list {
   display: block;
+  padding-top: .6rem;
 }
 .alt-menu-item {
   font:500 2rem/2.4rem $font-family-base;
   text-transform: uppercase;
   &:nth-child(n+2) {
-    margin-top:4rem;
+    margin-top:3.5rem;
   }
 }
 
+.menu-contacts-section {
+  padding-top: .6rem;
+  width: 27rem;
+}
+
+
 .menu-contacts-list-section:nth-child(n+2),
 .menu-contacts-item:nth-child(n+2) {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 .menu-contacts-link {
   font:500 2rem/1.2 $font-family-base;
@@ -3581,7 +3599,8 @@ html, body {
 
 .menu-contacts-btn-box {
   width: 100%;
-  margin-top: 4rem;
+
+  margin-top: 9.6rem;
 }
 .menu-contacts-btn-item {
   &:nth-child(n+2) {
@@ -3598,7 +3617,7 @@ html, body {
   align-items: baseline;
   flex-wrap: nowrap;
   margin-top: 4rem;
-  padding-bottom: 4.2rem;
+  padding-bottom: 3.6rem;
 }
 
 
@@ -3609,9 +3628,9 @@ html, body {
   justify-content: flex-start;
   align-items: baseline;
   flex-wrap: nowrap;
-  margin-left: -3.6rem;
+  margin-left: -4.4rem;
   & > * {
-    margin-left: 3.6rem;
+    margin-left: 4.4rem;
   }
   & > * {
     font:500 1.2rem/1.2 $font-family-base;
@@ -3776,9 +3795,10 @@ html, body {
 
 }
 
-.page-search-layer {
-  padding-top: 3.4rem;
+.page-search-layer, .page-live-search-layer {
+  padding-top: 3rem;
 }
+
 
 .live-search-list {
   display: block;
@@ -3798,15 +3818,13 @@ html, body {
 
 .page-modal-pad-left {
   padding-left: 20rem;
-}
-.page-modal-form-pad-left {
-
+  padding-right: 13rem;
 }
 
 .form-layout-overlay {
   background: #F8F9FB;
   border-radius: 1.5rem;
-  padding: 3rem 6.5rem;
+  padding: 3.2rem 3.5rem;
 }
 
 .form-top-subtitle {
@@ -3822,6 +3840,7 @@ html, body {
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
+  max-width: 126.8rem;
 }
 
 .calc-params-group-one {
@@ -3923,7 +3942,7 @@ html, body {
 }
 
 .u-form-control-wrap-2 {
-  margin-top: 5.2rem;
+  margin-top: 4.2rem;
 }
 
 .calc-params-box {
@@ -3988,7 +4007,7 @@ html, body {
   border-radius: 1.5rem;
   background: #FFF;
   border:.1rem solid transparent;
-  height: 12.4rem;
+  height: 12rem;
   padding: 1.2rem 2.2rem;
   text-align: left;
   font:500 1.5rem/ 1.2 $font-family-base;
@@ -4046,7 +4065,7 @@ html, body {
   margin-left: 4.8rem;
 
   & .form-field-item:nth-child(n+2) {
-    margin-top: 2rem;
+    margin-top: 2.2rem;
   }
 }
 
@@ -4142,7 +4161,7 @@ html, body {
 
 .btn-submit  {min-width: 17.8rem;}
 
-.page-modal-form  {padding-top: 11.5rem;}
+.page-modal-form  {padding-top: 11rem;}
 
  .btn-modal-close-position {
   cursor: pointer;
@@ -4169,7 +4188,7 @@ html, body {
 }
 
 .form-callback-cnt .form-field-item:nth-child(n+2) {
-  margin-top: 2rem;
+  margin-top: 2.2rem;
 }
 
 .page-modal-callback-form  .form-modal-title {
@@ -4206,11 +4225,12 @@ html, body {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: nowrap;
+  padding-left: 7.5rem;
 }
 .page-modal-success-side {
   flex: 0 0 auto;
-  margin-right: 10.8rem;
-  width: 54rem;
+  width: 66.5rem;
+  padding-right: 5rem;
 }
 .page-modal-success-content {
   flex: 1 1 auto;
@@ -4221,11 +4241,22 @@ html, body {
 
 .page-modal-success-content {
   .btn-wrap:nth-child(n+2) {
-    margin-top: 5.6rem;
+    margin-top: 5rem;
   }
 }
 
 .page-modal-success {padding-top: 28rem;}
+
+.page-modal-comment-form {
+  padding-top: 19.2rem;
+
+  & .form-modal-title {
+    margin-bottom: 5.2rem;
+  }
+
+  & .form-cellar:nth-child(n+2) {margin-top: 16rem;}
+  & .form-callback-box {max-width: 100rem;}
+}
 
 
 
@@ -4265,6 +4296,45 @@ html, body {
   color: $color-text-dark;
   &:nth-child(n+2) {margin-top: 1.4rem;}
 }
+
+.bg-print-layer {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  & img {
+    display: block;
+    width: 100%;
+     height: auto;
+  }
+}
+
+
+.dash-title.text-h4:before {
+  top: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
