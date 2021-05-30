@@ -3,62 +3,18 @@
 @@include("parts/head.html")
 <body>
 
-<!--@@include("parts/modal-menu.html")-->
-<!--@@include("parts/modal-calc.html")-->
+@@include("parts/modal-menu.html")
+@@include("parts/modal-search.html")
+@@include("parts/modal-calc.html")
 <!--@@include("parts/modal-comment.html")-->
 <!--@@include("parts/modal-success.html")-->
-<!--@@include("parts/modal-search.html")-->
+
 
 <div class="main-wrap">
     <div class="main-body">
         <div class="block-1-wrap block-full-height" >
-            <header class="header-block">
-                <div class="container">
-                    <div class="header">
-                        <div class="header-logo">
-                            <a href="/" class="logo"><img src="images/dist/logo.svg" alt="FLAMAX"></a>
-                        </div>
-                        <div class="header-menu">
-                            <ul class="menu">
-                                <li class="menu-item"><a href="#">Сборные резервуары</a></li>
-                                <li class="menu-item"><a href="#">Насосные станции</a></li>
-                                <li class="menu-item"><a href="#">Пожарная безопасность</a></li>
-                                <li class="menu-item"><a href="#">Сервис</a></li>
-                                <li class="menu-item"><a href="#">Проектировщикам</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="header-search">
-                            <div class="search-btn">
-                                <svg  width="13" height="13">
-                                    <use xlink:href="images/dist/icons/svg-icons-sprite.svg#search-icon"></use>
-                                </svg>
-                            </div>
-                        </div>
+            @@include("parts/header-block.html")
 
-                        <div class="header-phone">
-                            <div class="phone-unit">
-                                <span class="phone-icon">
-                                    <svg  width="12" height="12">
-                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#phone-icon"></use>
-                                    </svg>
-                                </span>
-                                <a href="tel:88802006269 " class="phone-label">8 880 200 62 69 </a>
-                            </div>
-                        </div>
-
-                        <div class="header-control">
-                            <a href="#" class="btn-user btn-user-outline btn-outline-white btn-user-middle ">
-                                <span class="btn-inner">Заказать расчет</span>
-                            </a>
-                        </div>
-
-                        <div class="header-btn-menu">
-                            <a href="javascript:void(0)" class="btn-menu"></a>
-                        </div>
-                    </div>
-                </div>
-            </header>
 
             <div class="slider-wrap main-slider-wrap-outer">
                 <div class="main-slider-wrap  container">
@@ -83,7 +39,7 @@
                                     <div class="main-slide-top-text">
                                         Уникальная конструкция
                                     </div>
-                                    <div class="main-slide-title text-h1">
+                                    <div class="main-slide-title u-text-h1 ">
                                         Сборные <br>
                                         стальные <br>
                                         резервуары
@@ -95,7 +51,7 @@
 
                             </div>
                             <div class="main-slide-content">
-                                <div class="main-slide-content-text">
+                                <div class="main-slide-content-text u-text-t2">
                                     Для противопожарного, питьевого <br>
                                     и технологического запаса
                                 </div>
@@ -103,7 +59,7 @@
                                 <div class="main-slide-btn-wrap">
                                     <div class="main-slide-btn-box">
                                         <div class="main-slide-btn-item">
-                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn ">
+                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn btn-open-modal-form">
                                                 <span class="btn-inner">подробнее</span>
                                             </a>
                                         </div>
@@ -131,7 +87,7 @@
                                     <div class="main-slide-top-text">
                                         Профессиональный монтаж резервуаров
                                     </div>
-                                    <div class="main-slide-title text-h1">
+                                    <div class="main-slide-title u-text-h1 ">
                                         Производство <br>
                                         и монтаж
                                     </div>
@@ -139,7 +95,7 @@
 
                             </div>
                             <div class="main-slide-content">
-                                <div class="main-slide-content-text">
+                                <div class="main-slide-content-text u-text-t2">
                                     Производство в заводских условиях <br>
                                     Монтаж от 7 до 14 дней
                                 </div>
@@ -174,7 +130,7 @@
                                     <div class="main-slide-top-text">
                                         Готовые материалы
                                     </div>
-                                    <div class="main-slide-title text-h1">
+                                    <div class="main-slide-title u-text-h1 ">
                                         Помощь <br>
                                         ПРОЕКТИРОВЩИКУ
                                     </div>
@@ -183,7 +139,7 @@
 
                             </div>
                             <div class="main-slide-content">
-                                <div class="main-slide-content-text">
+                                <div class="main-slide-content-text u-text-t2">
                                     Подготовка проекта резервуаров <br>
                                     в течение одного рабочего дня
                                 </div>
@@ -654,140 +610,144 @@
                 <div class="stages dash-title-wrap">
                     <p class="text-h3 dash-title">Этапы работ</p>
 
-                    <div class="stage-line-wrap">
-                        <div class="stage-line-box">
-                            <div class="stage-line-item">
-                                <div class="stages-line-icon">
-                                    <svg  width="24" height="25">
-                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#stage-icon-1"></use>
-                                    </svg>
+                    <div class="stages-outer">
+                        <div class="stage-line-wrap">
+                            <div class="stage-line-box">
+                                <div class="stage-line-item">
+                                    <div class="stages-line-icon">
+                                        <svg  width="24" height="25">
+                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#stage-icon-1"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="stage-line-item-line"></div>
                                 </div>
-                            </div>
-                            <div class="stage-line-item">
-                                <div class="stages-line-icon">
-                                    <svg  width="36" height="25">
-                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#stage-icon-2"></use>
-                                    </svg>
+                                <div class="stage-line-item">
+                                    <div class="stages-line-icon">
+                                        <svg  width="36" height="25">
+                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#stage-icon-2"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="stage-line-item-line"></div>
                                 </div>
-                            </div>
-                            <div class="stage-line-item">
-                                <div class="stages-line-icon">
-                                    <svg  width="33" height="33">
-                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#stage-icon-3"></use>
-                                    </svg>
+                                <div class="stage-line-item">
+                                    <div class="stages-line-icon">
+                                        <svg  width="33" height="33">
+                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#stage-icon-3"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="stage-line-item-line"></div>
                                 </div>
-                            </div>
-                            <div class="stage-line-item">
-                                <div class="stages-line-icon">
-                                    <svg  width="22" height="26">
-                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#stage-icon-4"></use>
-                                    </svg>
+                                <div class="stage-line-item">
+                                    <div class="stages-line-icon">
+                                        <svg  width="22" height="26">
+                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#stage-icon-4"></use>
+                                        </svg>
+                                    </div>
                                 </div>
+                                <div class="stages-line"></div>
                             </div>
-                            <div class="stages-line"></div>
                         </div>
-                    </div>
+                        <div class="stage-project-wrap">
+                            <div class="stage-project-box">
 
-                    <div class="stage-project-wrap">
-                        <div class="stage-project-box">
+                                <div class="stage-project-item">
+                                    <div class="stage-project-title">
+                                        Проектирование
+                                    </div>
+                                    <div class="stage-project-cover">
+                                        <a href="javascript:void(0)" class="stage-project-video-link"></a>
+                                        <img src="images/dist/stage-project-1.jpg" srcset="images/dist/stage-project-1@2x.jpg 2x" alt="">
+                                        <div class="play-icon">
+                                            <svg  width="10" height="16">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="stage-project-desc">
+                                        Смотреть видео «Подготовка проектной документации»
+                                    </div>
 
-                            <div class="stage-project-item">
-                                <div class="stage-project-title">
-                                    Проектирование
-                                </div>
-                                <div class="stage-project-cover">
-                                    <a href="javascript:void(0)" class="stage-project-video-link"></a>
-                                    <img src="images/dist/stage-project-1.jpg" srcset="images/dist/stage-project-1@2x.jpg 2x" alt="">
-                                    <div class="play-icon">
-                                        <svg  width="10" height="16">
-                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
-                                        </svg>
+                                    <div class="stage-project-text">
+                                        <p>
+                                            Проектный отдел выполняет полный перечень работ по подготовке и
+                                            сопровождению всех стадий рабочей документации.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="stage-project-desc">
-                                    Смотреть видео «Подготовка проектной документации»
-                                </div>
 
-                                <div class="stage-project-text">
-                                    <p>
-                                        Проектный отдел выполняет полный перечень работ по подготовке и
-                                        сопровождению всех стадий рабочей документации.
-                                    </p>
-                                </div>
-                            </div>
+                                <div class="stage-project-item">
+                                    <div class="stage-project-title">
+                                        Доставка
+                                    </div>
+                                    <div class="stage-project-cover">
+                                        <a href="javascript:void(0)" class="stage-project-video-link"></a>
+                                        <img src="images/dist/stage-project-2.jpg" srcset="images/dist/stage-project-2@2x.jpg 2x" alt="">
+                                        <div class="play-icon">
+                                            <svg  width="10" height="16">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="stage-project-desc">
+                                        Смотреть видео «Доставка резервуаров к месту установки»
+                                    </div>
 
-                            <div class="stage-project-item">
-                                <div class="stage-project-title">
-                                    Доставка
-                                </div>
-                                <div class="stage-project-cover">
-                                    <a href="javascript:void(0)" class="stage-project-video-link"></a>
-                                    <img src="images/dist/stage-project-2.jpg" srcset="images/dist/stage-project-2@2x.jpg 2x" alt="">
-                                    <div class="play-icon">
-                                        <svg  width="10" height="16">
-                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
-                                        </svg>
+                                    <div class="stage-project-text">
+                                        <p>
+                                            Поставка оборудования начиная с таможенного оформления
+                                            до разгрузки на объекте осуществляется собственными силами компании.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="stage-project-desc">
-                                    Смотреть видео «Доставка резервуаров к месту установки»
-                                </div>
 
-                                <div class="stage-project-text">
-                                    <p>
-                                        Поставка оборудования начиная с таможенного оформления
-                                        до разгрузки на объекте осуществляется собственными силами компании.
-                                    </p>
-                                </div>
-                            </div>
+                                <div class="stage-project-item">
+                                    <div class="stage-project-title">
+                                        Монтажные <br> работы
+                                    </div>
+                                    <div class="stage-project-cover">
+                                        <a href="javascript:void(0)" class="stage-project-video-link"></a>
+                                        <img src="images/dist/stage-project-3.jpg" srcset="images/dist/stage-project-3@2x.jpg 2x" alt="">
+                                        <div class="play-icon">
+                                            <svg  width="10" height="16">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="stage-project-desc">
+                                        Смотреть видео «Монтаж резервуара в короткие сроки»
+                                    </div>
 
-                            <div class="stage-project-item">
-                                <div class="stage-project-title">
-                                    Монтажные <br> работы
-                                </div>
-                                <div class="stage-project-cover">
-                                    <a href="javascript:void(0)" class="stage-project-video-link"></a>
-                                    <img src="images/dist/stage-project-3.jpg" srcset="images/dist/stage-project-3@2x.jpg 2x" alt="">
-                                    <div class="play-icon">
-                                        <svg  width="10" height="16">
-                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
-                                        </svg>
+                                    <div class="stage-project-text">
+                                        <p>
+                                            Монтажные работы производятся исключительно собственными бригадами, сформированными
+                                            из обученных специалистов.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="stage-project-desc">
-                                    Смотреть видео «Монтаж резервуара в короткие сроки»
-                                </div>
 
-                                <div class="stage-project-text">
-                                    <p>
-                                        Монтажные работы производятся исключительно собственными бригадами, сформированными
-                                        из обученных специалистов.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="stage-project-item">
-                                <div class="stage-project-title">
-                                    Техническое <br> обслуживание
-                                </div>
-                                <div class="stage-project-cover">
-                                    <a href="javascript:void(0)" class="stage-project-video-link"></a>
-                                    <img src="images/dist/stage-project-4.jpg" srcset="images/dist/stage-project-4@2x.jpg 2x" alt="">
-                                    <div class="play-icon">
-                                        <svg  width="10" height="16">
-                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
-                                        </svg>
+                                <div class="stage-project-item">
+                                    <div class="stage-project-title">
+                                        Техническое <br> обслуживание
                                     </div>
-                                </div>
-                                <div class="stage-project-desc">
-                                    Смотреть видео «Подготовка технического задания для клиента»
-                                </div>
+                                    <div class="stage-project-cover">
+                                        <a href="javascript:void(0)" class="stage-project-video-link"></a>
+                                        <img src="images/dist/stage-project-4.jpg" srcset="images/dist/stage-project-4@2x.jpg 2x" alt="">
+                                        <div class="play-icon">
+                                            <svg  width="10" height="16">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="stage-project-desc">
+                                        Смотреть видео «Подготовка технического задания для клиента»
+                                    </div>
 
-                                <div class="stage-project-text">
-                                    <p>
-                                        Сервисный отдел компании обеспечит оперативное гарантийное и постгарантийное
-                                        обслуживание поставляемого оборудования.
-                                    </p>
+                                    <div class="stage-project-text">
+                                        <p>
+                                            Сервисный отдел компании обеспечит оперативное гарантийное и постгарантийное
+                                            обслуживание поставляемого оборудования.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -817,6 +777,13 @@
                                         Видеоролик о компании
                                     </div>
                                 </div>
+
+                                <div class="play-icon btn-play-mobile">
+                                    <svg width="10" height="16">
+                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
+                                    </svg>
+                                </div>
+
                             </div>
 
                             <div class="company-desc-text company-text-content">
@@ -873,129 +840,142 @@
 
                             </div>
                         </div>
-                        <div class="company-side">
+                        <div class="company-side tab-wrap">
 
-                            <div class="company-side-block custom-slider company-side-item slider-wrap">
-                                <p class="company-side-title">Отзывы</p>
+                            <div class="company-side-header">
+                                <div class="company-side-header-item">
+                                    <a href="javascript:void(0)" class="btn-tab tab-active" data-tab-target=".tab-side-reviews">Отзывы</a>
+                                </div>
+                                <div class="company-side-header-item">
+                                    <a href="javascript:void(0)" class="btn-tab" data-tab-target=".tab-side-projects">Наши проекты</a>
+                                </div>
+                                
+                            </div>
 
-                                <div class="side-block-slider">
+                            <div class="tab-body-item tab-side-reviews tab-active">
+                                <div class="company-side-block custom-slider company-side-item slider-wrap">
+                                    <p class="company-side-title">Отзывы</p>
 
-                                    <div class="side-block-slide">
-                                        <div class="company-side-block-cover">
-                                            <a href="#" class="company-side-block-cover-link"></a>
-                                            <img src="images/dist/review-img@2x.jpg" alt="">
-                                            <div class="play-icon">
-                                                <svg  width="10" height="16">
-                                                    <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
+                                    <div class="side-block-slider">
+                                        <div class="side-block-slide">
+                                            <div class="company-side-block-cover">
+                                                <a href="#" class="company-side-block-cover-link"></a>
+                                                <img src="images/dist/review-img@2x.jpg" alt="">
+                                                <div class="play-icon">
+                                                    <svg  width="10" height="16">
+                                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+
+                                            <div class="company-side-block-desc text-overflow-container">
+                                                <div class="text-inner">
+                                                    <p>Компания «МАСТЕР ВАТТ» выражает благодарность компании ООО «ФЛАМАКС»
+                                                        за эффективное...</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="side-block-slide">
+                                            <div class="company-side-block-cover">
+                                                <a href="#" class="company-side-block-cover-link"></a>
+                                                <img src="images/dist/review-img@2x.jpg" alt="">
+                                                <div class="play-icon">
+                                                    <svg  width="10" height="16">
+                                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+
+                                            <div class="company-side-block-desc">
+                                                <div class="text-inner">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="company-side-block-cellar">
+                                        <a href="#" class="btn-user btn-user-outline btn-user-middle btn-outline-dark  ">
+                                            <span class="btn-inner">Читать все отзывы</span>
+                                        </a>
+
+                                        <div class="slider-controls-wrap company-side-slider-controls-wrap ">
+                                            <div class="slider-control slider-control-prev dark btn-slider prev">
+                                                <svg width="10" height="16">
+                                                    <use xlink:href="images/dist/icons/svg-icons-sprite.svg#slider-prev-icon"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="slider-control slider-control-next dark btn-slider next">
+                                                <svg width="10" height="16">
+                                                    <use xlink:href="images/dist/icons/svg-icons-sprite.svg#slider-next-icon"></use>
                                                 </svg>
                                             </div>
                                         </div>
 
-                                        <div class="company-side-block-desc text-overflow-container">
-                                            <div class="text-inner">
-                                                <p>Компания «МАСТЕР ВАТТ» выражает благодарность компании ООО «ФЛАМАКС»
-                                                    за эффективное...</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-body-item tab-side-projects">
+                                <div class="company-side-block custom-slider company-side-item slider-wrap">
+                                    <p class="company-side-title">Наши проекты</p>
+
+                                    <div class="side-block-slider">
+                                        <div class="side-block-slide">
+                                            <div class="company-side-block-cover">
+                                                <img src="images/dist/side-block-cover-projects.jpg" srcset="images/dist/side-block-cover-projects@2x.jpg 2x" alt="">
                                             </div>
 
+                                            <div class="company-side-block-desc">
+                                                <div class="text-inner">
+                                                    <p>Пожарные резервуары для ТЦ "Леруа Мерлен"</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="side-block-slide">
+                                            <div class="company-side-block-cover">
+                                                <img src="images/dist/side-block-cover-projects.jpg" srcset="images/dist/side-block-cover-projects@2x.jpg 2x" alt="">
+                                            </div>
+
+                                            <div class="company-side-block-desc">
+                                                <div class="text-inner">
+                                                    <p>Lorem ipsum dolor.</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="side-block-slide">
-                                        <div class="company-side-block-cover">
-                                            <a href="#" class="company-side-block-cover-link"></a>
-                                            <img src="images/dist/review-img@2x.jpg" alt="">
-                                            <div class="play-icon">
-                                                <svg  width="10" height="16">
-                                                    <use xlink:href="images/dist/icons/svg-icons-sprite.svg#play-icon"></use>
+
+                                    <div class="company-side-block-cellar">
+                                        <a href="#" class="btn-user btn-user-outline btn-user-middle btn-outline-dark  ">
+                                            <span class="btn-inner">Смотреть все проекты</span>
+                                        </a>
+
+                                        <div class="slider-controls-wrap company-side-slider-controls-wrap">
+                                            <div class="slider-control slider-control-prev dark btn-slider prev">
+                                                <svg width="10" height="16">
+                                                    <use xlink:href="images/dist/icons/svg-icons-sprite.svg#slider-prev-icon"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="slider-control slider-control-next dark btn-slider next">
+                                                <svg width="10" height="16">
+                                                    <use xlink:href="images/dist/icons/svg-icons-sprite.svg#slider-next-icon"></use>
                                                 </svg>
                                             </div>
                                         </div>
 
-                                        <div class="company-side-block-desc">
-                                            <div class="text-inner">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                                            </div>
-
-                                        </div>
                                     </div>
-
                                 </div>
-
-                                <div class="company-side-block-cellar">
-                                    <a href="#" class="btn-user btn-user-outline btn-user-middle btn-outline-dark  ">
-                                        <span class="btn-inner">Читать все отзывы</span>
+                                <div class="company-side-history-block company-side-item">
+                                    <img src="images/dist/company-history-photo.jpg"  srcset="images/dist/company-history-photo@2x.jpg 2x" alt="">
+                                    <a href="javascript:void(0)" class="btn-user btn-fill-white btn-user-middle btn">
+                                        <span class="btn-inner">истории компании</span>
                                     </a>
-
-                                    <div class="slider-controls-wrap company-side-slider-controls-wrap ">
-                                        <div class="slider-control slider-control-prev dark btn-slider prev">
-                                            <svg width="10" height="16">
-                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#slider-prev-icon"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="slider-control slider-control-next dark btn-slider next">
-                                            <svg width="10" height="16">
-                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#slider-next-icon"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
 
-                            <div class="company-side-block custom-slider company-side-item slider-wrap">
-                                <p class="company-side-title">Наши проекты</p>
-
-                                <div class="side-block-slider">
-                                    <div class="side-block-slide">
-                                        <div class="company-side-block-cover">
-                                            <img src="images/dist/side-block-cover-projects.jpg" srcset="images/dist/side-block-cover-projects@2x.jpg 2x" alt="">
-                                        </div>
-
-                                        <div class="company-side-block-desc">
-                                            <div class="text-inner">
-                                                <p>Пожарные резервуары для ТЦ "Леруа Мерлен"</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="side-block-slide">
-                                        <div class="company-side-block-cover">
-                                            <img src="images/dist/side-block-cover-projects.jpg" srcset="images/dist/side-block-cover-projects@2x.jpg 2x" alt="">
-                                        </div>
-
-                                        <div class="company-side-block-desc">
-                                            <div class="text-inner">
-                                                <p>Lorem ipsum dolor.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="company-side-block-cellar">
-                                    <a href="#" class="btn-user btn-user-outline btn-user-middle btn-outline-dark  ">
-                                        <span class="btn-inner">Смотреть все проекты</span>
-                                    </a>
-
-                                    <div class="slider-controls-wrap company-side-slider-controls-wrap">
-                                        <div class="slider-control slider-control-prev dark btn-slider prev">
-                                            <svg width="10" height="16">
-                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#slider-prev-icon"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="slider-control slider-control-next dark btn-slider next">
-                                            <svg width="10" height="16">
-                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#slider-next-icon"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="company-side-history-block company-side-item">
-                                <img src="images/dist/company-history-photo.jpg"  srcset="images/dist/company-history-photo@2x.jpg 2x" alt="">
-                                <a href="javascript:void(0)" class="btn-user btn-fill-white btn-user-middle btn">
-                                    <span class="btn-inner">истории компании</span>
-                                </a>
-                            </div>
                         </div>
                     </div>
 
@@ -1003,7 +983,7 @@
             </div>
         </section>
 
-        <section class="press-center-block u-pad-top-big">
+        <section class="press-center-block u-margin-top-big">
             <div class="container">
                 <div class="press-center">
                     <div class="press-center-head title-control-head">
@@ -1018,7 +998,6 @@
                             </a>
                         </div>
                     </div>
-
 
                     <div class="press-wrap">
                         <div class="press-previews">
@@ -1088,10 +1067,6 @@
                                              class="press-preview-img">
                                     </div>
                                 </div>
-
-
-
-
                             </div>
                         </div>
 
@@ -1158,7 +1133,7 @@
             </div>
         </section>
 
-        <section class="news-block">
+        <section class="news-block ov-h">
             <div class="container">
                 <div class="news">
                     <div class="news-wrap">
@@ -1503,14 +1478,12 @@
                                 <span class="btn-inner">Все выставки</span>
                             </a>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <section class="trust-block u-pad-top-big u-pad-bottom">
+        <section class="trust-block u-margin-top-big ov-h">
             <div class="container">
                 <div class="trust slider-wrap dash-title-wrap">
 
@@ -1679,28 +1652,31 @@
                             </div>
 
                             <div class="footer-contacts">
-                                <div class="footer-contacts-item">
+                                <div class="footer-contacts-item footer-contacts-item-1">
                                     <p class="footer-contacts-title">Бесплатный звонок</p>
-                                    <div class="cnt-body">
+                                    <div class="cnt-body cnt-body-1">
                                         <p class="cnt-text">
                                             <a href="tel:+78002006269">+7 800 200 62 69</a>
+                                        </p>
+                                        <p class="cnt-text cnt-text-mobile-only">
+                                            <a href="tel:+74956496269">+7 495 649 62 69</a>
                                         </p>
                                     </div>
 
                                 </div>
 
-                                <div class="footer-contacts-item">
+                                <div class="footer-contacts-item footer-contacts-item-2">
                                     <p class="footer-contacts-title">Факс</p>
-                                    <div class="cnt-body">
+                                    <div class="cnt-body cnt-body-2">
                                         <p class="cnt-text">
                                             <a href="tel:+74956496269">+7 495 649 62 69</a>
                                         </p>
                                     </div>
                                 </div>
 
-                                <div class="footer-contacts-item">
+                                <div class="footer-contacts-item footer-contacts-item-3">
                                     <p class="footer-contacts-title">Телефон</p>
-                                    <div class="cnt-body">
+                                    <div class="cnt-body cnt-body-3">
                                         <p class="cnt-text">
                                             <a href="tel:+74956496269">+7 495 649 62 69</a>
                                         </p>
@@ -1709,16 +1685,60 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="footer-contacts-item">
+                                <div class="footer-contacts-item footer-contacts-item-4">
                                     <p class="footer-contacts-title">Почта</p>
-                                    <div class="cnt-body">
+                                    <div class="cnt-body cnt-body-4">
                                         <p class="cnt-text">
                                             <a href="mailto:info@flamax.ru">info@flamax.ru</a>
                                         </p>
+                                        <div class="cnt-body-social-item">
+                                            <div class="social-group dark-social-group">
+                                                <div class="social-group-item">
+                                                    <a href="#" class="soc-unit" target="_blank">
+                                                        <svg width="16" height="9">
+                                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-vk-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                                <div class="social-group-item">
+                                                    <a href="#" class="soc-unit" target="_blank">
+                                                        <svg width="12" height="12">
+                                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-inst-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                                <div class="social-group-item">
+                                                    <a href="#" class="soc-unit" target="_blank">
+                                                        <svg width="7" height="14">
+                                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-fb-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                                <div class="social-group-item">
+                                                    <a href="#" class="soc-unit" target="_blank">
+                                                        <svg width="16" height="12">
+                                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-youtube-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
+                            <div class="footer-address">
+                                <div class="footer-address-item">
+                                    <p class="footer-address-item-title">ЦЕНТРАЛЬНЫЙ ОФИС</p>
+                                    <p class="footer-address-item-text">г.&nbsp;Москва, Алтуфьевское шоссе, д.44</p>
+                                </div>
+                                <div class="footer-address-item">
+                                    <p class="footer-address-item-title">КАЗАНСКИЙ ОФИС </p>
+                                    <p class="footer-address-item-text">г.&nbsp;Казань, ул.&nbsp;Павлюхина&nbsp;99Б, офис&nbsp;1009</p>
+                                </div>
+                            </div>
+
 
                         </div>
 
@@ -1726,8 +1746,8 @@
 
                             <div class="cellar-left-side">
                                 <ul class="cellar-links-list">
-                                    <li class="cellar-links-item"><a href="#">© flamaxc.2021</a></li>
-                                    <li class="cellar-links-item"><a href="#">Политика обработки персональных данных</a></li>
+                                    <li class="cellar-links-item">© flamaxc.2021</li>
+                                    <li class="cellar-links-item cellar-conf-policy"><a href="#">Политика обработки персональных данных</a></li>
                                     <li class="cellar-links-item"><a href="#">Реквизиты</a></li>
                                     <li class="cellar-links-item"><a href="#">Карта сайта</a></li>
                                 </ul>
@@ -1801,13 +1821,6 @@
 
 
 @@include("parts/menu.html")
-
-
-
-
-
-
-
 
 
 @@include("parts/footer.html")

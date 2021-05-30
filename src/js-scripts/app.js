@@ -361,6 +361,26 @@ const doSliderTrust = function () {
         autoplaySpeed:5000,
         pauseOnHover:false,
         lazyLoad: 'ondemand',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
     };
 
     $trustSlider.each(function (idx, item) {
@@ -392,12 +412,89 @@ const doElementFullHeight = function (selector, minMedia = 0) {
     const elementFullHeightList = $(selector);
     if (elementFullHeightList.length > 0) {
         const winHeight = $(window).height();
-        console.log( winHeight);
         elementFullHeightList.each(function (idx, item) {
             $(item).height(winHeight);
         })
     }
 }
+
+
+$(document).on('click', '.btn-open-menu', function (evt) {
+    $('html')
+        .addClass('modal-menu-active')
+        .addClass('stop-scroll');
+});
+
+$(document).on('click', '.btn-open-search', function (evt) {
+    $('html')
+        .addClass('modal-search-active')
+        .addClass('stop-scroll');
+});
+
+$(document).on('click', '.btn-open-modal-form', function (evt) {
+    $('html')
+        .addClass('modal-form-active')
+        .addClass('stop-scroll');
+});
+
+
+
+
+$(document).on('click', '.btn-modal-outer-close', function (evt) {
+    $('html')
+        .removeClass('modal-menu-active')
+        .removeClass('modal-search-active')
+        .removeClass('modal-form-active')
+        .removeClass('stop-scroll');
+});
+
+
+
+const doTabs = function () {
+    const tabWrap = $('.tab-wrap');
+    if (tabWrap.length) {
+
+        tabWrap.each(function (idx, item) {
+            const $tabWrapper = $(item);
+            $tabWrapper.on('click', '.btn-tab', function() {
+                const thisBtnTab = $(this);
+
+                const selector = thisBtnTab.attr('data-tab-target');
+                const $target = $tabWrapper.find(selector);
+
+                if ($target && $target.length) {
+                    $tabWrapper
+                        .find('.tab-body-item')
+                        .removeClass('tab-active');
+                    $target.addClass('tab-active');
+
+                    $tabWrapper
+                        .find('.btn-tab')
+                        .removeClass('tab-active');
+
+                    thisBtnTab.addClass('tab-active');
+
+                    const $sliders = $tabWrapper.find('.slick-slider');
+                    if ($sliders.length) {
+                        $sliders.each(function(idx) {
+                            let setTime = setTimeout(function () {
+                                $sliders.eq(idx).slick('setPosition');
+                            }, 30);
+
+                        })
+                    }
+
+                }
+
+            });
+        });
+    }
+}
+
+
+
+
+
 
 
 
@@ -409,6 +506,7 @@ $(document).ready(function () {
     doSideBlockSlider();
     doNewsColumnsSlider();
     doNewsMainSlider();
+    doTabs();
 
 
     doUserSelect('.custom-select');
