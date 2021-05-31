@@ -1,3 +1,4 @@
+
 <script src="https://api-maps.yandex.ru/2.1/?apikey=4d810e99-bc7e-4463-9467-54c0c928b747&lang=ru_RU"
         type="text/javascript">
 </script>
@@ -27,11 +28,14 @@
     }
   }
 
+
+
   function init() {
-    const mapCenter = [54.908598347389756,43.38108473828123];
+    const mapCenter = screen.width > 1280 ? [54.63230001911517,43.40305739453122] : [53.37029776226329,43.17509108593746];
+    const mapZoom = screen.width > 1280 ? 7 : 6;
     const myMap = new ymaps.Map("map", {
       center: mapCenter,
-      zoom: 7,
+      zoom: mapZoom,
       controls: [
         'zoomControl',
         'fullscreenControl',

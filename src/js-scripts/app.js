@@ -264,7 +264,7 @@ const doTechSlider = function () {
                 </div>
             `;
         const prepDesc = `
-                <div class="tech-section-description-content new">
+                <div class="tech-section-description-content new u-text-t2">
                     ${descHtml}
                 </div>
             `;
@@ -491,6 +491,48 @@ const doTabs = function () {
     }
 }
 
+const doAccordionMenu = function () {
+    const $mainMenuList = $('.main-menu-list');
+    if ($mainMenuList.length === 0)  {
+        return 0;
+    }
+    const $mainMenuItems = $mainMenuList.find('.main-menu-item');
+
+    $mainMenuList.on('click', '.main-menu-item-head', function (evt) {
+        if ($(window).width > 575) {
+            return 0;
+        }
+        evt.preventDefault();
+        const $thisMainMenuItem = $(this).closest('.main-menu-item');
+        $mainMenuItems.not($thisMainMenuItem)
+            .stop()
+            .removeClass('menu-accordion-active')
+            .find('.main-menu-item-body')
+            .stop()
+            .slideUp(200);
+
+        if($thisMainMenuItem.hasClass('menu-accordion-active')) {
+            $thisMainMenuItem
+                .removeClass('menu-accordion-active')
+                .find('.main-menu-item-body')
+                .stop()
+                .slideUp(200)
+
+        } else {
+            $thisMainMenuItem
+                .addClass('menu-accordion-active')
+                .find('.main-menu-item-body')
+                .stop()
+                .slideDown(200)
+        }
+
+
+    });
+
+
+
+}
+
 
 
 
@@ -507,6 +549,7 @@ $(document).ready(function () {
     doNewsColumnsSlider();
     doNewsMainSlider();
     doTabs();
+    doAccordionMenu();
 
 
     doUserSelect('.custom-select');
