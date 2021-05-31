@@ -1,12 +1,12 @@
-<div class="page-modal-outer page-modal-form page-modal-comment-form ">
+<div class="page-modal-outer page-modal-form page-modal-comment-form user-modal-outer " id="modal-page-comment-outer">
 
-    <div class="unit-control-icon close-control-icon btn-modal-close btn-modal-close-position">
+    <div class="unit-control-icon close-control-icon btn-modal-close btn-modal-close-position btn-modal-outer-close">
         <img src="images/dist/icons/close-icon.svg" alt="" width="10" height="10">
     </div>
 
     <div class="container page-modal-inner">
 
-        <div class="page-modal-body  page-modal-form-layer fx-1 page-modal-form-pad-left dash-title-wrap ">
+        <form class="page-modal-body  page-modal-form-layer fx-1 page-modal-form-pad-left dash-title-wrap send-form ">
 
             <p class="form-top-subtitle">Свяжитесь с нами</p>
             <p class="title dash-title text-h4 form-modal-title">
@@ -18,20 +18,20 @@
 
                     <div class="form-field-item">
                         <label class="user-input-label">
-                            <input type="text" class="user-input field-fill " placeholder="Ваше имя*">
+                            <input type="text" class="user-input field-fill validated-control" placeholder="Ваше имя*">
                         </label>
                     </div>
 
                     <div class="form-field-item">
                         <label class="user-input-label">
-                            <input type="text" class="user-input field-fill" placeholder="Ваш телефон*">
+                            <input type="tel" class="user-input field-fill validated-control" placeholder="Ваш телефон*">
                         </label>
                     </div>
 
                 </div>
                 <div class="form-callback-comment">
                     <label class="user-textarea-label">
-                        <textarea rows="10" placeholder="Комментарии" class="user-textarea field-fill"></textarea>
+                        <textarea rows="10" placeholder="Комментарии" class="user-textarea field-fill validated-control"></textarea>
                     </label>
                 </div>
             </div>
@@ -39,7 +39,7 @@
             <div class="form-cellar">
                 <div class="form-cellar-item">
                     <label class="user-check-unit half-transparent">
-                        <input type="checkbox">
+                        <input type="checkbox" name="" class="validated-control">
                         <span class="check-unit-icon">
                             <svg  width="8" height="6">
                                 <use xlink:href="images/dist/icons/svg-icons-sprite.svg#checkbox-tick-icon"></use>
@@ -55,7 +55,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
     <div class="bg-print-layer">

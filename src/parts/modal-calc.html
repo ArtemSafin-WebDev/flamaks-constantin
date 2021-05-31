@@ -1,10 +1,10 @@
-<div class="page-modal-outer page-modal-form " id="modal-page-calc-outer">
+<div class="page-modal-outer page-modal-form  user-modal-outer" id="modal-page-calc-outer">
 
     <div class="unit-control-icon close-control-icon btn-modal-close btn-modal-close-position btn-modal-outer-close">
         <img src="images/dist/icons/close-icon.svg" alt="" width="10" height="10">
     </div>
 
-    <div class="container page-modal-inner">
+    <form class="container page-modal-inner send-form">
 
         <div class="page-modal-body  page-modal-form-layer fx-1 page-modal-form-pad-left dash-title-wrap ">
 
@@ -77,7 +77,7 @@
 
                                         <div class="calc-params-box-item">
                                             <label class="user-input-label">
-                                                <input type="text" class="user-input" placeholder="Высота, м">
+                                                <input type="text" class="user-input " placeholder="Высота, м">
                                             </label>
                                         </div>
 
@@ -124,8 +124,6 @@
 
                             </div>
 
-
-
                         </div>
 
                     </div>
@@ -137,17 +135,17 @@
 
                     <div class="form-field-item">
                         <label class="user-input-label">
-                            <input type="text" class="user-input field-fill " placeholder="Ваше имя*">
+                            <input type="text" class="user-input field-fill validated-control" placeholder="Ваше имя*">
                         </label>
                     </div>
                     <div class="form-field-item">
                         <label class="user-input-label">
-                            <input type="text" class="user-input field-fill" placeholder="Ваш телефон*">
+                            <input type="tel" class="user-input field-fill validated-control" placeholder="Ваш телефон*">
                         </label>
                     </div>
                     <div class="form-field-item">
                         <label class="user-input-label">
-                            <input type="text" class="user-input field-fill" placeholder="E-mail*">
+                            <input type="text" class="user-input field-fill validated-control" placeholder="E-mail*">
                         </label>
                     </div>
                     <div class="form-field-item">
@@ -167,7 +165,7 @@
             <div class="form-cellar">
                 <div class="form-cellar-item">
                     <label class="user-check-unit half-transparent">
-                        <input type="checkbox">
+                        <input type="checkbox" name="" class="validated-control">
                         <span class="check-unit-icon">
                             <svg  width="8" height="6">
                                 <use xlink:href="images/dist/icons/svg-icons-sprite.svg#checkbox-tick-icon"></use>
@@ -188,7 +186,7 @@
 
         </div>
 
-    </div>
+    </form>
 
     <div class="bg-print-layer">
         <img src="images/dist/bg-print-modal.jpg" srcset="images/dist/bg-print-modal@2x.jpg 2x" alt="" >

@@ -4,15 +4,15 @@
 <body>
 
 @@include("parts/modal-menu.html")
-@@include("parts/modal-search.html")
+<!--@@include("parts/modal-search.html")-->
 @@include("parts/modal-calc.html")
-<!--@@include("parts/modal-comment.html")-->
+@@include("parts/modal-comment.html")
 <!--@@include("parts/modal-success.html")-->
 
 
 <div class="main-wrap">
     <div class="main-body">
-        <div class="block-1-wrap block-full-height" >
+        <div class="block-1-wrap block-full-height main-first-block" >
             @@include("parts/header-block.html")
 
 
@@ -48,7 +48,6 @@
                                         Насосные станции
                                     </div>
                                 </div>
-
                             </div>
                             <div class="main-slide-content">
                                 <div class="main-slide-content-text u-text-t2">
@@ -59,7 +58,7 @@
                                 <div class="main-slide-btn-wrap">
                                     <div class="main-slide-btn-box">
                                         <div class="main-slide-btn-item">
-                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn btn-open-modal-form">
+                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn btn-open-modal" data-modal-id="#modal-page-comment-outer">
                                                 <span class="btn-inner">подробнее</span>
                                             </a>
                                         </div>
@@ -102,7 +101,7 @@
                                 <div class="main-slide-btn-wrap">
                                     <div class="main-slide-btn-box">
                                         <div class="main-slide-btn-item">
-                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn ">
+                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn  btn-open-modal" data-modal-id="#modal-page-comment-outer">
                                                 <span class="btn-inner">подробнее</span>
                                             </a>
                                         </div>
@@ -145,7 +144,7 @@
                                 <div class="main-slide-btn-wrap">
                                     <div class="main-slide-btn-box">
                                         <div class="main-slide-btn-item">
-                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn ">
+                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn  btn-open-modal" data-modal-id="#modal-page-comment-outer">
                                                 <span class="btn-inner">подробнее</span>
                                             </a>
                                         </div>
@@ -1814,11 +1813,6 @@
     </div>
 </div>
 
-
-
-
-
-@@include("parts/menu.html")
 
 
 @@include("parts/footer.html")
