@@ -233,12 +233,19 @@ function copySvg() {
         .pipe(browserSync.stream())
 }
 
+function copyVideo() {
+    return src(`${srcFolder}/videos/**/*`)
+        .pipe(dest(`dist/videos/`))
+        .pipe(browserSync.stream())
+}
+
 function watchFiles() {
     watch([path.watch.html], html);
     watch([path.watch.css], css);
     watch([path.watch.js], js);
     watch([path.watch.libs], copyLibs);
     watch([path.watch.img], copyImg);
+    watch([`${srcFolder}/videos/**/*`], copyVideo);
 }
 
 
@@ -253,8 +260,8 @@ function cleanFonts() {
 }
 
 
-const building = series( clean, cleanImages, cleanFonts, parallel( buildCSS, buildJS, images, copyFonts, copyLibs, copySvg, html ));
-const watching =  parallel( series( clean, cleanFonts, cleanImages, parallel(css, js, html,  copyLibs, copyFonts, copyImg )) , watchFiles, fnBrowserSync);
+const building = series( clean, cleanImages, cleanFonts, parallel( buildCSS, buildJS, images, copyFonts, copyLibs, copySvg, copyVideo, html ));
+const watching =  parallel( series( clean, cleanFonts, cleanImages, parallel(css, js, html,  copyLibs, copyFonts, copyImg, copyVideo )) , watchFiles, fnBrowserSync);
 const fontsBuild = series( cleanFonts, fonts );
 const imagesBuild = series( cleanImages, images, copySvg );
 

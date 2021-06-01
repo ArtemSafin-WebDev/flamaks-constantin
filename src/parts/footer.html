@@ -1,8 +1,44 @@
 
+<a href="javascript:void(0)" class="btn-fill-accent btn-user btn btn-open-modal"  data-action="open-menu">
+    <span class="btn-inner">тестовая кнопка</span>
+</a>
+
+
+<div class="square-anim">
+
+</div>
+
+<style>
+    .square-anim {
+        display: block;
+        width: 100px;
+        height:100px;
+        background: red;
+        animation: sq-anim 3s ease-in-out 3;
+        display: none;
+    }
+
+    @keyframes sq-anim {
+        from {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+        to {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+</style>
+
+
 <script src="libs/jquery-3.2.1.min.js"></script>
 <script src="libs/slick/slick.js"></script>
 <script src="libs/select2/select2.full.min.js"></script>
 <script src="libs/jquery-mask/jquery-mask.js"></script>
+<script src="libs/lightgallery/js/lightgallery.min.js"></script>
+<script src="libs/lightgallery/modules/lg-video.min.js"></script>
+<script src="libs/light-modal/light-modal.js"></script>
 <script src="js/main.min.js"></script>
 
 

@@ -593,6 +593,18 @@ $(window).on('scroll', function () {
     toggleThemeHeader();
 });
 
+const doLightGallery = function () {
+    const $lgVideoItems = $('.lg-video-item');
+    if ($lgVideoItems.length) {
+        $lgVideoItems.lightGallery({
+            selector: 'this',
+        });
+    }
+}
+
+
+
+
 
 
 $(document).ready(function () {
@@ -605,6 +617,7 @@ $(document).ready(function () {
     doNewsMainSlider();
     doTabs();
     doAccordionMenu();
+    doLightGallery();
 
     doUserSelect('.custom-select');
     doElementFullHeight('.block-full-height')
@@ -624,7 +637,6 @@ $(document).ready(function () {
             console.log('неудачно')
         }
     });
-
 });
 
 
@@ -651,6 +663,7 @@ $(document).ready(function () {
 
 
 
+/*
 
 function touchPrevent (evt) {
     evt.preventDefault();
@@ -761,6 +774,7 @@ $(document).on('click', '.btn-open-modal', function () {
 });
 
 
+*/
 
 
 
