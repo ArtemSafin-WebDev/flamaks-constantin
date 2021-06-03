@@ -88,6 +88,7 @@ fnPlugin.modal = function (selector, options = {}) {
 
     function _getWindowScrollTop() {
         return window.pageYOffset;
+        // return $(window).scrollTop();
     }
 
     function _setModalOuterPosition() {
