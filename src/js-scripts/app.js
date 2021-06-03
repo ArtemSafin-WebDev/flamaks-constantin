@@ -7,7 +7,6 @@ const numToStr = function (num) {
 const doPageMainSlider = function(selector) {
     const $pageMainSlider = $(selector);
     if ($pageMainSlider.length === 0) return false;
-
     const sliderOptions = {
         dots: true,
         arrows: true,
@@ -16,7 +15,7 @@ const doPageMainSlider = function(selector) {
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed:4000,
         pauseOnHover:false,
         pauseOnFocus:false,
@@ -32,6 +31,22 @@ const doPageMainSlider = function(selector) {
         ]
     };
 
+    const sliderImagesOptions = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        autoplay: false,
+        pauseOnHover:false,
+        pauseOnFocus:false,
+        lazyLoad: 'ondemand',
+    };
+
+
+
     $pageMainSlider.each(function (idx, item) {
         const $slider = $(item);
         const $sliderWrap = $slider.closest('.slider-wrap');
@@ -42,14 +57,17 @@ const doPageMainSlider = function(selector) {
         const $sliderCurrentPage = $sliderWrap.find('.slider-current-page');
         const $sliderAllPage = $sliderWrap.find('.slider-all-page');
 
-        const $mainSliderImages = $sliderWrap.find('.main-slider-images');
-        const $mainSliderImagesSlides = $mainSliderImages.find('.main-slider-images-item');
-        $mainSliderImagesSlides.eq(0).addClass('slide-active');
+        // const $mainSliderImagesSlides = $mainSliderImages.find('.main-slider-images-item');
+        // $mainSliderImagesSlides.eq(0).addClass('slide-active');
+
+        const $mainSliderImages = $sliderWrap.find('.main-slider-images').eq(0);
+        $mainSliderImages.slick(sliderImagesOptions);
 
 
         const newOptions = Object.assign(sliderOptions, {
             prevArrow: $prevArrow,
             nextArrow: $nextArrow,
+            asNavFor: $mainSliderImages,
         });
 
         $sliderCurrentPage.html( numToStr(1) );
@@ -57,11 +75,11 @@ const doPageMainSlider = function(selector) {
         $slider.slick(newOptions);
 
         $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-            $mainSliderImagesSlides.removeClass('slide-active');
-            $mainSliderImagesSlides.eq(nextSlide).addClass('slide-active');
+            // $mainSliderImagesSlides.removeClass('slide-active');
+            // $mainSliderImagesSlides.eq(nextSlide).addClass('slide-active');
             $sliderCurrentPage.html( numToStr(nextSlide + 1) );
-
         });
+
     });
 };
 

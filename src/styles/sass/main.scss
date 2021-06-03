@@ -1222,6 +1222,21 @@ html, body {
 * end header-block
  */
 
+.main-slider {
+  display: none;
+  & ~ .slider-controls-wrap,
+  & ~ .slider-count-pages {
+    display: none;
+  }
+
+  &.slick-slider {
+    display: block;
+  }
+  &.slick-slider ~ .slider-controls-wrap,
+  &.slick-slider ~ .slider-count-pages {
+    display: flex;
+  }
+}
 
 
 .main-slide-btn-wrap {
@@ -1479,7 +1494,7 @@ html, body {
 
 @media (max-width: $bp-768) {
   .main-slider-wrap .slider-controls-wrap {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -1548,7 +1563,9 @@ html, body {
 }
 
 @media (max-width: $bp-480) {
-  .main-slider-wrap  .slider-count-pages {display: none;}
+  .main-slider-wrap  .slider-count-pages {
+    display: none !important;
+  }
 }
 
 .main-slider-images {
@@ -1558,12 +1575,35 @@ html, body {
   top: 0;
   left: 0;
 }
+
+.main-slider-images {
+  .slick-list,
+  .slick-slide,
+  .slick-slide > div,
+  .slick-track,
+  .main-slider-images-item {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .main-slider-images-item img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
 .main-slider-images-item {
   width: 100%;
   height: 100%;
   transition: all .3s linear;
-  opacity: 0;
-  visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -4722,6 +4762,11 @@ trust-block
   left: 0;
   z-index: 200;
   overflow: hidden;
+  display: none;
+
+  .light-modal-outer & {
+    display: block;
+  }
 
 }
 
