@@ -727,6 +727,7 @@ function doVideoBox() {
 
 
 $(document).ready(function () {
+    // doElementFullHeight('.block-full-height');
     doPageMainSlider('.main-page-slider');
     doAccordionApp();
     doTechSlider();
@@ -739,11 +740,8 @@ $(document).ready(function () {
     doLightGallery();
 
     doUserSelect('.custom-select');
-    doElementFullHeight('.block-full-height');
-
     initMaskPhoneInputs();
     doVideoBox();
-
     doProjectSizesSlider();
 
     $(document).on('focus change', 'input, textarea', function(){
