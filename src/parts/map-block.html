@@ -1,55 +1,54 @@
 
-<script src="https://api-maps.yandex.ru/2.1/?apikey=4d810e99-bc7e-4463-9467-54c0c928b747&lang=ru_RU"
+<script async src="https://api-maps.yandex.ru/2.1/?apikey=4d810e99-bc7e-4463-9467-54c0c928b747&lang=ru_RU&load=package.standard&onload=getYaMap"
         type="text/javascript">
 </script>
-<script type="text/javascript">
-  ymaps.ready(init);
+<script type="text/javascript" defer>
+    function getYaMap() {
+        ymaps.ready(init);
 
-  function getPlacemark(options = {
-    coords: [],
-    hintContent: '',
-    balloonContent: ''
-  }) {
-    return new ymaps.Placemark(options.coords, {
-      hintContent: options.hintContent,
-      balloonContent: options.balloonContent,
-    }, {
-      iconLayout: 'default#image',
-      iconImageHref: 'images/dist/icons/map-marker.svg',
-      iconImageSize: [44, 44],
-      iconImageOffset: [-22, -22],
-    });
-  }
+        function getPlacemark(options = {
+            coords: [],
+            hintContent: '',
+            balloonContent: ''
+        }) {
+            return new ymaps.Placemark(options.coords, {
+                hintContent: options.hintContent,
+                balloonContent: options.balloonContent,
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'images/dist/icons/map-marker.svg',
+                iconImageSize: [44, 44],
+                iconImageOffset: [-22, -22],
+            });
+        }
 
-  function addPlacemarks(objMap, placemarks = []) {
-    const placemarksLen = placemarks.length;
-    for(let i = 0; i < placemarksLen; i++) {
-      objMap.geoObjects.add(placemarks[i]);
-    }
-  }
+        function addPlacemarks(objMap, placemarks = []) {
+            const placemarksLen = placemarks.length;
+            for(let i = 0; i < placemarksLen; i++) {
+                objMap.geoObjects.add(placemarks[i]);
+            }
+        }
 
+        function init() {
+            const mapCenter = screen.width > 1280 ? [54.63230001911517,43.40305739453122] : [53.37029776226329,43.17509108593746];
+            const mapZoom = screen.width > 1280 ? 7 : 6;
+            const myMap = new ymaps.Map("map", {
+                center: mapCenter,
+                zoom: mapZoom,
+                controls: [
+                    'zoomControl',
+                    'fullscreenControl',
+                ]
+            });
 
-
-  function init() {
-    const mapCenter = screen.width > 1280 ? [54.63230001911517,43.40305739453122] : [53.37029776226329,43.17509108593746];
-    const mapZoom = screen.width > 1280 ? 7 : 6;
-    const myMap = new ymaps.Map("map", {
-      center: mapCenter,
-      zoom: mapZoom,
-      controls: [
-        'zoomControl',
-        'fullscreenControl',
-      ]
-    });
-
-    const moscowHint = `
+            const moscowHint = `
                             <div class="map-hint">
                                 <p class="map-hint-title">ЦЕНТРАЛЬНЫЙ ОФИС</p>
                                 <p class="map-hint-description">г. Москва, Алтуфьевское шоссе, д.44</p>
                             </div>
                     `;
 
-    const kazanHint = `
+            const kazanHint = `
                             <div class="map-hint">
                                 <p class="map-hint-title">КАЗАНСКИЙ ОФИС</p>
                                 <p class="map-hint-description">г. Казань, ул. Павлюхина 99Б, офис 1009</p>
@@ -57,25 +56,27 @@
                     `;
 
 
-    const placemarkMoscow = getPlacemark({
-      coords: [55.87460706886459,37.58787400000002],
-      hintContent: moscowHint,
-      balloonContent: moscowHint,
-    });
+            const placemarkMoscow = getPlacemark({
+                coords: [55.87460706886459,37.58787400000002],
+                hintContent: moscowHint,
+                balloonContent: moscowHint,
+            });
 
-    const placemarkKazan = getPlacemark({
-      coords: [55.7673975689768,49.150961499999916],
-      hintContent: kazanHint,
-      balloonContent: kazanHint,
-    });
+            const placemarkKazan = getPlacemark({
+                coords: [55.7673975689768,49.150961499999916],
+                hintContent: kazanHint,
+                balloonContent: kazanHint,
+            });
 
-    addPlacemarks(
-            myMap,
-            [placemarkMoscow, placemarkKazan]);
+            addPlacemarks(
+                myMap,
+                [placemarkMoscow, placemarkKazan]);
 
-    myMap.behaviors.disable('scrollZoom');
+            myMap.behaviors.disable('scrollZoom');
 
-  }
+        }
+    }
+
 </script>
 
 <div class="map-block footer-map-block" id="map"></div>

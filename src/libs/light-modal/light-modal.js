@@ -4,26 +4,27 @@ const fnPlugin = {};
 window.fnPlugin = fnPlugin;
 
 fnPlugin.modal = function (selector, options = {}) {
-
+    const OVERLAY_ANIMATION_IN = 'fadeIn';
+    const OVERLAY_ANIMATION_OUT = 'fadeOut';
     const DEFAULT_OPTIONS = {
         closableOverlay: true,
         hotESC: true,
-        animationIn: 'fadeIn',
-        animationOut: 'fadeOut',
+        animationIn: OVERLAY_ANIMATION_IN,
+        animationOut: OVERLAY_ANIMATION_OUT,
         animationDuration: 300,
         offset: 20,
         beforeClose: null,
         afterClose: null,
         beforeOpen: null,
         afterOpen: null,
+        beforeCloseAnimation: null,
         beforeDestruct: null,
         afterDestruct: null,
         classNames: [],
     }
     options = Object.assign(DEFAULT_OPTIONS, options);
 
-    const OVERLAY_ANIMATION_IN = 'fadeIn';
-    const OVERLAY_ANIMATION_OUT = 'fadeOut';
+
     let destructed = false;
 
     const $modalBlock = document.querySelector(selector);
@@ -57,9 +58,10 @@ fnPlugin.modal = function (selector, options = {}) {
     function _createModal() {
         const $wrap = document.createElement('div');
         $wrap.classList.add('light-modal-outer', ...options.classNames);
-        $wrap.innerHTML = `<div class="light-modal-overlay animated" ${options.closableOverlay ? 'data-closable="true"' : ''} style="-webkit-animation-duration: ${options.animationDuration}ms;, animation-duration: ${options.animationDuration}ms;"></div>`;
+        $wrap.innerHTML = `<div class="light-modal-overlay animated" ${options.closableOverlay ? 'data-closable="true"' : ''} style="-webkit-animation-duration: ${options.animationDuration}ms; animation-duration: ${options.animationDuration}ms;"></div>`;
         $modalBlock.classList.add('light-modal', 'animated');
         $modalBlock.style.animationDuration = options.animationDuration + 'ms';
+        // $wrap.style.height = `${window.innerHeight}px`;
         $wrap.append($modalBlock);
         return $wrap;
     }
@@ -76,7 +78,6 @@ fnPlugin.modal = function (selector, options = {}) {
             modal.close();
         }
     }
-
     function _getDocumentHeight() {
         return Math.max(
             document.body.scrollHeight,
@@ -88,7 +89,6 @@ fnPlugin.modal = function (selector, options = {}) {
 
     function _getWindowScrollTop() {
         return window.pageYOffset;
-        // return $(window).scrollTop();
     }
 
     function _setModalOuterPosition() {
@@ -135,6 +135,12 @@ fnPlugin.modal = function (selector, options = {}) {
     function _disallowScrollDocument() {
         if (_isDocumentScroll()) {
             document.documentElement.style.paddingRight = _getScrollWidth() + 'px';
+            const lightFixedElementList = document.querySelectorAll('.light-fixed-element');
+            if (lightFixedElementList.length) {
+                lightFixedElementList.forEach(function (item) {
+                    item.style.paddingRight = _getScrollWidth() + 'px';
+                })
+            }
         }
         options.currentScrollTop = _getWindowScrollTop();
         _setAttrWindowScrollTop(options.currentScrollTop);
@@ -147,6 +153,13 @@ fnPlugin.modal = function (selector, options = {}) {
         document.documentElement.style.paddingRight = '';
         document.documentElement.classList.remove('document-no-scroll');
         document.documentElement.style.top = '';
+        const lightFixedElementList = document.querySelectorAll('.light-fixed-element');
+        if (lightFixedElementList.length) {
+            lightFixedElementList.forEach(function (item) {
+                item.style.paddingRight = '';
+            })
+        }
+
         window.scrollBy(0, options.currentScrollTop );
         options.currentScrollTop = 0;
         _setAttrWindowScrollTop('');
@@ -164,10 +177,11 @@ fnPlugin.modal = function (selector, options = {}) {
     function open() {
         if (!destructed) {
             if ( _isFunciton(options.beforeOpen)) options.beforeOpen();
+            // $modal.style.height = window.innerHeight + 'px';
 
             _setModalOuterPosition();
-
             _disallowScrollDocument();
+
             $modal.classList.add('light-modal-open');
             _setModalInnerPosition();
             $modalBlock.classList.add(options.animationIn);
@@ -222,12 +236,11 @@ fnPlugin.modal = function (selector, options = {}) {
         if (_isFunciton(options.afterDestruct)) options.afterDestruct();
     }
 
-
-
     const modal = {
         open,
         close,
         destruct,
+        modalElement: $modal,
     };
 
     $modal.modal = modal;

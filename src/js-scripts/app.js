@@ -1,3 +1,21 @@
+function fixVhBug() {
+    let styleTag;
+    const cssVh = document.getElementById('cssVh');
+    if (cssVh === null) {
+        styleTag = document.createElement('style');
+        styleTag.id = 'cssVh';
+    } else {
+        styleTag = cssVh;
+    }
+    let windowInnerHeight;
+
+    windowInnerHeight = window.innerHeight;
+    const vh = windowInnerHeight / 100;
+    styleTag.innerText = `:root {--vh: ${vh}px; --vh100: ${windowInnerHeight}px`;
+    document.querySelector('head').appendChild(styleTag);
+}
+
+
 const numToStr = function (num) {
     if ( num <= 9 && num !== 0) {
         return `0${num}`;
@@ -11,7 +29,7 @@ const doPageMainSlider = function(selector) {
         dots: true,
         arrows: true,
         infinite: true,
-        speed: 300,
+        speed: 1200,
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
@@ -35,7 +53,7 @@ const doPageMainSlider = function(selector) {
         dots: false,
         arrows: false,
         infinite: true,
-        speed: 300,
+        speed: 1200,
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
@@ -56,9 +74,6 @@ const doPageMainSlider = function(selector) {
 
         const $sliderCurrentPage = $sliderWrap.find('.slider-current-page');
         const $sliderAllPage = $sliderWrap.find('.slider-all-page');
-
-        // const $mainSliderImagesSlides = $mainSliderImages.find('.main-slider-images-item');
-        // $mainSliderImagesSlides.eq(0).addClass('slide-active');
 
         const $mainSliderImages = $sliderWrap.find('.main-slider-images').eq(0);
         $mainSliderImages.slick(sliderImagesOptions);
@@ -254,29 +269,27 @@ const doProjectSizesSlider = function () {
 }
 
 
-
-
 const doAccordionApp = function () {
     const $appAccordion = $('.app-accordion');
     if ($appAccordion.length) {
 
         $appAccordion.each(function (idx, item) {
+            const timeDuration = 600;
             const $accordion = $(item);
-
             const $accordionItems = $accordion.find('.app-accordion-item');
 
             $accordion.on('click', '.app-accordion-head', function (evt) {
                 const $thisItem = $(this).closest('.app-accordion-item');
                 $accordionItems.not($thisItem)
                     .removeClass('accordion-section-active')
-                    .find('.app-accordion-body').stop().slideUp(200);
+                    .find('.app-accordion-body').stop().slideUp(timeDuration);
 
                 if ($thisItem.hasClass('accordion-section-active')) {
                     $thisItem.removeClass('accordion-section-active');
-                    $thisItem.find('.app-accordion-body').stop().slideUp(200);
+                    $thisItem.find('.app-accordion-body').stop().slideUp(timeDuration);
                 } else {
                     $thisItem.addClass('accordion-section-active');
-                    $thisItem.find('.app-accordion-body').stop().slideDown(200);
+                    $thisItem.find('.app-accordion-body').stop().slideDown(timeDuration);
                 }
             })
         })
@@ -359,9 +372,9 @@ const doTechSlider = function () {
                     clearTimeout(setTimeDelayStart);
                     clearTimeout(setTimeDelayEnd);
                     clearTimeout(setTimeDelayFinish);
-                }, 400)
-            }, 400)
-        }, 50);
+                }, 450)
+            }, 450)
+        }, 20);
 
 
     }
@@ -563,7 +576,7 @@ const doAccordionMenu = function () {
     const $mainMenuItems = $mainMenuList.find('.main-menu-item');
 
     $mainMenuList.on('click', '.main-menu-item-head', function (evt) {
-        if ($(window).width > 575) {
+        if ($(window).width() > 575) {
             return 0;
         }
         evt.preventDefault();
@@ -683,36 +696,27 @@ function fixProjectsTileBox($wrap = null) {
             const $projectsTileUnitHeaderItems = $box.find('.projects-tile-unit-header');
             const headerSizeList = []
             $projectsTileUnitHeaderItems.each(function () {
-                $item = $(this);
+                const $item = $(this);
                 headerSizeList.push($item.height());
             });
-
             const msxSizeHeight =  Math.max(...headerSizeList);
-
             $projectsTileUnitHeaderItems.css('min-height', msxSizeHeight + 'px');
         })
     }
 }
 
-
-/*
-fix projects tab
- */
-
-fixProjectsTileBox();
-
-
-if ($('.project-tab-unit').length) {
-
-    $(document).on('click', '.project-tab-unit', function (evt) {
-        const $tabWrap = $(this).closest('.tab-wrap');
-        const setTime = setTimeout(function () {
-            const $tabBodyActive = $tabWrap.find('.tab-body-item.tab-active');
-            fixProjectsTileBox($tabBodyActive);
-            clearTimeout(setTime);
-        }, 40);
-
-    });
+function doFixProjectsTileBox() {
+    fixProjectsTileBox();
+    if ($('.project-tab-unit').length) {
+        $(document).on('click', '.project-tab-unit', function (evt) {
+            const $tabWrap = $(this).closest('.tab-wrap');
+            const setTime = setTimeout(function () {
+                const $tabBodyActive = $tabWrap.find('.tab-body-item.tab-active');
+                fixProjectsTileBox($tabBodyActive);
+                clearTimeout(setTime);
+            }, 40);
+        });
+    }
 }
 
 function stopVideoBox ($videoBox) {
@@ -721,7 +725,6 @@ function stopVideoBox ($videoBox) {
 }
 
 function doVideoBox() {
-
     const $videoBox = $('.video-box');
 
     if($videoBox.length) {
@@ -742,9 +745,9 @@ function doVideoBox() {
 
 
 
-
-
 $(document).ready(function () {
+    fixVhBug();
+    doFixProjectsTileBox();
     // doElementFullHeight('.block-full-height');
     doPageMainSlider('.main-page-slider');
     doAccordionApp();
@@ -761,7 +764,19 @@ $(document).ready(function () {
     initMaskPhoneInputs();
     doVideoBox();
     doProjectSizesSlider();
+});
 
+$(window).on('resize', function () {
+    fixVhBug();
+});
+
+
+/*
+* симуляция отправки модальной формы
+* */
+
+
+$(document).ready(function () {
     $(document).on('focus change', 'input, textarea', function(){
         $(this).removeClass('invalid');
     });
@@ -769,153 +784,33 @@ $(document).ready(function () {
     $(document).on('submit', '.send-form', function (evt) {
         evt.preventDefault();
         const $form = $(this);
+
         if (isValid($form)) {
-            console.log('удачно');
-        } else {
-            console.log('неудачно')
+            if ($form.closest('.light-modal-outer')) {
+                $form.trigger('reset');
+                const openModals = document.querySelectorAll('.light-modal-open');
+
+                if (openModals.length) {
+                    openModals.forEach(function (item) {
+                        item.modal.close();
+                    });
+                    const setTime = setTimeout(function () {
+                        modalSuccess.open();
+                        clearTimeout(setTime);
+                    }, 720);
+                } else {
+                    modalSuccess.open();
+                }
+            }
         }
     });
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-function touchPrevent (evt) {
-    evt.preventDefault();
-}
-
-function pageCanceledScroll() {
-    $('html').addClass('no-scroll');
-    document.addEventListener('touchmove', touchPrevent, { passive: true });
-}
-
-function pageReturnedScroll() {
-    $('html').removeClass('no-scroll');
-    document.removeEventListener('touchmove', touchPrevent, { passive: true });
-}
-
-
-function openUserModal(selector) {
-    const $modalSelector = $(document).find(selector);
-    if ($modalSelector.length) {
-        pageCanceledScroll();
-        $('html').addClass('user-modal-opened');
-        $modalSelector.addClass('user-modal-active');
-    }
-}
-
-function closeUserModal() {
-    pageReturnedScroll()
-    $('html').removeClass('user-modal-opened');
-    $(document)
-        .find('.user-modal-outer')
-        .removeClass('user-modal-active')
-        .removeClass('user-modal-filtered')
-        .removeClass('user-modal-live-filtered')
-}
-
-
-
-$(document).on('click', '.btn-open-menu', function () {
-    openUserModal('#modal-page-menu-outer');
-});
-
-$(document).on('click', '.btn-modal-outer-close', function () {
-    closeUserModal();
-});
-
-$(document).on('click', '.btn-open-search', function () {
-    openUserModal('#modal-page-menu-outer');
-});
-
-$(document).on('click', '.btn-open-modal-calc', function () {
-    openUserModal('#modal-page-calc-outer');
-});
-
-$(document).on('focus', '.page-modal-header-search .search-input', function () {
-    const $searchInput = $(this);
-    const val = $searchInput.val()
-    if (val.length > 0) {
-        $searchInput.closest('.page-modal-outer').addClass('user-modal-live-filtered');
-        return 0;
-    }
-    $searchInput.closest('.page-modal-outer').addClass('user-modal-filtered');
-
-});
-
-$(document).on('blur', '.page-modal-header-search .search-input', function () {
-    const $searchInput = $(this);
-    const $pageModalOuter = $searchInput.closest('.page-modal-outer');
-
-    if($searchInput.val().length === 0) {
-        $pageModalOuter
-            .removeClass('user-modal-filtered');
-        return 0;
-    }
-});
-
-
-
-$(document).on('change input', '.page-modal-header-search .search-input', function () {
-    const $searchInput = $(this);
-    const $pageModalOuter = $searchInput.closest('.page-modal-outer');
-    const val = $searchInput.val()
-
-    if(val.length === 0) {
-        $pageModalOuter
-            .addClass('user-modal-filtered')
-            .removeClass('user-modal-live-filtered');
-        return 0;
-    }
-    if(val.length !== 0) {
-        $pageModalOuter
-            .removeClass('user-modal-filtered')
-            .addClass('user-modal-live-filtered');
-        return 0;
-    }
-
-});
-
-
-$(document).on('click', '.btn-open-modal', function () {
-    const modalTarget = $(this).attr('data-modal-id');
-    const $modalObj = $(modalTarget);
-    console.log(modalTarget);
-    if ($modalObj.length) {
-        openUserModal(modalTarget);
-    }
-
-
-});
-
-
-*/
-
-
-
-
+// try to define mobile browser
+// const ua = window.navigator.userAgent.toLowerCase();
+// const isIe = (/trident/gi).test(ua) || (/msie/gi).test(ua);
+// const isFirefox = (/firefox/gi).test(ua) || (/firefox/gi).test(ua);
 
 
 

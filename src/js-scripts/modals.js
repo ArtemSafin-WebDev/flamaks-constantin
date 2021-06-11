@@ -2,14 +2,14 @@
 
 
 const modalMenu = fnPlugin.modal( '#modal-menu',{
-    animationIn: 'modal-menu-animation-in',
-    animationOut: 'modal-menu-animation-out',
-    animationDuration: 200,
+    animationIn: '_anim-in',
+    animationOut: '_anim-out',
+    animationDuration: 710,
     offset: 0,
     beforeClose: funcModalMenuBeforeClose,
     afterClose: null,
-    beforeOpen: null,
-    afterOpen: funcModalMenuAfterOpen,
+    beforeOpen:  funcModalMenuBeforeOpen,
+    afterOpen:null,
     beforeDestruct: null,
     afterDestruct: null,
     classNames: ['light-menu-modal'],
@@ -42,7 +42,12 @@ function  inputSearchBlurHandler(evt) {
     modalOuter.dataset.searchStatus = 'search-live';
 }
 
-function  funcModalMenuAfterOpen (evt) {
+function  funcModalMenuBeforeOpen () {
+    const setTimeAnimatedOpen = setTimeout(function () {
+        modalMenu.modalElement.classList.add('modal-custom-animated');
+        clearTimeout(setTimeAnimatedOpen);
+    }, 20);
+
     const modalSearchInput = document.querySelector('.page-modal-header .search-input');
     modalSearchInput.addEventListener('change', inputSearchHandler);
     modalSearchInput.addEventListener('input', inputSearchHandler);
@@ -50,7 +55,7 @@ function  funcModalMenuAfterOpen (evt) {
     modalSearchInput.addEventListener('blur', inputSearchBlurHandler);
 }
 
-function  funcModalMenuBeforeClose (evt) {
+function  funcModalMenuBeforeClose () {
     const modalSearchInput = document.querySelector('.page-modal-header .search-input');
     modalSearchInput.removeEventListener('change', inputSearchHandler);
     modalSearchInput.removeEventListener('input', inputSearchHandler);
@@ -58,6 +63,104 @@ function  funcModalMenuBeforeClose (evt) {
     modalSearchInput.removeEventListener('blur', inputSearchBlurHandler);
     modalSearchInput.value = '';
     modalSearchInput.closest('.page-modal-outer').removeAttribute("data-search-status");
+
+    modalMenu.modalElement.classList.remove('modal-custom-animated');
+}
+
+
+function funcModalCalcBeforeClose() {
+    modalCalc.modalElement.classList.remove('modal-custom-animated');
+}
+
+function funcModalCalcBeforeOpen() {
+    const setTimeAnimatedOpen = setTimeout(function () {
+        modalCalc.modalElement.classList.add('modal-custom-animated');
+        clearTimeout(setTimeAnimatedOpen);
+    }, 20);
+}
+
+const modalCalc = fnPlugin.modal( '#modal-calc',{
+    animationIn: '_anim-in',
+    animationOut: '_anim-out',
+    animationDuration: 710,
+    offset: 0,
+    beforeClose: funcModalCalcBeforeClose,
+    afterClose: null,
+    beforeOpen: funcModalCalcBeforeOpen,
+    afterOpen: null,
+    beforeDestruct: null,
+    afterDestruct: null,
+    classNames: ['light-calc-modal'],
+});
+
+
+
+const modalComment = fnPlugin.modal( '#modal-comment',{
+    animationIn: '_anim-in',
+    animationOut: '_anim-out',
+    animationDuration: 710,
+    offset: 0,
+    beforeClose: funcModalCommentBeforeClose,
+    afterClose: null,
+    beforeOpen: funcModalCommentBeforeOpen,
+    afterOpen: null,
+    beforeDestruct: null,
+    afterDestruct: null,
+    classNames: ['light-comment-modal'],
+});
+
+function funcModalCommentBeforeClose() {
+    modalComment.modalElement.classList.remove('modal-custom-animated');
+}
+
+function funcModalCommentBeforeOpen() {
+    const setTimeAnimatedOpen = setTimeout(function () {
+        modalComment.modalElement.classList.add('modal-custom-animated');
+        clearTimeout(setTimeAnimatedOpen);
+    }, 20);
+}
+
+
+
+const modalSuccess = fnPlugin.modal( '#modal-success',{
+    animationIn: '_anim-in',
+    animationOut: '_anim-out',
+    animationDuration: 710,
+    offset: 0,
+    beforeClose: funcModalSuccessBeforeClose,
+    afterClose: null,
+    beforeOpen: funcModalSuccessBeforeOpen,
+    afterOpen: null,
+    beforeDestruct: null,
+    afterDestruct: null,
+    classNames: ['light-success-modal'],
+});
+
+
+
+function funcModalSuccessBeforeClose() {
+    modalSuccess.modalElement.classList.remove('modal-custom-animated');
+}
+
+function funcModalSuccessBeforeOpen() {
+    const setTimeAnimatedOpen = setTimeout(function () {
+        modalSuccess.modalElement.classList.add('modal-custom-animated');
+        clearTimeout(setTimeAnimatedOpen);
+    }, 20);
+}
+
+function switchModal(modalAction) {
+    switch (modalAction) {
+        case 'open-menu':
+            modalMenu.open();
+            break
+        case 'open-calc':
+            modalCalc.open();
+            break
+        case 'open-comment':
+            modalComment.open();
+            break
+    }
 }
 
 
@@ -71,10 +174,20 @@ document.addEventListener('click', function (evt) {
     const modalAction = btnOpenModal.dataset.action;
     if (modalAction === undefined || modalAction === '') return false;
 
-    switch (modalAction) {
-        case 'open-menu':
-            modalMenu.open();
+    const openModals = document.querySelectorAll('.light-modal-open');
+
+    if (openModals.length) {
+        openModals.forEach(function (item) {
+            item.modal.close();
+        });
+        const setTime = setTimeout(function () {
+            switchModal(modalAction);
+            clearTimeout(setTime);
+        }, 720);
+    } else {
+        switchModal(modalAction);
     }
+
 });
 
 
@@ -88,21 +201,3 @@ document.addEventListener('click', function (evt) {
 
 
 
-
-// data-modal-id="#modal-page-comment-outer"
-
-
-/*
-
-const $btnOrder = document.getElementById('btn-order');
-$btnOrder.addEventListener('click',  function (evt) {
-    modal.open();
-}, false);
-
-const modalText = $.modal('#myModalText');
-
-const $btnMore = document.getElementById('btn-more');
-$btnMore.addEventListener('click', () => {
-    modalText.open();
-});
-*/

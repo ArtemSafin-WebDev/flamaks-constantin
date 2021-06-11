@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("parts/head.html")
+<body>
+
+<div class="main-wrap">
+    <div class="main-body">
+
+        <div class="square-block square-block-1 tomato" id="square-block-1">
+            <div class="container container-pad">
+                <div class="square-block-num">1</div>
+                <div class="anim-block"></div>
+            </div>
+        </div>
+        <div class="square-block square-block-2 blue container-pad" id="square-block-2">
+            <div class="container container-pad">
+                <div class="square-block-num">2</div>
+            </div>
+        </div>
+        <div class="square-block square-block-3 green container-pad" id="square-block-3">
+            <div class="container container-pad">
+                <div class="square-block-num">3</div>
+            </div>
+        </div>
+        <div class="square-block square-block-4 fuchsia container-pad" id="square-block-4">
+            <div class="container container-pad">
+                <div class="square-block-num">4</div>
+            </div>
+        </div>
+        <div class="square-block square-block-5 brown container-pad" id="square-block-5">
+            <div class="container container-pad">
+                <div class="square-block-num">5</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+@@include("parts/modal-menu.html")
+@@include("parts/modal-calc.html")
+@@include("parts/modal-comment.html")
+@@include("parts/modal-success.html")
+
+@@include("parts/footer.html")
+
+
+
+<style>
+    .square-block {
+        width: 100%;
+        height: 100vh;
+    }
+    .tomato {
+        background: tomato;
+    }
+    .blue {
+        background: blue;
+    }
+    .green {
+        background: green;
+    }
+    .fuchsia{
+        background: fuchsia;
+    }
+    .brown {
+        background: brown;
+    }
+
+    .container-pad {
+        padding: 10rem;
+    }
+
+    .square-block {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s linear, visibility .3s linear;
+    }
+
+    .square-block.animated {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    .anim-block {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+    }
+
+    @keyframes jump {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+
+    .anim-block.animated {
+        animation-name: jump;
+        animation-delay: .5s;
+        animation-direction: normal;
+        animation-duration: 3s;
+        animation-fill-mode: both;
+    }
+    .square-block-num {
+        font:700 40px/1 "Arial", sans-serif;
+        color:#000;
+        transition: all .3s linear;
+        display: table;
+    }
+
+    .square-block-num.animated {
+        color: #FF2D94;
+    }
+
+</style>
+
+
+<script>
+
+
+    function scrollVisible(element, options = {
+        offsetTop:0,
+        offsetBottom:0,
+        k:false
+    }) {
+        const scrTop = $(window).scrollTop();
+        const winHeight = $(window).height();
+        const elemOfTop = element.offset().top;
+        const elemHeight = element.outerHeight();
+
+        const elemTopBoundary = elemOfTop;
+        const elemBottomBoundary = elemHeight + elemOfTop;
+
+        const windowTopBoundary = scrTop;
+        const windowBottomBoundary = scrTop + winHeight;
+
+        const windowSpaceTop = winHeight * options.offsetTop;
+        const windowSpaceBottom = winHeight * options.offsetBottom;
+
+        let  result = {
+            visible: false,
+            k:0,
+        }
+
+        if ( (windowTopBoundary + windowSpaceTop) < elemBottomBoundary &&
+            (windowBottomBoundary - windowSpaceBottom) > elemTopBoundary) {
+            result.visible = true;
+        }
+
+        if (options.k === false) {
+            return result;
+        }
+
+        /*calculate k*/
+        let  pathTop = elemTopBoundary - winHeight + windowSpaceBottom;
+        pathTop = pathTop >= 0 ? pathTop : windowSpaceBottom;
+        let  pathEnd = elemBottomBoundary - windowSpaceTop;
+        pathEnd = pathEnd >= 0 ? pathEnd: elemBottomBoundary;
+
+        const pathSize = pathEnd - pathTop;
+        const difPath = scrTop - pathTop;
+        let  k = difPath / (pathSize / 100);
+
+        k = k < 0 ? 0 : k;
+        k = k >= 100 ? 100 : k;
+
+        result.k = k.toFixed(2);
+        return result;
+    }
+
+
+    const squareBlock1 = $('#square-block-1');
+    const squareBlock2 = $('#square-block-2');
+    const squareBlock5 = $('#square-block-5');
+    const squareBlockNum2 = squareBlock2.find('.square-block-num').eq(0);
+
+
+    $(window).on('load scroll', function () {
+
+        const scrSquareBlock1 = scrollVisible(squareBlock1, { offsetTop:0.2, offsetBottom:0.2, k:false});
+        if ( scrSquareBlock1.visible ) {
+            squareBlock1.addClass('animated');
+        }
+        else {
+            squareBlock1.removeClass('animated');
+        }
+
+        const scrSquareBlock2 = scrollVisible(squareBlock2, { offsetTop:0.2, offsetBottom:0.2, k:false});
+        if ( scrSquareBlock2.visible ) {
+            squareBlock2.addClass('animated');
+        }
+        else {
+            squareBlock2.removeClass('animated');
+        }
+
+        const scrSquareBlockNum2 = scrollVisible(squareBlockNum2, { offsetTop:0.2, offsetBottom:0.2, k:true});
+        squareBlockNum2.css({
+            'transform': `scale(${ (scrSquareBlockNum2.k / 100 + 1) * 3 }) translateX(${ (scrSquareBlockNum2.k / 100) * -100 }%)`,
+            '-webkit-transform': `scale(${ (scrSquareBlockNum2.k / 100 + 1) * 3} translateX(${ (scrSquareBlockNum2.k / 100) * -100 }%))`
+        });
+        if ( scrSquareBlockNum2.visible ) {
+            squareBlockNum2.addClass('animated');
+        } else {
+            squareBlockNum2.removeClass('animated');
+        }
+
+        const scrSquareBlock5 = scrollVisible(squareBlock5, { offsetTop:0.2, offsetBottom:0.2, k:false});
+        if ( scrSquareBlock5.visible ) {
+            squareBlock5.addClass('animated');
+        }
+        else {
+            squareBlock5.removeClass('animated');
+        }
+    });
+
+
+
+/*    const animBlock  = $('.anim-block');
+    $(document).on('click', '.anim-block', function () {
+        const $this = $(this);
+        if ($this.hasClass('animated')) {
+            $this.removeClass('animated');
+            return 0;
+        }
+        $(this).addClass('animated');
+    });*/
+
+</script>
+
+
+</body>
+</html>

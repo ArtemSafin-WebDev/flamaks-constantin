@@ -3,18 +3,10 @@
 @@include("parts/head.html")
 <body>
 
-@@include("parts/modal-menu.html")
-<!--@@include("parts/modal-search.html")-->
-@@include("parts/modal-calc.html")
-@@include("parts/modal-comment.html")
-<!--@@include("parts/modal-success.html")-->
-
-
 <div class="main-wrap">
     <div class="main-body">
-        <div class="block-1-wrap block-full-height main-first-block" >
-            @@include("parts/header-block.html")
-
+        @@include("parts/header-block.html")
+        <div class="block-1-wrap block-full-height main-first-block" id="first-block" >
 
             <div class="slider-wrap main-slider-wrap-outer">
                 <div class="main-slider-wrap  container main-first-block-pl">
@@ -28,9 +20,15 @@
                                         Уникальная конструкция
                                     </div>
                                     <div class="main-slide-title u-text-h1 ">
-                                        Сборные <br>
-                                        стальные <br>
-                                        резервуары
+                                        <span class="text-slice-block">
+                                            <span class="text-slice-inner">Сборные</span>
+                                        </span>
+                                        <span class="text-slice-block">
+                                            <span class="text-slice-inner">стальные</span>
+                                        </span>
+                                        <span class="text-slice-block">
+                                            <span class="text-slice-inner">резервуары</span>
+                                        </span>
                                     </div>
                                     <div class="main-slide-bottom-text">
                                         Насосные станции
@@ -46,7 +44,7 @@
                                 <div class="main-slide-btn-wrap">
                                     <div class="main-slide-btn-box">
                                         <div class="main-slide-btn-item">
-                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn btn-open-modal" data-modal-id="#modal-page-comment-outer">
+                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn btn-open-modal" data-action="open-comment">
                                                 <span class="btn-inner">подробнее</span>
                                             </a>
                                         </div>
@@ -75,8 +73,18 @@
                                         Профессиональный монтаж резервуаров
                                     </div>
                                     <div class="main-slide-title u-text-h1 ">
-                                        Производство <br>
-                                        и монтаж
+                                        <div class="main-slide-title-inner">
+                                            <span class="text-slice-block">
+                                                <span class="text-slice-inner">
+                                                    Производство
+                                                </span>
+                                            </span>
+                                            <span class="text-slice-block">
+                                                <span class="text-slice-inner">
+                                                    и монтаж
+                                                </span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -89,7 +97,7 @@
                                 <div class="main-slide-btn-wrap">
                                     <div class="main-slide-btn-box">
                                         <div class="main-slide-btn-item">
-                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn  btn-open-modal" data-modal-id="#modal-page-comment-outer">
+                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn  btn-open-modal"  data-action="open-comment">
                                                 <span class="btn-inner">подробнее</span>
                                             </a>
                                         </div>
@@ -116,9 +124,16 @@
                                     <div class="main-slide-top-text">
                                         Готовые материалы
                                     </div>
-                                    <div class="main-slide-title u-text-h1 ">
-                                        Помощь <br>
-                                        ПРОЕКТИРОВЩИКУ
+                                    <div class="main-slide-title u-text-h1">
+                                        <div class="main-slide-title-inner">
+                                            <span class="text-slice-block">
+                                                <span class="text-slice-inner">Помощь</span>
+                                            </span>
+                                            <span class="text-slice-block">
+                                                <span class="text-slice-inner">ПРОЕКТИРОВЩИКУ</span>
+                                            </span>
+                                        </div>
+
                                     </div>
 
                                 </div>
@@ -132,7 +147,7 @@
                                 <div class="main-slide-btn-wrap">
                                     <div class="main-slide-btn-box">
                                         <div class="main-slide-btn-item">
-                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn  btn-open-modal" data-modal-id="#modal-page-comment-outer">
+                                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn  btn-open-modal"  data-action="open-comment">
                                                 <span class="btn-inner">подробнее</span>
                                             </a>
                                         </div>
@@ -178,10 +193,10 @@
 
                 <div class="main-slider-images">
                     <div class="main-slider-images-item ">
-                        <img src="images/dist/empty.png"  data-lazy="images/dist/main-slide-3@2x.jpg" alt="">
+                        <img src="images/dist/empty.png"  data-lazy="images/dist/main-slide-1@2x.jpg" alt="">
                     </div>
                     <div class="main-slider-images-item">
-                        <img src="images/dist/empty.png" data-lazy="images/dist/main-slide-3@2x.jpg" alt="">
+                        <img src="images/dist/empty.png" data-lazy="images/dist/main-slide-2@2x.jpg" alt="">
                     </div>
                     <div class="main-slider-images-item">
                         <img src="images/dist/empty.png"  data-lazy="images/dist/main-slide-3@2x.jpg" alt="">
@@ -217,7 +232,7 @@
 
         </div>
 
-        <section class="enterprise-block u-margin-top">
+        <section class="enterprise-block u-margin-top ov-h" id="enterprise-block">
             <div class="container">
                 <div class="enterprise">
                     <div class="accordion-box app-accordion">
@@ -402,7 +417,7 @@
             </div>
         </section>
 
-        <section class="tech-block u-margin-top-big">
+        <section class="tech-block u-margin-top-big" id="tech-block">
             <div class="container">
                 <div class="tech  dash-title-wrap">
                     <div class="tech-box">
@@ -607,7 +622,7 @@
             </div>
         </section>
 
-        <section class="stages-block u-margin-top-big">
+        <section class="stages-block u-margin-top-big" id="stages-block">
             <div class="container">
                 <div class="stages dash-title-wrap">
                     <p class="u-text-h3 dash-title">Этапы работ</p>
@@ -753,13 +768,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="stages-outer-layer"></div>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <section class="company-block u-margin-top-big">
+        <section class="company-block u-margin-top-big" id="company-block">
             <div class="container">
                 <div class="company">
                     <div class="company-page-box">
@@ -993,7 +1009,7 @@
             </div>
         </section>
 
-        <section class="press-center-block u-margin-top-big">
+        <section class="press-center-block u-margin-top-big" id="press-center-block">
             <div class="container">
                 <div class="press-center">
                     <div class="press-center-head title-control-head">
@@ -1146,7 +1162,7 @@
             </div>
         </section>
 
-        <section class="news-block ov-h">
+        <section class="news-block ov-h" id="news-block">
             <div class="container">
                 <div class="news">
                     <div class="news-wrap">
@@ -1178,13 +1194,12 @@
                                 <div class="news-columns-slider">
                                     <div class="news-columns-slide">
                                         <div class="news-column">
-
                                             <div class="news-column-item">
                                                 <div class="news-tile">
                                                     <div class="news-tile-cover">
                                                         <div class="news-tile-img">
                                                             <a href="#">
-                                                                <img src="images/dist/news-tile-img-1.jpg" srcset="images/dist/news-tile-img-1@2x.jpg" alt="">
+                                                                <img src="images/dist/empty.png" data-lazy="images/dist/news-tile-img-1.jpg"  alt="">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -1200,13 +1215,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="news-column-item">
                                                 <div class="news-tile">
                                                     <div class="news-tile-cover">
                                                         <div class="news-tile-img">
                                                             <a href="#">
-                                                                <img src="images/dist/news-tile-img-2.jpg" srcset="images/dist/news-tile-img-2@2x.jpg" alt="">
+                                                                <img src="images/dist/empty.png" data-lazy="images/dist/news-tile-img-2.jpg" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -1219,13 +1233,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="news-column-item">
                                                 <div class="news-tile">
                                                     <div class="news-tile-cover">
                                                         <div class="news-tile-img">
                                                             <a href="#">
-                                                                <img src="images/dist/news-tile-img-3.jpg" srcset="images/dist/news-tile-img-3@2x.jpg" alt="">
+                                                                <img src="images/dist/empty.png" data-lazy="images/dist/news-tile-img-3.jpg" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -1238,13 +1251,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="news-column-item">
                                                 <div class="news-tile">
                                                     <div class="news-tile-cover">
                                                         <div class="news-tile-img">
                                                             <a href="#">
-                                                                <img src="images/dist/news-tile-img-4.jpg" srcset="images/dist/news-tile-img-4@2x.jpg" alt="">
+                                                                <img src="images/dist/empty.png" data-lazy="images/dist/news-tile-img-4.jpg"  alt="">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -1257,25 +1269,27 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                         </div>
-
                                     </div>
                                     <div class="news-columns-slide">
                                         <div class="news-column">
-
                                             <div class="news-column-item">
                                                 <div class="news-tile">
                                                     <div class="news-tile-cover">
                                                         <div class="news-tile-img">
-                                                            <img src="images/dist/news-tile-img-3.jpg" srcset="images/dist/news-tile-img-3@2x.jpg" alt="">
+                                                            <a href="#">
+                                                                <img src="images/dist/empty.png" data-lazy="images/dist/news-tile-img-1.jpg"  alt="">
+                                                            </a>
                                                         </div>
                                                     </div>
 
                                                     <div class="news-tile-content">
                                                         <p class="news-tile-title">
-                                                            10-я международная выставка чистая вода. казань...</p>
+                                                            <a href="#">
+                                                                ТБ ФОРУМ 2021. <br>
+                                                                технологии безопасности (москва)
+                                                            </a>
+                                                        </p>
                                                         <p class="news-tile-status">выставка завершена</p>
                                                     </div>
                                                 </div>
@@ -1284,97 +1298,57 @@
                                                 <div class="news-tile">
                                                     <div class="news-tile-cover">
                                                         <div class="news-tile-img">
-                                                            <img src="images/dist/news-tile-img-4.jpg" srcset="images/dist/news-tile-img-4@2x.jpg" alt="">
+                                                            <a href="#">
+                                                                <img src="images/dist/empty.png" data-lazy="images/dist/news-tile-img-2.jpg" alt="">
+                                                            </a>
                                                         </div>
                                                     </div>
 
                                                     <div class="news-tile-content">
                                                         <p class="news-tile-title">
-                                                            Flamax на форуме «открытые инновации»</p>
+                                                            <a href="#">Всероссийский водный конгресс</a>
+                                                        </p>
                                                         <p class="news-tile-status">выставка завершена</p>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="news-column-item">
+                                                <div class="news-tile">
+                                                    <div class="news-tile-cover">
+                                                        <div class="news-tile-img">
+                                                            <a href="#">
+                                                                <img src="images/dist/empty.png" data-lazy="images/dist/news-tile-img-3.jpg" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
 
+                                                    <div class="news-tile-content">
+                                                        <p class="news-tile-title">
+                                                            <a href="#">10-я международная выставка чистая вода. казань...</a>
+                                                        </p>
+                                                        <p class="news-tile-status">выставка завершена</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="news-column-item">
+                                                <div class="news-tile">
+                                                    <div class="news-tile-cover">
+                                                        <div class="news-tile-img">
+                                                            <a href="#">
+                                                                <img src="images/dist/empty.png" data-lazy="images/dist/news-tile-img-4.jpg"  alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
 
+                                                    <div class="news-tile-content">
+                                                        <p class="news-tile-title">
+                                                            <a href="#">Flamax на форуме «открытые инновации»</a>
+                                                        </p>
+                                                        <p class="news-tile-status">выставка завершена</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-
-                                    </div>
-                                    <div class="news-columns-slide">
-                                        <div class="news-column">
-
-                                            <div class="news-column-item">
-                                                <div class="news-tile">
-                                                    <div class="news-tile-cover">
-                                                        <div class="news-tile-img">
-                                                            <img src="images/dist/news-tile-img-3.jpg" srcset="images/dist/news-tile-img-3@2x.jpg" alt="">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="news-tile-content">
-                                                        <p class="news-tile-title">
-                                                            10-я международная выставка чистая вода. казань...</p>
-                                                        <p class="news-tile-status">выставка завершена</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="news-column-item">
-                                                <div class="news-tile">
-                                                    <div class="news-tile-cover">
-                                                        <div class="news-tile-img">
-                                                            <img src="images/dist/news-tile-img-4.jpg" srcset="images/dist/news-tile-img-4@2x.jpg" alt="">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="news-tile-content">
-                                                        <p class="news-tile-title">
-                                                            Flamax на форуме «открытые инновации»</p>
-                                                        <p class="news-tile-status">выставка завершена</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-                                    <div class="news-columns-slide">
-                                        <div class="news-column">
-
-                                            <div class="news-column-item">
-                                                <div class="news-tile">
-                                                    <div class="news-tile-cover">
-                                                        <div class="news-tile-img">
-                                                            <img src="images/dist/news-tile-img-3.jpg" srcset="images/dist/news-tile-img-3@2x.jpg" alt="">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="news-tile-content">
-                                                        <p class="news-tile-title">
-                                                            10-я международная выставка чистая вода. казань...</p>
-                                                        <p class="news-tile-status">выставка завершена</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="news-column-item">
-                                                <div class="news-tile">
-                                                    <div class="news-tile-cover">
-                                                        <div class="news-tile-img">
-                                                            <img src="images/dist/news-tile-img-4.jpg" srcset="images/dist/news-tile-img-4@2x.jpg" alt="">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="news-tile-content">
-                                                        <p class="news-tile-title">
-                                                            Flamax на форуме «открытые инновации»</p>
-                                                        <p class="news-tile-status">выставка завершена</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
                                     </div>
 
                                 </div>
@@ -1496,7 +1470,7 @@
             </div>
         </section>
 
-        <section class="trust-block u-margin-top-big ov-h">
+        <section class="trust-block u-margin-top-big ov-h" id="trust-block">
             <div class="container">
                 <div class="trust slider-wrap dash-title-wrap">
 
@@ -1626,203 +1600,210 @@
         </section>
     </div>
 
-    <div class="footer-block-wrap main-edge">
-        @@include("parts/map-block.html")
+    @@include("parts/footer-block.html")
 
-        <section class="footer-block">
-            <div class="container">
-                <div class="footer">
-                    <div class="footer-body">
-                        <div class="footer-nav">
-                            <div class="footer-nav-item">
-                                <p class="footer-nav-title">Наземные резервуары</p>
-                                <ul class="footer-nav-list">
-                                    <li><a href="#">Пожарные резервуары</a></li>
-                                    <li><a href="#">Резервуары питьевого запаса</a></li>
-                                    <li><a href="#">Резервуары совмещенного запаса воды</a></li>
-                                </ul>
-                            </div>
+<!--    <div class="footer-block-wrap main-edge">
+        <div class="footer-block-layer">
+            @@include("parts/map-block.html")
 
-                            <div class="footer-nav-item">
-                                <p class="footer-nav-title">Насосные станции</p>
-                                <ul class="footer-nav-list">
-                                    <li><a href="#">Насосные станции</a></li>
-                                    <li><a href="#">Водопроводные насосные станции</a></li>
-                                    <li><a href="#">Проектные работы</a></li>
-                                </ul>
-                            </div>
+            <section class="footer-block">
+                <div class="container">
+                    <div class="footer">
+                        <div class="footer-body">
+                            <div class="footer-nav">
+                                <div class="footer-nav-item">
+                                    <p class="footer-nav-title">Наземные резервуары</p>
+                                    <ul class="footer-nav-list">
+                                        <li><a href="#">Пожарные резервуары</a></li>
+                                        <li><a href="#">Резервуары питьевого запаса</a></li>
+                                        <li><a href="#">Резервуары совмещенного запаса воды</a></li>
+                                    </ul>
+                                </div>
 
-                            <div class="footer-nav-item">
-                                <p class="footer-nav-title">Пожарная безопасность</p>
-                                <ul class="footer-nav-list">
-                                    <li><a href="#">Разработка документации</a></li>
-                                    <li><a href="#">Пожарная автоматика</a></li>
-                                    <li><a href="#">Системы дымоудаления</a></li>
-                                    <li><a href="#">Огнезащита конструкций</a></li>
-                                </ul>
-                            </div>
+                                <div class="footer-nav-item">
+                                    <p class="footer-nav-title">Насосные станции</p>
+                                    <ul class="footer-nav-list">
+                                        <li><a href="#">Насосные станции</a></li>
+                                        <li><a href="#">Водопроводные насосные станции</a></li>
+                                        <li><a href="#">Проектные работы</a></li>
+                                    </ul>
+                                </div>
 
-                        </div>
-
-                        <div class="footer-contacts">
-                            <div class="footer-contacts-item footer-contacts-item-1">
-                                <p class="footer-contacts-title">Бесплатный звонок</p>
-                                <div class="cnt-body cnt-body-1">
-                                    <p class="cnt-text">
-                                        <a href="tel:+78002006269">+7 800 200 62 69</a>
-                                    </p>
-                                    <p class="cnt-text cnt-text-mobile-only">
-                                        <a href="tel:+74956496269">+7 495 649 62 69</a>
-                                    </p>
+                                <div class="footer-nav-item">
+                                    <p class="footer-nav-title">Пожарная безопасность</p>
+                                    <ul class="footer-nav-list">
+                                        <li><a href="#">Разработка документации</a></li>
+                                        <li><a href="#">Пожарная автоматика</a></li>
+                                        <li><a href="#">Системы дымоудаления</a></li>
+                                        <li><a href="#">Огнезащита конструкций</a></li>
+                                    </ul>
                                 </div>
 
                             </div>
 
-                            <div class="footer-contacts-item footer-contacts-item-2">
-                                <p class="footer-contacts-title">Факс</p>
-                                <div class="cnt-body cnt-body-2">
-                                    <p class="cnt-text">
-                                        <a href="tel:+74956496269">+7 495 649 62 69</a>
-                                    </p>
-                                </div>
-                            </div>
+                            <div class="footer-contacts">
+                                <div class="footer-contacts-item footer-contacts-item-1">
+                                    <p class="footer-contacts-title">Бесплатный звонок</p>
+                                    <div class="cnt-body cnt-body-1">
+                                        <p class="cnt-text">
+                                            <a href="tel:+78002006269">+7 800 200 62 69</a>
+                                        </p>
+                                        <p class="cnt-text cnt-text-mobile-only">
+                                            <a href="tel:+74956496269">+7 495 649 62 69</a>
+                                        </p>
+                                    </div>
 
-                            <div class="footer-contacts-item footer-contacts-item-3">
-                                <p class="footer-contacts-title">Телефон</p>
-                                <div class="cnt-body cnt-body-3">
-                                    <p class="cnt-text">
-                                        <a href="tel:+74956496269">+7 495 649 62 69</a>
-                                    </p>
-                                    <p class="cnt-text">
-                                        <a href="tel:+74952150055">+7 495 215 00 55</a>
-                                    </p>
                                 </div>
-                            </div>
-                            <div class="footer-contacts-item footer-contacts-item-4">
-                                <p class="footer-contacts-title">Почта</p>
-                                <div class="cnt-body cnt-body-4">
-                                    <p class="cnt-text">
-                                        <a href="mailto:info@flamax.ru">info@flamax.ru</a>
-                                    </p>
-                                    <div class="cnt-body-social-item">
-                                        <div class="social-group dark-social-group">
-                                            <div class="social-group-item">
-                                                <a href="#" class="soc-unit" target="_blank">
-                                                    <svg width="16" height="9">
-                                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-vk-icon"></use>
-                                                    </svg>
-                                                </a>
-                                            </div>
-                                            <div class="social-group-item">
-                                                <a href="#" class="soc-unit" target="_blank">
-                                                    <svg width="12" height="12">
-                                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-inst-icon"></use>
-                                                    </svg>
-                                                </a>
-                                            </div>
-                                            <div class="social-group-item">
-                                                <a href="#" class="soc-unit" target="_blank">
-                                                    <svg width="7" height="14">
-                                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-fb-icon"></use>
-                                                    </svg>
-                                                </a>
-                                            </div>
-                                            <div class="social-group-item">
-                                                <a href="#" class="soc-unit" target="_blank">
-                                                    <svg width="16" height="12">
-                                                        <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-youtube-icon"></use>
-                                                    </svg>
-                                                </a>
-                                            </div>
 
+                                <div class="footer-contacts-item footer-contacts-item-2">
+                                    <p class="footer-contacts-title">Факс</p>
+                                    <div class="cnt-body cnt-body-2">
+                                        <p class="cnt-text">
+                                            <a href="tel:+74956496269">+7 495 649 62 69</a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="footer-contacts-item footer-contacts-item-3">
+                                    <p class="footer-contacts-title">Телефон</p>
+                                    <div class="cnt-body cnt-body-3">
+                                        <p class="cnt-text">
+                                            <a href="tel:+74956496269">+7 495 649 62 69</a>
+                                        </p>
+                                        <p class="cnt-text">
+                                            <a href="tel:+74952150055">+7 495 215 00 55</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="footer-contacts-item footer-contacts-item-4">
+                                    <p class="footer-contacts-title">Почта</p>
+                                    <div class="cnt-body cnt-body-4">
+                                        <p class="cnt-text">
+                                            <a href="mailto:info@flamax.ru">info@flamax.ru</a>
+                                        </p>
+                                        <div class="cnt-body-social-item">
+                                            <div class="social-group dark-social-group">
+                                                <div class="social-group-item">
+                                                    <a href="#" class="soc-unit" target="_blank">
+                                                        <svg width="16" height="9">
+                                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-vk-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                                <div class="social-group-item">
+                                                    <a href="#" class="soc-unit" target="_blank">
+                                                        <svg width="12" height="12">
+                                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-inst-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                                <div class="social-group-item">
+                                                    <a href="#" class="soc-unit" target="_blank">
+                                                        <svg width="7" height="14">
+                                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-fb-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                                <div class="social-group-item">
+                                                    <a href="#" class="soc-unit" target="_blank">
+                                                        <svg width="16" height="12">
+                                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-youtube-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="footer-address">
+                                <div class="footer-address-item">
+                                    <p class="footer-address-item-title">ЦЕНТРАЛЬНЫЙ ОФИС</p>
+                                    <p class="footer-address-item-text">г.&nbsp;Москва, Алтуфьевское шоссе, д.44</p>
+                                </div>
+                                <div class="footer-address-item">
+                                    <p class="footer-address-item-title">КАЗАНСКИЙ ОФИС </p>
+                                    <p class="footer-address-item-text">г.&nbsp;Казань, ул.&nbsp;Павлюхина&nbsp;99Б, офис&nbsp;1009</p>
+                                </div>
                             </div>
 
-                        </div>
-                        <div class="footer-address">
-                            <div class="footer-address-item">
-                                <p class="footer-address-item-title">ЦЕНТРАЛЬНЫЙ ОФИС</p>
-                                <p class="footer-address-item-text">г.&nbsp;Москва, Алтуфьевское шоссе, д.44</p>
-                            </div>
-                            <div class="footer-address-item">
-                                <p class="footer-address-item-title">КАЗАНСКИЙ ОФИС </p>
-                                <p class="footer-address-item-text">г.&nbsp;Казань, ул.&nbsp;Павлюхина&nbsp;99Б, офис&nbsp;1009</p>
-                            </div>
+
                         </div>
 
+                        <div class="cellar">
+
+                            <div class="cellar-left-side">
+                                <ul class="cellar-links-list">
+                                    <li class="cellar-links-item">© flamaxc.2021</li>
+                                    <li class="cellar-links-item cellar-conf-policy"><a href="#">Политика обработки персональных данных</a></li>
+                                    <li class="cellar-links-item"><a href="#">Реквизиты</a></li>
+                                    <li class="cellar-links-item"><a href="#">Карта сайта</a></li>
+                                </ul>
+                            </div>
+                            <div class="cellar-center">
+
+                                <div class="social-group dark-social-group">
+                                    <div class="social-group-item">
+                                        <a href="#" class="soc-unit" target="_blank">
+                                            <svg width="16" height="9">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-vk-icon"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="social-group-item">
+                                        <a href="#" class="soc-unit" target="_blank">
+                                            <svg width="12" height="12">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-inst-icon"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="social-group-item">
+                                        <a href="#" class="soc-unit" target="_blank">
+                                            <svg width="7" height="14">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-fb-icon"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="social-group-item">
+                                        <a href="#" class="soc-unit" target="_blank">
+                                            <svg width="16" height="12">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-youtube-icon"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="cellar-right-side">
+
+                                <p><a href="#" class="cellar-link-partner">МЫ&nbsp;–&nbsp;ЗАЧЕСТНЫЙБИЗНЕС</a></p>
+                                <p class="dev-company-unit cellar-dev-company">
+                                    <span class="dev-company-unit-label">Создание сайта</span>
+                                    <a href="#" class="dev-company-unit-logo"><img src="images/dist/mark-weber-logo.svg" alt=""></a>
+                                </p>
+                            </div>
+                        </div>
 
                     </div>
 
-                    <div class="cellar">
-
-                        <div class="cellar-left-side">
-                            <ul class="cellar-links-list">
-                                <li class="cellar-links-item">© flamaxc.2021</li>
-                                <li class="cellar-links-item cellar-conf-policy"><a href="#">Политика обработки персональных данных</a></li>
-                                <li class="cellar-links-item"><a href="#">Реквизиты</a></li>
-                                <li class="cellar-links-item"><a href="#">Карта сайта</a></li>
-                            </ul>
-                        </div>
-                        <div class="cellar-center">
-
-                            <div class="social-group dark-social-group">
-                                <div class="social-group-item">
-                                    <a href="#" class="soc-unit" target="_blank">
-                                        <svg width="16" height="9">
-                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-vk-icon"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="social-group-item">
-                                    <a href="#" class="soc-unit" target="_blank">
-                                        <svg width="12" height="12">
-                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-inst-icon"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="social-group-item">
-                                    <a href="#" class="soc-unit" target="_blank">
-                                        <svg width="7" height="14">
-                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-fb-icon"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="social-group-item">
-                                    <a href="#" class="soc-unit" target="_blank">
-                                        <svg width="16" height="12">
-                                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-youtube-icon"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="cellar-right-side">
-
-                            <p><a href="#" class="cellar-link-partner">МЫ&nbsp;–&nbsp;ЗАЧЕСТНЫЙБИЗНЕС</a></p>
-                            <p class="dev-company-unit cellar-dev-company">
-                                <span class="dev-company-unit-label">Создание сайта</span>
-                                <a href="#" class="dev-company-unit-logo"><img src="images/dist/mark-weber-logo.svg" alt=""></a>
-                            </p>
-                        </div>
-                    </div>
 
                 </div>
 
-
-            </div>
-
-        </section>
-
-    </div>
+            </section>
+        </div>
+    </div>-->
 </div>
 
-
+@@include("parts/modal-menu.html")
+@@include("parts/modal-calc.html")
+@@include("parts/modal-comment.html")
+@@include("parts/modal-success.html")
 
 @@include("parts/footer.html")
+
 
 </body>
 </html>

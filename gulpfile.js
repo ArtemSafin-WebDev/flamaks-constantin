@@ -16,7 +16,9 @@ let path = {
             `!${srcFolder}/styles/sass/_*.{scss, sass}`
         ],
         js: [
-            `${srcFolder}/js-scripts/*.js`
+            `${srcFolder}/js-scripts/modals.js`,
+            `${srcFolder}/js-scripts/app.js`,
+            `${srcFolder}/js-scripts/animations.js`,
         ],
         img: `${srcFolder}/images/src/**/*.{jpg,jpeg,gif,ico,png,webp}`,
         fonts: `${srcFolder}/fonts/**/*.{eot,otf,ttf,woff,woff2}`,
@@ -260,12 +262,14 @@ function cleanFonts() {
 }
 
 
-const building = series( clean, cleanImages, cleanFonts, parallel( buildCSS, buildJS, images, copyFonts, copyLibs, copySvg, copyVideo, html ));
+const building = series( clean, cleanImages, cleanFonts, parallel( css, buildJS, images, copyFonts, copyLibs, copySvg, copyVideo, html ));
+const building2 = series( clean, cleanImages, cleanFonts, parallel( buildCSS, buildJS, images, copyFonts, copyLibs, copySvg, copyVideo, html ));
 const watching =  parallel( series( clean, cleanFonts, cleanImages, parallel(css, js, html,  copyLibs, copyFonts, copyImg, copyVideo )) , watchFiles, fnBrowserSync);
 const fontsBuild = series( cleanFonts, fonts );
 const imagesBuild = series( cleanImages, images, copySvg );
 
 exports.build = building;
+exports.build2 = building2;
 exports.watch = watching;
 exports.imgbuild = imagesBuild;
 exports.fontsbuild = fontsBuild;

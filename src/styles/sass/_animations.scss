@@ -1,0 +1,387 @@
+
+.text-slice-block {
+  overflow: hidden;
+  display: block;
+}
+
+/**
+* animation main-slider
+ */
+
+
+.main-slider {
+  .text-slice-inner {
+    transform: translateY(100%);
+    transition: transform .5s linear, opacity .5s linear;
+    display: block;
+    opacity: 0;
+  }
+  .text-slice-block:nth-child(1) .text-slice-inner {
+    transition-delay: 0s, 0s;
+  }
+  .text-slice-block:nth-child(2) .text-slice-inner {
+    transition-delay: 0.02s,  0.02s;
+  }
+  .text-slice-block:nth-child(3) .text-slice-inner {
+    transition-delay: 0.04s,  0.04s;
+  }
+  .text-slice-block:nth-child(4) .text-slice-inner {
+    transition-delay: 0.06s, 0.06s;
+  }
+  .text-slice-block:nth-child(5) .text-slice-inner {
+    transition-delay: 0.08s, 0.08s;
+  }
+}
+
+.main-slider .slick-active .text-slice-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main-slide-content,
+.main-slide-top-text,
+.main-slide-bottom-text {
+  opacity: 0;
+  transition: all .5s linear;
+}
+.slick-active {
+
+  .main-slide-content,
+  .main-slide-top-text,
+  .main-slide-bottom-text {
+    opacity: 1;
+    transition: all .5s ease-in;
+  }
+
+}
+
+
+/**
+* end animation main-slider
+ */
+
+/**
+* анимация модальных окон
+ */
+
+
+
+
+/**
+* animation modal menu
+ */
+
+.light-modal-overlay:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  transform: translateY(-100%);
+  background: #FFF;
+  transition: transform .7s linear 0s;
+}
+
+.modal-custom-animated {
+  .light-modal-overlay:before {
+    transition: transform .7s linear 0s;
+    transform: translateY(0);
+  }
+}
+
+.page-modal-header {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s linear .2s, visibility .2s linear .2s;
+}
+
+.modal-custom-animated  .page-modal-header {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .2s linear 0s, visibility .2s linear 0s;
+}
+
+.page-modal-body {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s linear 0s, visibility .4s linear 0s;
+}
+
+.modal-custom-animated  .page-modal-body {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .4s linear .3s, visibility .4s linear .3s;
+}
+
+.page-modal-footer {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s linear 0s, visibility .3s linear 0s;
+}
+
+.modal-custom-animated  .page-modal-footer {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .3s linear .6s, visibility .3s linear .6s;
+}
+
+
+.bg-print-layer img {
+  transition: opacity .3s linear 0s, visibility .3s linear 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-custom-animated  .bg-print-layer img {
+  transition: opacity .6s linear 0.6s, visibility .6s linear 0.6s;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.alt-menu-list, .menu-contacts-section {
+  transition: opacity .3s linear 0.3s, visibility .3s linear 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-custom-animated {
+   & .alt-menu-list,
+   & .menu-contacts-section {
+    transition: opacity .3s linear 0s, visibility .3s linear 0s;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+.main-menu-item .text-slice-inner {
+  transition: transform .3s linear 0s, opacity .3s linear 0s;
+  transform: translateY(3.5rem);
+  opacity: 0;
+}
+
+.modal-custom-animated {
+  .main-menu-item .text-slice-inner {
+    transition: transform 2.5s linear 0s, opacity 2.5s linear 0s;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .main-menu-item {
+    &:nth-child(1) .text-slice-inner {
+      transition-delay: .3s, .3s;
+    }
+    &:nth-child(2) .text-slice-inner {
+      transition-delay: .32s, .32s;
+    }
+    &:nth-child(3) .text-slice-inner {
+      transition-delay: .34s, .34s;
+    }
+    &:nth-child(4) .text-slice-inner {
+      transition-delay: .36s, .36s;
+    }
+    &:nth-child(5) .text-slice-inner {
+      transition-delay: .38s, .38s;
+    }
+    &:nth-child(n+6) .text-slice-inner {
+      transition-delay: .38s, .38s;
+    }
+  }
+
+}
+
+.main-menu-item {
+  &:nth-child(1) .text-slice-inner {
+    transition-delay: 0.08s, 0.08s;
+  }
+  &:nth-child(2) .text-slice-inner {
+    transition-delay: 0.06s, 0.06s;
+  }
+  &:nth-child(3) .text-slice-inner {
+    transition-delay: 0.04s, 0.04s;
+  }
+  &:nth-child(4) .text-slice-inner {
+    transition-delay: 0.02s, 0.02s;
+  }
+  &:nth-child(5) .text-slice-inner {
+    transition-delay: 0s, 0s;
+  }
+  &:nth-child(n+6) .text-slice-inner {
+    transition-delay: 0s, 0s;
+  }
+}
+
+.modal-custom-animated  .main-menu-item .text-slice-inner {
+  transition: transform .3s linear 0.3s, opacity .3s linear 0.3s;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.page-modal-menu {
+  &[data-search-status="search-focus"],
+  &[data-search-status="search-live"] {
+    .page-menu-wrap {
+      display: none;
+    }
+  }
+
+  &[data-search-status="search-focus"] {
+    .page-search-layer {
+      display: block;
+    }
+  }
+
+  &[data-search-status="search-live"] {
+    .page-live-search-layer  {
+      display: block;
+    }
+  }
+}
+
+/**
+* end animation modal menu
+ */
+
+
+/**
+* animation modal form
+ */
+
+.form-top-subtitle {
+  transition: opacity .3s linear 0s;
+  opacity: 0;
+}
+
+.modal-custom-animated {
+  .form-top-subtitle {
+    transition: opacity .3s linear .3s;
+    opacity: 1;
+  }
+}
+
+.page-modal-form .dash-title .text-slice-inner {
+  transition: transform .3s linear 0s, opacity .3s linear 0s;
+  transform: translateY(4rem);
+  opacity: 0;
+  display: block;
+}
+.modal-custom-animated .page-modal-form .dash-title .text-slice-inner {
+  transition: transform .3s linear .3s, opacity .3s linear .3s;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.page-modal-form .dash-title {
+  & .text-slice-block:nth-child(n) .text-slice-inner {
+    transition-delay: 0s;
+  }
+}
+
+.modal-custom-animated .page-modal-form .dash-title {
+  & .text-slice-block:nth-child(n) .text-slice-inner {
+    transition-delay: .3s;
+  }
+}
+
+.page-modal-form  .form-calc-box,
+.page-modal-form  .form-callback-box {
+  transition: transform .3s linear 0s, opacity .3s linear 0s, visibility .3s linear 0s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4rem);
+}
+
+.modal-custom-animated .page-modal-form  .form-calc-box,
+.modal-custom-animated .page-modal-form .form-callback-box {
+  transition: transform .3s linear .3s, opacity .3s linear .3s, visibility .3s linear .3s;
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-modal-form .form-cellar {
+  transition:  opacity .3s linear  0s, visibility .3s linear 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-custom-animated  .page-modal-form .form-cellar {
+  transition: opacity .3s linear .3s, visibility .3s linear .3s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-modal-form .unit-control-icon {
+  transition:  opacity .3s linear 0s, visibility .3s linear 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-custom-animated  .page-modal-form  .unit-control-icon {
+  transition:  opacity .3s linear .3s, visibility .3s linear .3s;
+  opacity: 1;
+  visibility: visible;
+}
+
+  /**
+  * end animation modal form
+   */
+
+/**
+* animation success-block
+ */
+
+.page-modal-success-box {
+  transition: opacity .3s linear 0s, transform .3s linear 0s, visibility .3s linear 0s ;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4rem);
+}
+.light-success-modal.modal-custom-animated  .page-modal-success-box {
+  transition: opacity .3s linear .3s, transform .3s linear .3s, visibility .3s linear .3s ;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+.light-success-modal  .unit-control-icon {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s linear 0s, visibility .3s linear 0s ;
+}
+
+.light-success-modal.modal-custom-animated  .unit-control-icon {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .3s linear .2s, visibility .3s linear .2s ;
+}
+
+/**
+* end animation success-block
+ */
+
+
+
+/**
+* animation accordion
+ */
+
+.accordion-section-active .accordion-section-body {
+  opacity: 1;
+  transition: opacity 0s linear;
+}
+
+.accordion-section-body {
+  transition: opacity .5s linear;
+  opacity: 0;
+}
+
+/**
+* end animation accordion
+ */
+
