@@ -440,6 +440,7 @@ html, body {
   text-align: center;
   overflow: hidden;
   position: relative;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 
   .btn-inner {
     display: inline-block;
@@ -3517,6 +3518,12 @@ press-center-block
   display: none;
 }
 
+@media (max-width: $bp-1440) {
+  .press-side-item:nth-child(n+2) {
+    margin-top: 2.7rem;
+  }
+}
+
 @media (max-width: $bp-1366) {
   .press-side {margin-left: 4rem;}
   .press-side-item:nth-child(n+2) {margin-top: 5rem;}
@@ -3549,7 +3556,6 @@ press-center-block
     font-size: 2rem;
     line-height: 2.4rem;
   }
-
 }
 
 @media (max-width: $bp-1024) {
@@ -3868,7 +3874,6 @@ press-center-block
   margin-bottom: 3.3rem;
   opacity: .15;
 }
-
 
 .news-main {
   flex: 0 0 auto;

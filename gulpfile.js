@@ -114,9 +114,9 @@ function buildCSS() {
         .pipe(sass({
             outputStyle: "expanded"
         }))
-        .pipe(
-            groupMedia()
-        )
+        // .pipe(
+        //     groupMedia()
+        // )
         .pipe(concat('main.css'))
         .pipe(autoprefixer({
             cascade: false,
@@ -262,14 +262,12 @@ function cleanFonts() {
 }
 
 
-const building = series( clean, cleanImages, cleanFonts, parallel( css, buildJS, images, copyFonts, copyLibs, copySvg, copyVideo, html ));
-const building2 = series( clean, cleanImages, cleanFonts, parallel( buildCSS, buildJS, images, copyFonts, copyLibs, copySvg, copyVideo, html ));
+const building = series( clean, cleanImages, cleanFonts, parallel( buildCSS, buildJS, images, copyFonts, copyLibs, copySvg, copyVideo, html ));
 const watching =  parallel( series( clean, cleanFonts, cleanImages, parallel(css, js, html,  copyLibs, copyFonts, copyImg, copyVideo )) , watchFiles, fnBrowserSync);
 const fontsBuild = series( cleanFonts, fonts );
 const imagesBuild = series( cleanImages, images, copySvg );
 
 exports.build = building;
-exports.build2 = building2;
 exports.watch = watching;
 exports.imgbuild = imagesBuild;
 exports.fontsbuild = fontsBuild;
