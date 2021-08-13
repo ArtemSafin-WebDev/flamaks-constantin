@@ -4,6 +4,8 @@
   "description": "gulp build for html layouts",
   "main": "index.js",
   "scripts": {
+    "build": "gulp",
+    "start": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Konstantin Voronin <konstantin.web.89@gmail.com>",
@@ -27,7 +29,8 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-uglify-es": "^2.0.0"
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify-es": "^2.0.0",
+    "sass": "^1.37.5"
   }
 }
