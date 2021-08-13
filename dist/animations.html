@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flamax</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1.0" />
+    <link rel="stylesheet" href="libs/slick/slick.css">
+    <link rel="stylesheet" href="libs/select2/select2.min.css">
+    <link rel="stylesheet" href="libs/lightgallery/css/lightgallery.min.css" type="text/css">
+    <link rel="stylesheet" href="libs/light-modal/light-modal.css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+
+<div class="main-wrap">
+    <div class="main-body">
+
+        <div class="square-block square-block-1 tomato" id="square-block-1">
+            <div class="container container-pad">
+                <div class="square-block-num">1</div>
+                <div class="anim-block"></div>
+            </div>
+        </div>
+        <div class="square-block square-block-2 blue container-pad" id="square-block-2">
+            <div class="container container-pad">
+                <div class="square-block-num">2</div>
+            </div>
+        </div>
+        <div class="square-block square-block-3 green container-pad" id="square-block-3">
+            <div class="container container-pad">
+                <div class="square-block-num">3</div>
+            </div>
+        </div>
+        <div class="square-block square-block-4 fuchsia container-pad" id="square-block-4">
+            <div class="container container-pad">
+                <div class="square-block-num">4</div>
+            </div>
+        </div>
+        <div class="square-block square-block-5 brown container-pad" id="square-block-5">
+            <div class="container container-pad">
+                <div class="square-block-num">5</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="page-modal-outer page-modal-menu" id="modal-menu">
+    <div class="container page-modal-inner">
+        <div class="page-modal-header fx-0">
+            <div class="page-modal-header-logo">
+                <img src="images/dist/red-logo.svg" alt="" width="106" height="15">
+            </div>
+            <div class="page-modal-header-search">
+                <div class="search-panel">
+                    <input type="text" placeholder="Поиск" class="search-input">
+                    <button class="btn-search">
+                        <img src="images/dist/icons/form-search-icon.svg" alt="" width="13" height="13">
+                    </button>
+                </div>
+            </div>
+            <div class="page-modal-header-controls">
+                <div class="unit-control-icon login-icon-control">
+                    <img src="images/dist/icons/login-icon.svg" alt="" width="13" height="15">
+                </div>
+                <div class="unit-control-icon exit-icon-control btn-modal-outer-close" data-closable="true">
+                    <img src="images/dist/icons/close-icon.svg" alt="" width="10" height="10">
+                </div>
+            </div>
+        </div>
+
+        <div class="page-modal-body fx-1 page-modal-pad-left">
+            <div class="page-menu-wrap">
+                <div class="main-menu-list page-menu-wrap-item">
+                    <div class="main-menu-item">
+                        <div class="main-menu-item-head text-slice-block">
+                            <p class="main-menu-item-head-value text-slice-inner"><a href="accumulator-tanks.html">Сборные резервуары</a></p>
+                            <div class="drop-icon"><img src="images/dist/icons/drop-select-icon.svg" alt="" width="17" height="10"></div>
+                        </div>
+                        <div class="main-menu-item-body">
+                            <ul class="main-submenu-list">
+                                <li class="main-submenu-item"><a href="fire-prevention.html">Пожарные резервуары</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары питьевого запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары совмещенного запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Другая продукция</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-menu-item">
+                        <div class="main-menu-item-head text-slice-block">
+                            <p class="main-menu-item-head-value text-slice-inner"><a href="#">Насосные станции</a></p>
+                            <div class="drop-icon"><img src="images/dist/icons/drop-select-icon.svg" alt="" width="17" height="10"></div>
+                        </div>
+                        <div class="main-menu-item-body">
+                            <ul class="main-submenu-list">
+                                <li class="main-submenu-item"><a href="#">Пожарные резервуары</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары питьевого запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары совмещенного запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Другая продукция</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-menu-item">
+                        <div class="main-menu-item-head text-slice-block">
+                            <p class="main-menu-item-head-value text-slice-inner"><a href="fire-prevention.html">Пожарная безопасность</a></p>
+                            <div class="drop-icon"><img src="images/dist/icons/drop-select-icon.svg" alt="" width="17" height="10"></div>
+                        </div>
+                        <div class="main-menu-item-body">
+                            <ul class="main-submenu-list">
+                                <li class="main-submenu-item"><a href="#">Пожарные резервуары</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары питьевого запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары совмещенного запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Другая продукция</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="main-menu-item">
+                        <div class="main-menu-item-head text-slice-block">
+                            <p class="main-menu-item-head-value text-slice-inner"><a href="#">Сервис</a></p>
+                            <div class="drop-icon"><img src="images/dist/icons/drop-select-icon.svg" alt="" width="17" height="10"></div>
+                        </div>
+                        <div class="main-menu-item-body">
+                            <ul class="main-submenu-list">
+                                <li class="main-submenu-item"><a href="#">Пожарные резервуары</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары питьевого запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары совмещенного запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Другая продукция</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="main-menu-item">
+                        <div class="main-menu-item-head text-slice-block">
+                            <p class="main-menu-item-head-value text-slice-inner"><a href="#">Проектировщикам</a></p>
+                            <div class="drop-icon"><img src="images/dist/icons/drop-select-icon.svg" alt="" width="17" height="10"></div>
+                        </div>
+                        <div class="main-menu-item-body">
+                            <ul class="main-submenu-list">
+                                <li class="main-submenu-item"><a href="#">Пожарные резервуары</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары питьевого запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Резервуары совмещенного запаса</a></li>
+                                <li class="main-submenu-item"><a href="#">Другая продукция</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="alt-menu-list page-menu-wrap-item">
+                    <li class="alt-menu-item"><a href="#">О компании</a></li>
+                    <li class="alt-menu-item"><a href="#">Пресс-центр</a></li>
+                    <li class="alt-menu-item"><a href="#">Вопросы</a></li>
+                    <li class="alt-menu-item"><a href="#">Наши работы</a></li>
+                    <li class="alt-menu-item"><a href="#">Отзывы</a></li>
+                    <li class="alt-menu-item"><a href="#">Реквизиты</a></li>
+                    <li class="alt-menu-item"><a href="#">Карьера</a></li>
+                    <li class="alt-menu-item"><a href="#">Контакты</a></li>
+                </ul>
+
+                <div class="menu-contacts-section page-menu-wrap-item">
+                    <div class="menu-contacts-list">
+                        <div class="menu-contacts-list-section">
+                            <div class="menu-contacts-item">
+                                <a href="tel:+78002006269" class="menu-contacts-link">+7 800 200 62 69</a>
+                            </div>
+                            <div class="menu-contacts-item">
+                                <a href="tel:+74956496269" class="menu-contacts-link">+7 495 649 62 69</a>
+                            </div>
+                        </div>
+                        <div class="menu-contacts-list-section">
+                            <div class="menu-contacts-item">
+                                <a href="mailto:info@flamax.ru" class="menu-contacts-link">info@flamax.ru</a>
+                            </div>
+                            <div class="menu-contacts-item menu-contacts-social-item">
+                                <div class="social-group dark-social-group social-group-alt-hover menu-contacts-socials-group ">
+                                    <div class="social-group-item">
+                                        <a href="#" class="soc-unit" target="_blank">
+                                            <svg width="16" height="9">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-vk-icon"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="social-group-item">
+                                        <a href="#" class="soc-unit" target="_blank">
+                                            <svg width="12" height="12">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-inst-icon"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="social-group-item">
+                                        <a href="#" class="soc-unit" target="_blank">
+                                            <svg width="7" height="14">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-fb-icon"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="social-group-item">
+                                        <a href="#" class="soc-unit" target="_blank">
+                                            <svg width="16" height="12">
+                                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-youtube-icon"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-contacts-btn-box">
+                        <div class="menu-contacts-btn-item">
+                            <a href="javascript:void(0)" class="btn-fill-accent btn-user btn btn-open-modal" data-action="open-comment" tabindex="-1">
+                                <span class="btn-inner">подробнее</span>
+                            </a>
+                        </div>
+
+                        <div class="menu-contacts-btn-item">
+                            <a href="javascript:void(0)" class="btn-outline-dark btn-user-outline-fill-white btn-user-outline btn-user btn-start-icon btn  " tabindex="0">
+                            <span class="btn-inner">
+                                <i class="icon">
+                                    <svg class="inline-svg-icon" width="10" height="9">
+                                      <use xlink:href="images/dist/icons/svg-icons-sprite.svg#download-icon"></use>
+                                    </svg>
+                                 </i>
+                                Скачать презентацию
+                            </span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="page-live-search-layer">
+                <ul class="live-search-list">
+                    <li class="live-search-item">
+                        <a href="#">Как крепится лестница резервуара?</a>
+                    </li>
+                    <li class="live-search-item">
+                        <a href="#">Каким образом производится дезинфекция резервуаров для питьевой воды?</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page-search-layer">
+
+                <p class="page-search-title">Часто ищут</p>
+
+                <div class="page-search-wrap">
+                    <div class="page-search-box">
+
+                        <div class="page-search-item">
+                            <div class="page-search-unit">
+                                <a href="#" class="page-search-unit-link"></a>
+                                <div class="page-search-unit-icon">
+                                    <img src="images/dist/icons/find-section-icon-1.svg" alt="" width="37" height="26">
+                                </div>
+
+                                <p class="page-search-unit-title">
+                                    Cервисное обслуживание сборных резервуаров
+                                </p>
+
+                                <div class="page-search-unit-anim-layer"></div>
+                            </div>
+                        </div>
+
+                        <div class="page-search-item">
+                            <div class="page-search-unit">
+                                <a href="#" class="page-search-unit-link"></a>
+                                <div class="page-search-unit-icon">
+                                    <img src="images/dist/icons/find-section-icon-2.svg" alt="" width="30" height="28">
+                                </div>
+
+                                <p class="page-search-unit-title">
+                                    Cервисное обслуживание насосных станций
+                                </p>
+
+                                <div class="page-search-unit-anim-layer"></div>
+                            </div>
+                        </div>
+
+                        <div class="page-search-item">
+                            <div class="page-search-unit">
+                                <a href="#" class="page-search-unit-link"></a>
+                                <div class="page-search-unit-icon">
+                                    <img src="images/dist/icons/find-section-icon-3.svg" alt="" width="37" height="34">
+                                </div>
+
+                                <p class="page-search-unit-title">
+                                    Cервисное обслуживание противопожарных систем
+                                </p>
+
+                                <div class="page-search-unit-anim-layer"></div>
+                            </div>
+                        </div>
+
+                        <div class="page-search-item">
+                            <div class="page-search-unit">
+                                <a href="#" class="page-search-unit-link"></a>
+                                <div class="page-search-unit-icon">
+                                    <img src="images/dist/icons/find-section-icon-4.svg" alt="" width="37" height="26">
+                                </div>
+
+                                <p class="page-search-unit-title">
+                                    Как осуществляется циркуляция воды в резервуаре?
+                                </p>
+
+                                <div class="page-search-unit-anim-layer"></div>
+                            </div>
+                        </div>
+
+                        <div class="page-search-item">
+                            <div class="page-search-unit">
+                                <a href="#" class="page-search-unit-link"></a>
+                                <div class="page-search-unit-icon">
+                                    <img src="images/dist/icons/find-section-icon-5.svg" alt="" width="26" height="27">
+                                </div>
+
+                                <p class="page-search-unit-title">
+                                    Каков срок службы <br> резервуаров?
+                                </p>
+
+                                <div class="page-search-unit-anim-layer"></div>
+                            </div>
+                        </div>
+
+                        <div class="page-search-item">
+                            <div class="page-search-unit">
+                                <a href="#" class="page-search-unit-link"></a>
+                                <div class="page-search-unit-icon">
+                                    <img src="images/dist/icons/find-section-icon-6.svg" alt="" width="30" height="29">
+                                </div>
+
+                                <p class="page-search-unit-title">
+                                    Какая гарантия на ваши резервуары?
+                                </p>
+
+                                <div class="page-search-unit-anim-layer"></div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-modal-footer fx-0  page-modal-pad-left">
+            <div class="page-modal-footer-left">
+                <p>© flamax.2021</p>
+                <p><a href="#">Политика обработки персональных данных</a></p>
+            </div>
+            <div class="page-modal-footer-right">
+                <p class="dev-company-unit">
+                    <span class="dev-company-unit-label">Создание сайта</span>
+                    <a href="#" class="dev-company-unit-logo"><img src="images/dist/mark-weber-logo.svg" alt=""></a>
+                </p>
+            </div>
+        </div>
+        <div class="bg-print-layer ov-h">
+            <img src="images/dist/bg-print-modal.jpg" srcset="images/dist/bg-print-modal@2x.jpg 2x" alt="" >
+        </div>
+    </div>
+</div>
+<div class="page-modal-outer page-modal-form" id="modal-calc">
+
+    <div class="unit-control-icon close-control-icon btn-modal-close btn-modal-close-position btn-modal-outer-close" data-closable="true">
+        <img src="images/dist/icons/close-icon.svg" alt="" width="10" height="10">
+    </div>
+
+    <form class="container page-modal-inner send-form">
+
+        <div class="page-modal-body  page-modal-form-layer fx-1 page-modal-form-pad-left dash-title-wrap ">
+
+            <p class="form-top-subtitle">Заказать расчет</p>
+            <p class="title dash-title text-h4 form-modal-title">
+                <span class="text-slice-block">
+                    <span class="text-slice-inner">Получить расчет</span>
+                </span>
+                <span class="text-slice-block">
+                    <span class="text-slice-inner">стоимости резервуара</span>
+                </span>
+
+            </p>
+
+            <div class="form-calc-box">
+                <div class="form-calc-params form-layout-overlay">
+                    <div class="u-form-control-wrap-1 calc-params-group-wrap">
+                        <div class="calc-params-group-one">
+                            <div class="calc-params-group-one-item">
+                                <select name="product" class="custom-select" >
+                                    <option value="" selected hidden>Продукт для хранения</option>
+                                    <option value="">Продукт 1</option>
+                                    <option value="">Продукт 2</option>
+                                </select>
+                            </div>
+                            <div class="calc-params-group-one-item">
+                                <select name="count-values" class="custom-select" >
+                                    <option value="">Количество резервуаров</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6</option>
+                                </select>
+                            </div>
+
+                            <div class="calc-params-group-one-item">
+                                <select name="value" class="custom-select" >
+                                    <option value="">Требуемый полезный объем, м<sup>3</sup></option>
+                                    <option value="">30 м<sup>3</sup></option>
+                                    <option value="">50 м<sup>3</sup></option>
+                                </select>
+                            </div>
+
+                            <div class="calc-params-group-one-item">
+                                <select name="region" class="custom-select" >
+                                    <option value="">Регион установки резервуара </option>
+                                    <option value="">Регион 1</option>
+                                    <option value="">Регион 2</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="u-form-control-wrap-2 calc-params-group-wrap">
+                        <div class="calc-params-group-one">
+
+                            <div class="calc-params-group-one-item">
+                                <p class="form-top-subtitle">Плошадь под застройку</p>
+
+                                <div class="calc-params-box-wrap">
+                                    <div class="calc-params-box calc-params-box-3">
+                                        <div class="calc-params-box-item">
+                                            <label class="user-input-label">
+                                                <input type="text" class="user-input" placeholder="Длина, м">
+                                            </label>
+                                        </div>
+
+                                        <div class="calc-params-box-item">
+                                            <label class="user-input-label">
+                                                <input type="text" class="user-input" placeholder="Ширина, м">
+                                            </label>
+                                        </div>
+
+                                        <div class="calc-params-box-item">
+                                            <label class="user-input-label">
+                                                <input type="text" class="user-input " placeholder="Высота, м">
+                                            </label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="calc-params-group-one-item">
+                                <p class="form-top-subtitle">Срок сдачи объекта</p>
+
+
+                                <div class="calc-params-box-wrap">
+                                    <div class="calc-params-box calc-params-box-2">
+                                        <div class="calc-params-box-item">
+                                            <select name="product" class="custom-select" >
+                                                <option value="" selected hidden>Месяц</option>
+                                                <option value="">Январь</option>
+                                                <option value="">Февраль</option>
+                                                <option value="">Март</option>
+                                                <option value="">Апрель</option>
+                                                <option value="">Май</option>
+                                                <option value="">Июнь</option>
+                                                <option value="">Июль</option>
+                                                <option value="">Август</option>
+                                                <option value="">Сентябрь</option>
+                                                <option value="">Октябрь</option>
+                                                <option value="">Ноябрь</option>
+                                                <option value="">Декабрь</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="calc-params-box-item">
+                                            <select name="count-values" class="custom-select" >
+                                                <option value="">Год</option>
+                                                <option value="">2021</option>
+                                                <option value="">2022</option>
+                                                <option value="">2023</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-calc-person">
+
+                    <div class="form-field-item">
+                        <label class="user-input-label">
+                            <input type="text" class="user-input field-fill validated-control" placeholder="Ваше имя*">
+                        </label>
+                    </div>
+                    <div class="form-field-item">
+                        <label class="user-input-label">
+                            <input type="tel" class="user-input field-fill validated-control" placeholder="Ваш телефон*">
+                        </label>
+                    </div>
+                    <div class="form-field-item">
+                        <label class="user-input-label">
+                            <input type="text" class="user-input field-fill validated-control" placeholder="E-mail*">
+                        </label>
+                    </div>
+                    <div class="form-field-item">
+                        <label class="user-input-label">
+                            <input type="text" class="user-input field-fill" placeholder="Название компании">
+                        </label>
+                    </div>
+                    <div class="form-field-item">
+                        <label class="user-textarea-label">
+                            <textarea rows="10" placeholder="Комментарии" class="user-textarea field-fill"></textarea>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-cellar">
+                <div class="form-cellar-item">
+                    <label class="user-check-unit half-transparent">
+                        <input type="checkbox" name="" class="validated-control">
+                        <span class="check-unit-icon">
+                            <svg  width="8" height="6">
+                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#checkbox-tick-icon"></use>
+                            </svg>
+                        </span>
+
+                        <span class="check-unit-text">Я согласен с <a href="#" target="_blank">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                <div class="form-cellar-item btn-wrap">
+                    <button type="submit" class="btn-fill-accent btn-user btn btn-submit " tabindex="0">
+                        <span class="btn-inner">отправить</span>
+                    </button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </form>
+</div>
+<div class="page-modal-outer page-modal-form page-modal-comment-form  " id="modal-comment">
+
+    <div class="unit-control-icon close-control-icon btn-modal-close btn-modal-close-position btn-modal-outer-close" data-closable="true">
+        <img src="images/dist/icons/close-icon.svg" alt="" width="10" height="10">
+    </div>
+
+    <div class="container page-modal-inner">
+
+        <form class="page-modal-body  page-modal-form-layer fx-1 page-modal-form-pad-left dash-title-wrap send-form ">
+
+            <p class="form-top-subtitle">Свяжитесь с нами</p>
+            <p class="title dash-title text-h4 form-modal-title">
+                <span class="text-slice-block">
+                    <span class="text-slice-inner">Не нашли что искали?</span>
+                </span>
+
+            </p>
+
+            <div class="form-callback-box">
+                <div class="form-callback-cnt">
+
+                    <div class="form-field-item">
+                        <label class="user-input-label">
+                            <input type="text" class="user-input field-fill validated-control" placeholder="Ваше имя*">
+                        </label>
+                    </div>
+
+                    <div class="form-field-item">
+                        <label class="user-input-label">
+                            <input type="tel" class="user-input field-fill validated-control" placeholder="Ваш телефон*">
+                        </label>
+                    </div>
+
+                </div>
+                <div class="form-callback-comment">
+                    <label class="user-textarea-label">
+                        <textarea rows="10" placeholder="Комментарии" class="user-textarea field-fill validated-control"></textarea>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-cellar">
+                <div class="form-cellar-item">
+                    <label class="user-check-unit half-transparent">
+                        <input type="checkbox" name="" class="validated-control">
+                        <span class="check-unit-icon">
+                            <svg  width="8" height="6">
+                                <use xlink:href="images/dist/icons/svg-icons-sprite.svg#checkbox-tick-icon"></use>
+                            </svg>
+                        </span>
+
+                        <span class="check-unit-text">Я согласен с <a href="#" target="_blank">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                <div class="form-cellar-item btn-wrap">
+                    <button type="submit" class="btn-fill-accent btn-user btn btn-submit " tabindex="0">
+                        <span class="btn-inner">отправить</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div class="bg-print-layer">
+            <img src="images/dist/bg-print-modal.jpg" srcset="images/dist/bg-print-modal@2x.jpg 2x" alt="" >
+        </div>
+    </div>
+</div>
+<div class="page-modal-outer page-modal-success" id="modal-success">
+
+    <div class="unit-control-icon close-control-icon btn-modal-close btn-modal-close-position" data-closable="true">
+        <img src="images/dist/icons/close-icon.svg" alt="" width="10" height="10">
+    </div>
+
+    <div class="container page-modal-inner success-page-modal-inner">
+        <div class="page-modal-success-wrap">
+            <div class="page-modal-success-box">
+                <div class="page-modal-success-side">
+                    <div class="success-unit">
+                        <div class="success-unit-icon">
+                            <img src="images/dist/icons/success-tick-icon.svg" alt="" width="77" height="57">
+                        </div>
+                        <div class="success-unit-text u-text-h1">
+                            Спасибо <br>
+                            за вашу заявку
+                        </div>
+                    </div>
+                </div>
+                <div class="page-modal-success-content">
+                    <p>
+                        В ближайшее время с вами свяжется <br>
+                        наш специалист – будьте на связи
+                    </p>
+
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0)" class="btn-fill-accent btn-user btn" data-closable="true" >
+                            <span class="btn-inner">Вернуться на сайт</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="libs/jquery-3.2.1.min.js"></script>
+<script src="libs/slick/slick.js"></script>
+<script src="libs/select2/select2.full.min.js"></script>
+<script src="libs/jquery-mask/jquery-mask.js"></script>
+<script src="libs/lightgallery/js/lightgallery.min.js"></script>
+<script src="libs/lightgallery/modules/lg-video.min.js"></script>
+<script src="libs/light-modal/light-modal.js"></script>
+<script src="js/main.min.js"></script>
+
+
+
+
+
+
+<style>
+    .square-block {
+        width: 100%;
+        height: 100vh;
+    }
+    .tomato {
+        background: tomato;
+    }
+    .blue {
+        background: blue;
+    }
+    .green {
+        background: green;
+    }
+    .fuchsia{
+        background: fuchsia;
+    }
+    .brown {
+        background: brown;
+    }
+
+    .container-pad {
+        padding: 10rem;
+    }
+
+    .square-block {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s linear, visibility .3s linear;
+    }
+
+    .square-block.animated {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    .anim-block {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+    }
+
+    @keyframes jump {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+
+    .anim-block.animated {
+        animation-name: jump;
+        animation-delay: .5s;
+        animation-direction: normal;
+        animation-duration: 3s;
+        animation-fill-mode: both;
+    }
+    .square-block-num {
+        font:700 40px/1 "Arial", sans-serif;
+        color:#000;
+        transition: all .3s linear;
+        display: table;
+    }
+
+    .square-block-num.animated {
+        color: #FF2D94;
+    }
+
+</style>
+
+
+<script>
+
+
+    function scrollVisible(element, options = {
+        offsetTop:0,
+        offsetBottom:0,
+        k:false
+    }) {
+        const scrTop = $(window).scrollTop();
+        const winHeight = $(window).height();
+        const elemOfTop = element.offset().top;
+        const elemHeight = element.outerHeight();
+
+        const elemTopBoundary = elemOfTop;
+        const elemBottomBoundary = elemHeight + elemOfTop;
+
+        const windowTopBoundary = scrTop;
+        const windowBottomBoundary = scrTop + winHeight;
+
+        const windowSpaceTop = winHeight * options.offsetTop;
+        const windowSpaceBottom = winHeight * options.offsetBottom;
+
+        let  result = {
+            visible: false,
+            k:0,
+        }
+
+        if ( (windowTopBoundary + windowSpaceTop) < elemBottomBoundary &&
+            (windowBottomBoundary - windowSpaceBottom) > elemTopBoundary) {
+            result.visible = true;
+        }
+
+        if (options.k === false) {
+            return result;
+        }
+
+        /*calculate k*/
+        let  pathTop = elemTopBoundary - winHeight + windowSpaceBottom;
+        pathTop = pathTop >= 0 ? pathTop : windowSpaceBottom;
+        let  pathEnd = elemBottomBoundary - windowSpaceTop;
+        pathEnd = pathEnd >= 0 ? pathEnd: elemBottomBoundary;
+
+        const pathSize = pathEnd - pathTop;
+        const difPath = scrTop - pathTop;
+        let  k = difPath / (pathSize / 100);
+
+        k = k < 0 ? 0 : k;
+        k = k >= 100 ? 100 : k;
+
+        result.k = k.toFixed(2);
+        return result;
+    }
+
+
+    const squareBlock1 = $('#square-block-1');
+    const squareBlock2 = $('#square-block-2');
+    const squareBlock5 = $('#square-block-5');
+    const squareBlockNum2 = squareBlock2.find('.square-block-num').eq(0);
+
+
+    $(window).on('load scroll', function () {
+
+        const scrSquareBlock1 = scrollVisible(squareBlock1, { offsetTop:0.2, offsetBottom:0.2, k:false});
+        if ( scrSquareBlock1.visible ) {
+            squareBlock1.addClass('animated');
+        }
+        else {
+            squareBlock1.removeClass('animated');
+        }
+
+        const scrSquareBlock2 = scrollVisible(squareBlock2, { offsetTop:0.2, offsetBottom:0.2, k:false});
+        if ( scrSquareBlock2.visible ) {
+            squareBlock2.addClass('animated');
+        }
+        else {
+            squareBlock2.removeClass('animated');
+        }
+
+        const scrSquareBlockNum2 = scrollVisible(squareBlockNum2, { offsetTop:0.2, offsetBottom:0.2, k:true});
+        squareBlockNum2.css({
+            'transform': `scale(${ (scrSquareBlockNum2.k / 100 + 1) * 3 }) translateX(${ (scrSquareBlockNum2.k / 100) * -100 }%)`,
+            '-webkit-transform': `scale(${ (scrSquareBlockNum2.k / 100 + 1) * 3} translateX(${ (scrSquareBlockNum2.k / 100) * -100 }%))`
+        });
+        if ( scrSquareBlockNum2.visible ) {
+            squareBlockNum2.addClass('animated');
+        } else {
+            squareBlockNum2.removeClass('animated');
+        }
+
+        const scrSquareBlock5 = scrollVisible(squareBlock5, { offsetTop:0.2, offsetBottom:0.2, k:false});
+        if ( scrSquareBlock5.visible ) {
+            squareBlock5.addClass('animated');
+        }
+        else {
+            squareBlock5.removeClass('animated');
+        }
+    });
+
+
+
+/*    const animBlock  = $('.anim-block');
+    $(document).on('click', '.anim-block', function () {
+        const $this = $(this);
+        if ($this.hasClass('animated')) {
+            $this.removeClass('animated');
+            return 0;
+        }
+        $(this).addClass('animated');
+    });*/
+
+</script>
+
+
+</body>
+</html>
