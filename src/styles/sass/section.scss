@@ -1,9 +1,9 @@
 .section {
+  z-index: 1;
+  position: relative;
+
   box-sizing: border-box;
-  padding-top: 75px;
   padding-right: 178px;
-  padding-bottom: 180px;
-  width: 100%;
 
   font-family: "Intro", sans-serif;
 
@@ -21,14 +21,20 @@
     padding-bottom: 90px;
   }
 
-  &__title-block {
-    position: relative;
+  &_size {
 
+    &_narrow {
+      padding-right: 85px;
+    }
+  }
+
+  &__title-block {
     margin-bottom: 53px;
   }
 
   &__title {
     color: black;
+    max-width: 740px;
   }
 
   &__title-back-link {
@@ -87,5 +93,31 @@
     width: 100%;
     object-fit: cover;
     overflow: hidden;
+  }
+
+  &__block-title {
+    position: relative;
+
+    margin-bottom: 63px;
+
+    font-size: 42px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: "Intro", sans-serif;
+    font-weight: 700;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -200px;
+
+      width: 136px;
+      height: 1px;
+      background-color: #333333;
+
+      opacity: 0.2;
+      z-index: 2;
+    }
   }
 }

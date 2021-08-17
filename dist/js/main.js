@@ -1,6 +1,5 @@
 "use strict";
 
-
 const modalMenu = fnPlugin.modal( '#modal-menu',{
     animationIn: '_anim-in',
     animationOut: '_anim-out',
@@ -948,6 +947,10 @@ function doVideoBox() {
 }
 
 
+function slider() {
+    $('.slider').slick();
+}
+
 
 $(document).ready(function () {
     fixVhBug();
@@ -968,6 +971,9 @@ $(document).ready(function () {
     initMaskPhoneInputs();
     doVideoBox();
     doProjectSizesSlider();
+
+
+    slider()
 });
 
 $(window).on('resize', function () {
@@ -1015,7 +1021,6 @@ $(document).ready(function () {
 // const ua = window.navigator.userAgent.toLowerCase();
 // const isIe = (/trident/gi).test(ua) || (/msie/gi).test(ua);
 // const isFirefox = (/firefox/gi).test(ua) || (/firefox/gi).test(ua);
-
 
 
 

@@ -1,6 +1,5 @@
 "use strict";
 
-
 const modalMenu = fnPlugin.modal( '#modal-menu',{
     animationIn: '_anim-in',
     animationOut: '_anim-out',

@@ -1,0 +1,30 @@
+.about {
+  
+  &__container {
+    display: flex;
+    
+    margin-bottom: 150px;
+
+    box-sizing: border-box;
+    padding: 83px 68px 62px 80px;
+    background-color: #F3F5F8;
+  }
+
+  &__title {
+    max-width: 350px;
+    margin-right: 122px;
+
+    font-size: 42px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: "Intro", sans-serif;
+    font-weight: 700;
+  }
+
+  &__description {
+    font-size: 20px;
+    line-height: 1.4;
+    font-family: "Intro", sans-serif;
+    font-weight: 400;
+  }
+}

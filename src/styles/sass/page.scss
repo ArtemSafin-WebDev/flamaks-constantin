@@ -12,4 +12,27 @@
     margin-right: auto;
     max-width: 1525px;
   }
+
+  &__sections {
+    position: relative;
+
+    padding-top: 75px;
+    padding-bottom: 180px;
+    width: 100%;
+
+    background-color: white;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -500rem;
+  
+      height: 100%;
+      width: 500rem;
+  
+      background-color: white;
+      z-index: 0;
+    }
+  }
 }

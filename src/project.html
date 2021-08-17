@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("parts/head.html")
+<body>
+
+  <div class="main-wrap">
+    <div class="main-body">
+      @@include("parts/header-block.html")
+
+      <img src="images/dist/bg-requisites.jpg" alt="" class="section__image">
+
+      <div class="container main-page-first-container main-first-block-pl">
+
+        <div class="section__title-block">
+          <a href="#" class="section__title-back-link" title="Назад">
+            <svg class="section__title-icon" viewBox="0 0 23 15">
+              <path d="M6.88 1L1 6.94m0 0l5.88 6.363M1 6.939h14.7c2.1 0 6.3.934 6.3 8.061"/>
+            </svg>
+          </a>
+          <h1 class="main-page-first-title u-text-h1 section__title">ПОЖАРНЫЕ РЕЗЕРВУАРЫ 500&nbsp;м³ ДЛЯ «WILDBERRIES»</h1>
+        </div>
+
+        <div class="page__sections">
+          <section class="section project">
+            <h2 class="section__block-title">ХАРАКТЕРИСТИКИ ПРОЕКТА</h2>
+
+            <div class="stats">
+              <div class="stats__container">
+                <div class="stats__item">
+                  <span class="stats__item-title">Назначение:</span>
+                  <span class="stats__item-desc">Пожарный запас воды</span>
+                </div>
+
+                <div class="stats__item">
+                  <span class="stats__item-title">Год реализации:</span>
+                  <span class="stats__item-desc">в работе</span>
+                </div>
+              </div>
+
+              <div class="stats__container">
+                <div class="stats__item">
+                  <span class="stats__item-title">Место:</span>
+                  <span class="stats__item-desc">Краснодар</span>
+                </div>
+
+                <div class="stats__item">
+                  <span class="stats__item-title">Габариты:</span>
+                  <span class="stats__item-desc">D = 10,20 м; H = 5,07 м</span>
+                </div>
+              </div>
+
+              <div class="stats__container">
+                <div class="stats__item">
+                  <span class="stats__item-title">Работы:</span>
+                  <span class="stats__item-desc">проектирование, производство, поставка, монтаж, испытания</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+          <section class="section section_size_narrow about">
+            <div class="about__container">
+              <h2 class="about__title">ЗАКАЗЧИК «WILDBERRIES»</h2>
+              <p class="about__description">
+                Один из крупнейших интернет-магазинов модной одежды, обуви, аксессуаров, косметических средств. Это российский международный интернет-магазин одежды, обуви, товаров для дома и других товаров. Помимо РФ работает также в Белоруссии, Казахстане и Киргизии. Основан в 2004 году и управляется ООО «Вайлдберриз» со штаб-квартирой в Москве и деревне Мильково (Московская область). Крупнейший интернет-магазин РФ по итогам 2016 и 2017 годов
+              </p>
+            </div>
+          </section>
+          <section class="section">
+            <h2 class="section__block-title">Фотографии объекта</h2>
+
+            <div class="slider">
+              <div class="slider__slide">1</div>
+              <div class="slider__slide">2</div>
+              <div class="slider__slide">3</div>
+            </div>
+
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  @@include("parts/footer-block.html")
+  @@include("parts/modal-menu.html")
+  @@include("parts/modal-calc.html")
+  @@include("parts/modal-comment.html")
+  @@include("parts/modal-success.html")
+
+  @@include("parts/footer.html")
+
+  <script>
+    const $header = $('.header-block').eq(0);
+    $header.addClass('dark');
+  </script>
+</body>
+</html>

@@ -4,12 +4,6 @@
 @import "_variables.scss";
 @import "_animations.scss";
 
-@import "page.scss";
-@import "section.scss";
-@import "requisites.scss";
-@import "contacts.scss";
-@import "certificates";
-
 .block-full-height {
   height: 100vh;
   height: var(--vh100);
@@ -1326,7 +1320,7 @@ body {
 }
 
 .main-slider-wrap {
-  padding-top: 16rem;
+  padding-top: 18rem;
   position: absolute;
   top: 0;
   left: 0;
