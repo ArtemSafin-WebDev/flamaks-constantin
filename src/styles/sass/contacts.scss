@@ -1,12 +1,27 @@
 .contacts {
+  --fs-main: 17px;
+  --labels-fs: 10px;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 24px;
-  row-gap: 35px;
+  column-gap: 39px;
+  row-gap: 27px;
 
   padding: 38px;
   background-color: #F3F5F8;
   margin-bottom: 7px;
+  width: 100%;
+
+  @media screen and (max-width: 1023px) {
+    --fs-main: 14px;
+    --labels-fs: 8px;
+
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 459px) {
+    grid-template-columns: 1fr;
+  }
 
   &__contact {
     display: flex;
@@ -14,11 +29,11 @@
   }
 
   &__contact-name {
-    margin-bottom: 23px;
+    margin-bottom: 18px;
 
     text-transform: uppercase;
     font-family: "Intro", sans-serif;
-    font-size: 10px;
+    font-size: var(--labels-fs);
     font-weight: 400;
     line-height: 1;
 
@@ -27,8 +42,10 @@
   }
 
   &__contact-link {
+    margin-bottom: 14px;
+
     font-family: "Intro", sans-serif;
-    font-size: 17px;
+    font-size: var(--fs-main);
     font-weight: 700;
     line-height: 1;
 
@@ -44,8 +61,6 @@
       outline: none;
       opacity: 0.8;
     }
-
-    margin-bottom: 20px;
     
     &:last-of-type {
       margin-bottom: 0;
@@ -57,6 +72,10 @@
     flex-direction: column;
 
     margin-bottom: 44px;
+
+    @media screen and (max-width: 1023px) {
+      margin-bottom: 35px;
+    }
   }
 
   &__doc-link {
@@ -65,13 +84,18 @@
     justify-content: space-between;
 
     box-sizing: border-box;
-    padding: 16px 50px 13px 36px;
+    padding: 12px 45px 12px 36px;
     margin-bottom: 7px;
     width: 100%;
 
     background-color: #F3F5F8;
 
     transition: opacity 0.3s ease;
+    font-size: 10px;
+
+    @media screen and (max-width: 1023px) {
+      padding: 12px 20px 12px 20px;
+    }
 
     &:hover {
       opacity: 0.8;
@@ -93,7 +117,7 @@
 
     text-transform: uppercase;
     font-family: "Intro", sans-serif;
-    font-size: 17px;
+    font-size: var(--fs-main);
     font-weight: 400;
     line-height: 1.2;
   }
@@ -116,7 +140,7 @@
     text-align: center;
     text-transform: uppercase;
     font-family: "Intro", sans-serif;
-    font-size: 10px;
+    font-size: var(--labels-fs);
     font-weight: 400;
     line-height: 1.2;
     opacity: 0.4;

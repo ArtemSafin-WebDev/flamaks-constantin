@@ -1,13 +1,19 @@
 .certificates {
+  --title-fs: 20px;
+
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 1023px) {
+    --title-fs: 18px;
+  }
 
   &__title {
     margin-bottom: 22px;
 
     text-transform: uppercase;
     font-family: "Intro", sans-serif;
-    font-size: 20px;
+    font-size: var(--title-fs);
     font-weight: 700;
     line-height: 1.5;
   }

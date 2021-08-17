@@ -1,19 +1,25 @@
 .requisites {
+  --unit-title-fs: 20px;
+  --unit-desc-fs: 17px;
+
   $bg-color: white;
 
   z-index: 1;
   position: relative;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 112px;
-
-  padding-top: 77px;
-  padding-right: 178px;
-  padding-bottom: 180px;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
 
   background-color: $bg-color;
+
+  @media screen and (max-width: 1023px) {
+    --unit-title-fs: 18px;
+    --unit-desc-fs: 14px;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 
   &::after {
     content: '';
@@ -31,12 +37,38 @@
   &__container {
     display: flex;
     flex-direction: column;
+
+    &_place {
+
+      &_req {
+        max-width: 540px;
+        margin-right: 40px;
+
+        @media screen and (max-width: 767px) {
+          max-width: 100%;
+          margin-right: 0;
+          margin-bottom: 40px;
+        }
+      }
+
+      &_contacts {
+        width: 460px;
+
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
+      }
+    }
   }
 
   &__unit {
     display: flex;
     flex-direction: column;
-    margin-bottom: 70px;
+    margin-bottom: 59px;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
 
     &:last-of-type {
       margin-bottom: 0;
@@ -44,9 +76,9 @@
   }
 
   &__unit-title {
-    margin-bottom: 26px;
+    margin-bottom: 15px;
 
-    font-size: 20px;
+    font-size: var(--unit-title-fs);
     line-height: 1.1;
     text-transform: uppercase;
     font-family: "Intro", sans-serif;
@@ -54,12 +86,12 @@
   }
 
   &__unit-desc {
-    font-size: 17px;
+    font-size: var(--unit-desc-fs);
     line-height: 1.2;
     font-family: "Intro", sans-serif;
     font-weight: 400;
 
-    margin-bottom: 17px;
+    margin-bottom: 14px;
 
     &:last-of-type {
       margin-bottom: 0;
