@@ -4,10 +4,17 @@
 @import "_variables.scss";
 @import "_animations.scss";
 
+@import "page.scss";
+@import "section.scss";
+@import "requisites.scss";
+@import "contacts.scss";
+@import "certificates";
+
 .block-full-height {
   height: 100vh;
   height: var(--vh100);
 }
+
 html.no-scroll body,
 body.no-scroll {
   overflow: hidden !important;
@@ -51,7 +58,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1550px;
   padding: 0 4rem;
   margin: 0 auto;
 }
