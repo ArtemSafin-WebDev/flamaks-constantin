@@ -1252,6 +1252,14 @@ body {
 * end header-block
  */
 
+ .main-page-slider {
+   height: 100%;
+ }
+
+ .main-page-slider .slick-list {
+   height: 100%;
+ }
+
 .main-slider {
   display: none;
   & ~ .slider-controls-wrap,
@@ -3631,7 +3639,8 @@ press-center-block
 
 @media (max-width: $bp-768) {
   .press-previews-box .press-previews-item:first-child ~ .press-previews-item {
-    display: none;
+    // display: none;
+    width: 100%;
   }
   .press-center-head {
     margin-bottom: 3rem;
@@ -3640,7 +3649,7 @@ press-center-block
 
 @media (max-width: $bp-640) {
   .press-preview {
-    height: 42rem;
+    height: 34rem;
   }
   .press-previews-item-100 .press-preview-desc {
     font-size: 2rem;
@@ -5444,6 +5453,9 @@ trust-block
       padding-top: 2.4rem;
       padding-left: 1.8rem;
       padding-right: 1.8rem;
+      padding-bottom: 1.8rem;
+
+      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
     }
     .main-submenu-list {
       display: block;
