@@ -1,0 +1,124 @@
+.d-stages {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 40px;
+
+  width: 100%;
+
+  @media screen and(max-width: 992px) {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 80px;
+  }
+
+  &__pseudo-line {
+    position: absolute;
+    top: -1px;
+    left: 0;
+
+    height: 1px;
+    width: 100%;
+
+    background-color: #BE3D3D;
+  }
+
+  &__item {
+    position: relative;
+
+    width: 100%;
+
+    @media screen and(max-width: 992px) {
+      display: flex;
+    }
+  }
+
+  &__stages-anim {
+    position: relative;
+
+    margin-bottom: 60px;
+
+    @media screen and(max-width: 992px) {
+      margin-left: 40px;
+      margin-bottom: 0;
+      margin-right: 60px;
+      width: 1px;
+      height: 100%;
+    }
+  }
+
+  &__dot-container {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 0;
+    height: 60px;
+
+    @media screen and(max-width: 992px) {
+      bottom: unset;
+      top: -60px;
+    }
+  }
+
+  &__dot-icon {
+    margin-bottom: 16px;
+
+    fill: transparent;
+    stroke: #BE3D3D;
+  }
+
+  &__dot {
+    z-index: 2;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+    background-color: #BE3D3D;
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    height: 1px;
+    width: calc(100% + 40px);
+
+    background-color: rgba(0,0,0,0.15);
+
+    @media screen and(max-width: 992px) {
+      top: 0;
+      
+      width: 1px;
+      height: calc(100% + 80px);
+    }
+
+    &_last {
+      width: 100%;
+
+      @media screen and(max-width: 992px) {
+        height: 100%;
+      }
+    }
+  }
+
+  &__fill-line {
+    height: 100%;
+    width: 0%;
+
+    background-color: #BE3D3D;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .stage-project-item {
+    max-width: 600px;
+  }
+}

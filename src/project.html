@@ -5,7 +5,7 @@
 
   <div class="main-wrap">
     <div class="main-body">
-      @@include("parts/header-block.html")
+      @@include("parts/header-block-black.html")
 
       <img src="images/dist/bg-requisites.jpg" alt="" class="section__image">
 
@@ -93,15 +93,21 @@
 
             <div class="slider">
               <div class="slider__slide-wrapper">
-                <div class="slider__slide">1</div>
+                <div class="slider__slide">
+                  <img class="slider__image" src="images/dist/project-slide-1.jpg" alt="">
+                </div>
               </div>
 
               <div class="slider__slide-wrapper">
-                <div class="slider__slide">2</div>
+                <div class="slider__slide">
+                  <img class="slider__image" src="images/dist/project-slide-2.jpg" alt="">
+                </div>
               </div>
 
               <div class="slider__slide-wrapper">
-                <div class="slider__slide">3</div>
+                <div class="slider__slide">
+                  <img class="slider__image" src="images/dist/project-slide-3.jpg" alt="">
+                </div>
               </div>
             </div>
 
@@ -132,10 +138,5 @@
   @@include("parts/modal-success.html")
 
   @@include("parts/footer.html")
-
-  <script>
-    const $header = $('.header-block').eq(0);
-    $header.addClass('dark');
-  </script>
 </body>
 </html>

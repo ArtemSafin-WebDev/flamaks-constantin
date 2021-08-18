@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="libs/lightgallery/css/lightgallery.min.css" type="text/css">
     <link rel="stylesheet" href="libs/light-modal/light-modal.css">
     <link rel="stylesheet" href="css/main.min.css">
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" > </script> 
 </head>
 
 <body>
 
   <div class="main-wrap">
     <div class="main-body">
-      <header class="header-block light-fixed-element">
+      <header class="header-block light-fixed-element dark not-toggle">
     <div class="container">
         <div class="header">
             <div class="header-logo">
@@ -149,15 +151,21 @@
 
             <div class="slider">
               <div class="slider__slide-wrapper">
-                <div class="slider__slide">1</div>
+                <div class="slider__slide">
+                  <img class="slider__image" src="images/dist/project-slide-1.jpg" alt="">
+                </div>
               </div>
 
               <div class="slider__slide-wrapper">
-                <div class="slider__slide">2</div>
+                <div class="slider__slide">
+                  <img class="slider__image" src="images/dist/project-slide-2.jpg" alt="">
+                </div>
               </div>
 
               <div class="slider__slide-wrapper">
-                <div class="slider__slide">3</div>
+                <div class="slider__slide">
+                  <img class="slider__image" src="images/dist/project-slide-3.jpg" alt="">
+                </div>
               </div>
             </div>
 
@@ -1083,10 +1091,5 @@
 
 
 
-
-  <script>
-    const $header = $('.header-block').eq(0);
-    $header.addClass('dark');
-  </script>
 </body>
 </html>

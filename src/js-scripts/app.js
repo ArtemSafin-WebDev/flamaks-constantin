@@ -654,7 +654,13 @@ function isValid (jqObj) {
 }
 
 function toggleThemeHeader () {
+    const header = document.querySelector('.header-block');
+    if (header.classList.contains('not-toggle')) {
+        return;
+    }
+    
     const $header = $('.header-block').eq(0);
+
     const $mainFirstBlock = $('.main-first-block').eq(0);
     if ($header.length === 0  || $mainFirstBlock === 0 ) return;
     let mainFirstBlockHeight = $mainFirstBlock.height();
@@ -774,6 +780,43 @@ function slider() {
     }
 }
 
+function setHoverEffect(element, trigger) {
+    trigger.addEventListener("mouseenter", () => {
+        gsap.to(element, {
+            width: '100%',
+            duration: 2
+        });
+    });
+
+    trigger.addEventListener("mouseleave", () => {
+        gsap.to(element, {
+            width: '0%',
+            duration: 2
+        });
+    });
+}
+
+function animateOnHover() {
+    const container = document.querySelector('.stages-outer');
+
+    if (container) {
+        const line1 = container.querySelector('.d-stages__fill-line_n_1');
+        const line2 = container.querySelector('.d-stages__fill-line_n_2');
+        const line3 = container.querySelector('.d-stages__fill-line_n_3');
+        const line4 = container.querySelector('.d-stages__fill-line_n_4');
+
+        const card1 = container.querySelector('.stage-project-item_n_1');
+        const card2 = container.querySelector('.stage-project-item_n_2');
+        const card3 = container.querySelector('.stage-project-item_n_3');
+        const card4 = container.querySelector('.stage-project-item_n_4');
+        
+        setHoverEffect(line1, card1)
+        setHoverEffect(line2, card2)
+        setHoverEffect(line3, card3)
+        setHoverEffect(line4, card4)
+    }
+}
+
 
 $(document).ready(function () {
     fixVhBug();
@@ -796,7 +839,8 @@ $(document).ready(function () {
     doProjectSizesSlider();
 
 
-    slider()
+    slider();
+    animateOnHover();
 });
 
 $(window).on('resize', function () {
