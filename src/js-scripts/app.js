@@ -745,7 +745,32 @@ function doVideoBox() {
 
 
 function slider() {
-    $('.slider').slick();
+    const sliderSection = document.querySelector('.slider-section');
+    
+    if (sliderSection) {
+        const slider = sliderSection.querySelector('.slider')
+        const sliderBtns = sliderSection.querySelector('.slider-controls-wrap')
+        const prevBtn = sliderBtns.querySelector('.slider-control-prev')
+        const nextBtn = sliderBtns.querySelector('.slider-control-next')
+
+        const sliderOptions = {
+            dots: false,
+            arrows: true,
+            infinite: true,
+            speed: 1200,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: false,
+            autoplay: false,
+            pauseOnHover:false,
+            pauseOnFocus:false,
+            lazyLoad: 'ondemand',
+            prevArrow: prevBtn,
+            nextArrow: nextBtn
+        };
+    
+        $('.slider').slick(sliderOptions);
+    }
 }
 
 

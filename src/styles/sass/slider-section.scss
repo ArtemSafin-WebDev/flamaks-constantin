@@ -1,0 +1,18 @@
+.slider-section {
+
+  margin-bottom: 152px;
+
+  overflow-x: hidden;
+
+  &__title-container {
+    display: flex;
+    justify-content: space-between;
+    
+    padding-left: 20rem;
+  }
+
+  &__wrapper {
+    padding-left: 20rem;
+    padding-right: 85px;
+  }
+}

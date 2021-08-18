@@ -10562,6 +10562,26 @@ production-links-block
     margin-bottom: 3rem;
   }
 }
+.on-map {
+  padding-bottom: 100px;
+}
+.on-map__container {
+  padding-left: 20rem;
+}
+.on-map__map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+}
+.on-map__map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 255, 0.3);
+}
 .page__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10581,7 +10601,6 @@ production-links-block
 .page__sections {
   position: relative;
   padding-top: 75px;
-  padding-bottom: 180px;
   width: 100%;
   background-color: white;
 }
@@ -10609,6 +10628,7 @@ production-links-block
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-bottom: 180px;
   background-color: white;
 }
 @media screen and (max-width: 1023px) {
@@ -10731,6 +10751,7 @@ production-links-block
   padding-right: 85px;
 }
 .section__title-block {
+  position: relative;
   margin-bottom: 53px;
 }
 .section__title {
@@ -10817,14 +10838,53 @@ production-links-block
   opacity: 0.2;
   z-index: 2;
 }
+.slider-section {
+  margin-bottom: 152px;
+  overflow-x: hidden;
+}
+.slider-section__title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 20rem;
+}
+.slider-section__wrapper {
+  padding-left: 20rem;
+  padding-right: 85px;
+}
 .slider {
+  min-width: 100%;
+  min-height: 100%;
+}
+.slider__slide-wrapper {
+  position: relative;
   width: 100%;
-  height: 200px;
+  height: 0;
+  padding-bottom: 50%;
 }
 .slider__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 200px;
+  height: 100%;
   background-color: rgba(255, 0, 0, 0.3);
+}
+.slider__btn-container {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.slick-slide {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+  overflow: visible;
 }
 .stats {
   display: -ms-grid;

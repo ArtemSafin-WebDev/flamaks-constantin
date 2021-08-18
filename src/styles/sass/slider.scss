@@ -1,10 +1,42 @@
 .slider {
-  width: 100%;
-  height: 200px;
+  min-width: 100%;
+  min-height: 100%;
+
+  &__slide-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+  }
 
   &__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
     width: 100%;
-    height: 200px;
+    height: 100%;
     background-color: rgba(255, 0, 0, 0.3);
   }
+
+  &__btn-container {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  &__btn {
+
+  }
+}
+
+.slick-slide {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+
+  overflow: visible;
 }
