@@ -1,0 +1,116 @@
+.history {
+  box-sizing: border-box;
+  padding: 90px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 140px;
+  margin-bottom: 220px;
+
+  &__card {
+    padding-bottom: 67px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 71px;
+
+    &:last-of-type {
+      padding-bottom: 0;
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+
+  &__card-container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 800px;
+  }
+
+  &__card-year {
+    margin-bottom: 26px;
+
+    font-size: 25px;
+    line-height: 1.1;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #BE3D3D;
+  }
+
+  &__card-name {
+    margin-bottom: 45px;
+
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333333;
+  }
+
+  &__card-paragraph-container {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 51px;
+
+    &_last {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card-paragraph {
+    margin-bottom: 20px;
+
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #333333;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card-list-title {
+    margin-bottom: 37px;
+
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #333333;
+  }
+
+  &__card-list {
+
+  }
+
+  &__card-list-item {
+    position: relative;
+
+    box-sizing: border-box;
+    margin-bottom: 35px;
+    padding-left: 40px;
+
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #333333;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      position: absolute;
+      top: 10px;
+      left: 0;
+
+      content: '';
+      width: 16px;
+      height: 2px;
+  
+      background-color: #BE3D3D;
+    }
+  }
+
+  &__card-list-paragraph {
+
+  }
+}

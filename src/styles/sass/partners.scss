@@ -1,0 +1,123 @@
+@import '_mixins.scss';
+
+.partners {
+
+  margin-bottom: 120px;
+
+  @media screen and (max-width: 1023px) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: 599px) {
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @media screen and (max-width: 1279px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 899px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    padding: 31px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+
+    &:hover .partners__card-icon{
+      opacity: 1;
+      fill: #BE3D3D;
+    }
+
+    @include setDefoultHoverEffect(0.8);
+  }
+
+  &__card-logo-container {
+    height: 42px;
+    margin-bottom: 175px;
+
+    @media screen and (max-width: 899px) {
+      margin-bottom: 75px;
+    }
+
+    @media screen and (max-width: 599px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__card-logo {
+    display: block;
+    max-height: 100%;
+
+    object-fit: contain;
+    object-position: top left;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: auto 30px;
+    column-gap: 50px;
+
+    @media screen and (max-width: 599px) {
+      column-gap: 20px;
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card-title {
+    font-size: 25px;
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333333;
+
+    margin-bottom: 26px;
+
+    @media screen and (max-width: 599px) {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__card-description {
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 400;
+
+    @media screen and (max-width: 599px) {
+      font-size: 14px;
+    }
+  }
+
+  &__card-icon {
+    display: block;
+    align-self: flex-end;
+
+    width: 30px;
+    height: 30px;
+
+    fill: white;
+    stroke: black;
+    opacity: 0.3;
+    transition: opacity 0.3s, fill 0.3s ease;
+  }
+}
