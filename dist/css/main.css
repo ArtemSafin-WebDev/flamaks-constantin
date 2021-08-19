@@ -23,6 +23,51 @@
   font-family: "Intro", sans-serif;
   font-weight: 400;
 }
+.certificates-list {
+  margin-bottom: 150px;
+}
+.certificates-list__list {
+  margin: 0 0 57px 0;
+  padding: 0;
+  list-style: none;
+}
+.certificates-list__item {
+  margin-bottom: 5px;
+}
+.certificates-list__item:last-of-type {
+  margin-bottom: 0;
+}
+.certificates-list__link {
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 35px 170px 35px 35px;
+  width: 100%;
+  height: 100%;
+  background-color: #F3F5F8;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-transform: uppercase;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.certificates-list__link:hover {
+  opacity: 0.8;
+}
+.certificates-list__link:focus {
+  outline: none;
+  opacity: 0.8;
+}
+.certificates-page__desc {
+  margin-bottom: 88px;
+}
+.certificates-page__desc-paragraph {
+  font-size: 25px;
+  line-height: 1.4;
+  font-weight: 400;
+}
 .certificates {
   --title-fs: 20px;
   display: -webkit-box;
