@@ -1,0 +1,12 @@
+@mixin setDefoultHoverEffect($opacityOnHover) {
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: $opacityOnHover;
+  }
+
+  &:focus {
+    outline: none;
+    opacity: $opacityOnHover;
+  }
+}

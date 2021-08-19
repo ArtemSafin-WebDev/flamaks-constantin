@@ -1,12 +1,32 @@
 .certificates-page {
 
   &__desc {
+    box-sizing: border-box;
     margin-bottom: 88px;
+
+    @media screen and (max-width: 1023px) {
+      margin-bottom: 60px;
+    }
+  
+    @media screen and (max-width: 767px) {
+      margin-bottom: 40px;
+      padding-right: 40px;
+    }
   }
 
   &__desc-paragraph {
     font-size: 25px;
     line-height: 1.4;
     font-weight: 400;
+
+    @media screen and (max-width: 1023px) {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.2;
+    }
   }
 }
