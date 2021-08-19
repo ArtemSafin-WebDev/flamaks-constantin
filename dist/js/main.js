@@ -1020,7 +1020,6 @@ function animateOnHover() {
     }
 }
 
-
 $(document).ready(function () {
     fixVhBug();
     doFixProjectsTileBox();
@@ -1044,6 +1043,7 @@ $(document).ready(function () {
 
     slider();
     animateOnHover();
+
 });
 
 $(window).on('resize', function () {

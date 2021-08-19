@@ -25,12 +25,27 @@
 
     &_narrow {
       padding-right: 85px;
+
+      @media screen and (max-width: 1023px) {
+        // padding-top: 40px;
+        padding-right: 45px;
+      }
+    
+      @media screen and (max-width: 767px) {
+        padding-right: 20px;
+        // padding-bottom: 90px;
+      }
+
+      @media screen and (max-width: 479px) {
+        padding-right: 0;
+        // padding-bottom: 90px;
+      }
     }
   }
 
   &__paragraph {
     box-sizing: border-box;
-    
+
     font-size: 25px;
     line-height: 1.4;
     font-weight: 400;
@@ -41,7 +56,8 @@
       line-height: 1.2;
     }
 
-    @media screen and (max-width: 1279px) {
+    @media screen and (max-width: 767px) {
+      font-size: 18px;
       padding-right: 20px;
     }
   }

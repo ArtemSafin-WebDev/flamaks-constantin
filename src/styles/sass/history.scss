@@ -11,10 +11,21 @@
     padding: 60px;
   }
 
+  @media screen and (max-width: 767px) {
+    margin-top: 50px;
+    margin-bottom: 60px;
+    padding: 40px;
+  }
+
   &__card {
     padding-bottom: 67px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.1);
     margin-bottom: 71px;
+
+    @media screen and (max-width: 767px) {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+    }
 
     &:last-of-type {
       padding-bottom: 0;
@@ -38,6 +49,11 @@
     font-weight: 400;
     text-transform: uppercase;
     color: #BE3D3D;
+
+    @media screen and (max-width: 599px) {
+      font-size: 22px;
+      line-height: 1.1;
+    }
   }
 
   &__card-name {
@@ -48,6 +64,13 @@
     font-weight: 700;
     text-transform: uppercase;
     color: #333333;
+
+    @media screen and (max-width: 599px) {
+      font-size: 15px;
+      line-height: 1.1;
+
+      margin-bottom: 35px;
+    }
   }
 
   &__card-paragraph-container {
@@ -74,6 +97,13 @@
       line-height: 1.1;
     }
 
+    @media screen and (max-width: 599px) {
+      font-size: 14px;
+      line-height: 1.1;
+
+      margin-bottom: 15px;
+    }
+
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -86,10 +116,13 @@
     line-height: 1.2;
     font-weight: 700;
     color: #333333;
-  }
 
-  &__card-list {
+    @media screen and (max-width: 599px) {
+      font-size: 15px;
+      line-height: 1.1;
 
+      margin-bottom: 20px;
+    }
   }
 
   &__card-list-item {
@@ -103,6 +136,13 @@
     line-height: 1.2;
     font-weight: 400;
     color: #333333;
+
+    @media screen and (max-width: 599px) {
+      font-size: 14px;
+      line-height: 1.1;
+
+      margin-bottom: 20px;
+    }
 
     &:last-of-type {
       margin-bottom: 0;
@@ -118,6 +158,10 @@
       height: 2px;
   
       background-color: #BE3D3D;
+
+      @media screen and (max-width: 599px) {
+        top: 7px;
+      }
     }
   }
 
