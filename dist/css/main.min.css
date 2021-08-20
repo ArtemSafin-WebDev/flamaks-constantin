@@ -1752,6 +1752,156 @@ input[type=submit], input[type=text], input[type=email], input[type=tel], input[
   transition: fill 0.3s ease;
 }
 
+.press-slide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+}
+.press-slide__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.press-slide__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.press-slide__container {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 46rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.press-slide__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.press-slide__toggle-line {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  margin-bottom: 6rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+.press-slide__fill-line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+}
+.press-slide__text {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 11rem auto 6.2rem;
+  grid-template-columns: 11rem auto 6.2rem;
+  z-index: 10;
+}
+.press-slide__time {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: white;
+}
+.press-slide__title {
+  padding-left: 10rem;
+  padding-right: 10rem;
+  color: white;
+}
+.press-slide__link:hover .press-slide__link-icon {
+  stroke: white;
+  fill: white;
+}
+.press-slide__link:focus .press-slide__link-icon {
+  stroke: white;
+  fill: white;
+}
+.press-slide__link-icon {
+  width: 6.2rem;
+  height: 6.2rem;
+  stroke: rgba(255, 255, 255, 0.7);
+  fill: rgba(255, 255, 255, 0);
+  -webkit-transition: fill 0.3s, stroke 0.3s ease;
+  -o-transition: fill 0.3s, stroke 0.3s ease;
+  transition: fill 0.3s, stroke 0.3s ease;
+}
+
+.press {
+  position: relative;
+  height: 600px;
+}
+.press__menu {
+  position: absolute;
+  top: 0;
+  left: -20rem;
+  max-width: 19.3rem;
+}
+.press__menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.press__menu-list-item {
+  margin-bottom: 2.5rem;
+}
+.press__menu-list-item:last-of-type {
+  margin-bottom: 0;
+}
+.press__menu-link {
+  position: relative;
+  text-transform: uppercase;
+  color: #333333;
+  font-size: 1rem;
+  line-height: 1.3;
+  -webkit-transition: color 0.3s, opacity 0.3s ease;
+  -o-transition: color 0.3s, opacity 0.3s ease;
+  transition: color 0.3s, opacity 0.3s ease;
+}
+.press__menu-link:hover {
+  color: #BE3D3D;
+  opacity: 0.8;
+}
+.press__menu-link_active {
+  padding-left: 2rem;
+  color: #BE3D3D;
+  font-weight: 700;
+}
+.press__menu-link_active .press__menu-link-icon {
+  display: block;
+}
+.press__menu-link-icon {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .block-full-height {
   height: 100vh;
   height: var(--vh100);
@@ -1821,6 +1971,12 @@ body {
   max-width: 1535px;
   padding: 0 4rem;
   margin: 0 auto;
+}
+
+.container_upper {
+  position: relative;
+  top: -300px;
+  padding-left: 23.8rem;
 }
 
 @media (max-width: 639px) {
@@ -11832,6 +11988,16 @@ production-links-block
   position: relative;
   margin-bottom: 5.3rem;
 }
+.section__title-block_theme_light {
+  color: white;
+}
+.section__title-block_fixed {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 20rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
 .section__title {
   color: black;
   max-width: 74rem;
@@ -11839,7 +12005,7 @@ production-links-block
 .section__title-back-link {
   position: absolute;
   left: -19.8rem;
-  top: 0;
+  top: 0.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11915,6 +12081,18 @@ production-links-block
   background-color: #333333;
   opacity: 0.2;
   z-index: 2;
+}
+.section__back-link {
+  position: absolute;
+  bottom: 10px;
+  left: -19.8rem;
+}
+.section__main-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
 }
 .slider-section {
   margin-bottom: 15.2rem;

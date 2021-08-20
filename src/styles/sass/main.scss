@@ -10,6 +10,9 @@
 @import "./articles/page-num.scss";
 @import "./articles/media-contacts.scss";
 
+@import "./press/press-slide.scss";
+@import "./press/press.scss";
+
 .block-full-height {
   height: 100vh;
   height: var(--vh100);
@@ -61,6 +64,13 @@ body {
   max-width: 1535px;
   padding: 0 4rem;
   margin: 0 auto;
+}
+
+.container_upper {
+  position: relative;
+  top: -300px;
+
+  padding-left: 23.8rem;
 }
 
 @media (max-width: $bp-1440) {

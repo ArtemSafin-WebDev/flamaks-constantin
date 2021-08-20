@@ -65,6 +65,20 @@
   &__title-block {
     position: relative;
     margin-bottom: 5.3rem;
+
+    &_theme {
+
+      &_light {
+        color: white;
+      }
+    }
+
+    &_fixed {
+      box-sizing: border-box;
+      padding-top: 20rem;
+      max-width: 120rem;
+      margin: 0 auto;
+    }
   }
 
   &__title {
@@ -75,7 +89,7 @@
   &__title-back-link {
     position: absolute;
     left: -19.8rem;
-    top: 0;
+    top: 0.4rem;
 
     display: flex;
     align-items: center;
@@ -154,5 +168,20 @@
       opacity: 0.2;
       z-index: 2;
     }
+  }
+
+  &__back-link {
+    position: absolute;
+    bottom: 10px;
+    left: -19.8rem;
+  }
+
+  &__main-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    width: 100%;
   }
 }
