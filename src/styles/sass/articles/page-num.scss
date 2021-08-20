@@ -1,0 +1,105 @@
+.page-num {
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 54px;
+
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 30px;
+
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-align: center;
+
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+
+      &::after {
+        background-color: black;
+      }
+    }
+
+    &:focus {
+      opacity: 1;
+
+      &::after {
+        background-color: black;
+      }
+    }
+
+    &_active {
+      font-weight: 700;
+      opacity: 1;
+      color: #BE3D3D;
+
+      &::after {
+        background-color: #BE3D3D;
+      }
+
+      &:hover {
+        opacity: 1;
+  
+        &::after {
+          background-color: #BE3D3D;
+        }
+      }
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+
+      content: '';
+
+      height: 3px;
+      width: 100%;
+
+      transition: background-color 0.3s ease;
+    }
+  }
+
+  &__btn {
+    cursor: pointer;
+    background: none;
+
+    &_type {
+
+      &_prev {
+        margin-right: 23px;
+      } 
+    }
+
+    &:hover .page-num__btn-icon {
+      stroke: #BE3D3D;
+    }
+
+    &:focus .page-num__btn-icon {
+      stroke: #BE3D3D;
+    }
+  }
+
+  &__btn-icon {
+    width: 7px;
+    height: 14px;
+
+    fill: none;
+    stroke: #211E1E;
+
+    transition: stroke 0.3s ease;
+  }
+}

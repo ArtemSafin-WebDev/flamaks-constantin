@@ -4,6 +4,10 @@
 @import "_variables.scss";
 @import "_animations.scss";
 
+@import "./articles/articles.scss";
+@import "./articles/article.scss";
+@import "./articles/page-num.scss";
+
 .block-full-height {
   height: 100vh;
   height: var(--vh100);
