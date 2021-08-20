@@ -65,6 +65,22 @@
   &__title-block {
     position: relative;
     margin-bottom: 53px;
+
+    @media screen and (max-width: 1200px) {
+      margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 576px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__title {

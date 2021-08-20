@@ -15,11 +15,25 @@
 
   &__sections {
     position: relative;
-
     padding-top: 75px;
     width: 100%;
-
     background-color: white;
+
+    @media screen and (max-width: 1200px) {
+      padding-top: 40px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      padding-top: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding-top: 20px;
+    }
+
+    @media screen and (max-width: 576px) {
+      padding-top: 16px;
+    }
 
     &::after {
       content: '';

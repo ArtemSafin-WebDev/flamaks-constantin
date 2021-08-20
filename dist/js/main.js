@@ -214,18 +214,18 @@ function fixVhBug() {
 
     windowInnerHeight = window.innerHeight;
     const vh = windowInnerHeight / 100;
-    styleTag.innerText = `:root {--vh: ${vh}px; --vh100: ${windowInnerHeight}px`;
+    styleTag.innerText = `:root {--vh: ${ vh }px; --vh100: ${ windowInnerHeight }px`;
     document.querySelector('head').appendChild(styleTag);
 }
 
 
 const numToStr = function (num) {
-    if ( num <= 9 && num !== 0) {
-        return `0${num}`;
+    if (num <= 9 && num !== 0) {
+        return `0${ num }`;
     }
     return num;
 }
-const doPageMainSlider = function(selector) {
+const doPageMainSlider = function (selector) {
     const $pageMainSlider = $(selector);
     if ($pageMainSlider.length === 0) return false;
     const sliderOptions = {
@@ -238,9 +238,9 @@ const doPageMainSlider = function(selector) {
         slidesToScroll: 1,
         fade: true,
         autoplay: true,
-        autoplaySpeed:4000,
-        pauseOnHover:false,
-        pauseOnFocus:false,
+        autoplaySpeed: 4000,
+        pauseOnHover: false,
+        pauseOnFocus: false,
         lazyLoad: 'ondemand',
         responsive: [
             {
@@ -262,11 +262,10 @@ const doPageMainSlider = function(selector) {
         slidesToScroll: 1,
         fade: true,
         autoplay: false,
-        pauseOnHover:false,
-        pauseOnFocus:false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
         lazyLoad: 'ondemand',
     };
-
 
 
     $pageMainSlider.each(function (idx, item) {
@@ -289,14 +288,14 @@ const doPageMainSlider = function(selector) {
             asNavFor: $mainSliderImages,
         });
 
-        $sliderCurrentPage.html( numToStr(1) );
-        $sliderAllPage.html( numToStr(countSlides) );
+        $sliderCurrentPage.html(numToStr(1));
+        $sliderAllPage.html(numToStr(countSlides));
         $slider.slick(newOptions);
 
-        $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
             // $mainSliderImagesSlides.removeClass('slide-active');
             // $mainSliderImagesSlides.eq(nextSlide).addClass('slide-active');
-            $sliderCurrentPage.html( numToStr(nextSlide + 1) );
+            $sliderCurrentPage.html(numToStr(nextSlide + 1));
         });
 
     });
@@ -304,7 +303,8 @@ const doPageMainSlider = function(selector) {
 
 const doNewsMainSlider = function () {
 
-    const $newsMainSliders =  $('.news-main-slider');;
+    const $newsMainSliders = $('.news-main-slider');
+    ;
     if ($newsMainSliders.length === 0) return false;
 
     const sliderOptions = {
@@ -316,9 +316,9 @@ const doNewsMainSlider = function () {
         slidesToScroll: 1,
         fade: true,
         autoplay: true,
-        autoplaySpeed:5000,
-        pauseOnHover:false,
-        pauseOnFocus:false,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        pauseOnFocus: false,
         lazyLoad: 'ondemand',
     };
 
@@ -343,13 +343,13 @@ const doNewsMainSlider = function () {
         });
 
         $sliderCurrentPage.html(1);
-        $sliderAllPage.html( countSlides);
+        $sliderAllPage.html(countSlides);
         $slider.slick(newOptions);
 
-        $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
             $mainSliderImagesSlides.removeClass('slide-active');
             $mainSliderImagesSlides.eq(nextSlide).addClass('slide-active');
-            $sliderCurrentPage.html( nextSlide + 1);
+            $sliderCurrentPage.html(nextSlide + 1);
         });
 
     });
@@ -370,9 +370,9 @@ const doSideBlockSlider = function () {
         slidesToScroll: 1,
         fade: true,
         autoplay: false,
-        autoplaySpeed:4000,
-        pauseOnHover:true,
-        pauseOnFocus:true,
+        autoplaySpeed: 4000,
+        pauseOnHover: true,
+        pauseOnFocus: true,
         lazyLoad: 'ondemand',
     };
 
@@ -404,9 +404,9 @@ const doNewsColumnsSlider = function () {
         slidesToScroll: 1,
         fade: true,
         autoplay: false,
-        autoplaySpeed:4000,
-        pauseOnHover:true,
-        pauseOnFocus:true,
+        autoplaySpeed: 4000,
+        pauseOnHover: true,
+        pauseOnFocus: true,
         lazyLoad: 'ondemand',
     };
 
@@ -437,8 +437,8 @@ const doProjectSizesSlider = function () {
         slidesToScroll: 1,
         fade: false,
         autoplay: false,
-        pauseOnHover:true,
-        pauseOnFocus:true,
+        pauseOnHover: true,
+        pauseOnFocus: true,
         lazyLoad: 'ondemand',
         variableWidth: true,
         focusOnSelect: true
@@ -458,7 +458,7 @@ const doProjectSizesSlider = function () {
         $slider.slick(newOptions);
 
 
-        $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
             $previewBox
                 .find('.project-sizes-preview-item')
                 .removeClass('active')
@@ -506,7 +506,7 @@ const doTechSlider = function () {
     function fireTechSlider($thisTab, $techSliderTabs, $slider) {
 
         if (($slider).hasClass('tech-animated')) return false;
-        if ( $thisTab.hasClass('tech-slider-tab-active') ) return false;
+        if ($thisTab.hasClass('tech-slider-tab-active')) return false;
 
         $techSliderTabs.removeClass('tech-slider-tab-active');
         $thisTab.addClass('tech-slider-tab-active');
@@ -514,8 +514,8 @@ const doTechSlider = function () {
         const $techSliderMediaCover = $slider.find('.tech-slider-media .tech-slider-media-cover');
         const width = $techSliderMediaCover.width();
 
-        const $techSectionTitle =  $slider.find('.tech-slider-media  .tech-section-title');
-        const $techSectionDescriptionContent =  $slider.find('.tech-slider-media  .tech-section-description');
+        const $techSectionTitle = $slider.find('.tech-slider-media  .tech-section-title');
+        const $techSectionDescriptionContent = $slider.find('.tech-slider-media  .tech-section-description');
 
         /* получить контент таба */
 
@@ -527,20 +527,20 @@ const doTechSlider = function () {
 
         const prepImg = `
                 <div class="tech-section-cover-frame new">
-                    <div class="tech-section-cover-frame-wrap " style="width:${width}px">
-                      ${imgHtml}
+                    <div class="tech-section-cover-frame-wrap " style="width:${ width }px">
+                      ${ imgHtml }
                     </div>
                 </div>
             `;
 
         const prepTitle = `
                 <div class="tech-section-title-content new">
-                    ${titleHtml}
+                    ${ titleHtml }
                 </div>
             `;
         const prepDesc = `
                 <div class="tech-section-description-content new u-text-t2">
-                    ${descHtml}
+                    ${ descHtml }
                 </div>
             `;
 
@@ -606,7 +606,6 @@ const doTechSlider = function () {
         const $techSliderTabs = $slider.find('.tech-slider-tab');
 
 
-
         $techSliderTabs.on('click', ' .tech-section-head', function (evt) {
             const $thisTab = $(this).closest('.tech-slider-tab');
 
@@ -633,8 +632,8 @@ const doSliderTrust = function () {
         slidesToScroll: 1,
         fade: false,
         autoplay: false,
-        autoplaySpeed:5000,
-        pauseOnHover:false,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
         lazyLoad: 'ondemand',
         responsive: [
             {
@@ -683,7 +682,7 @@ const doUserSelect = function (selector) {
 }
 
 const doElementFullHeight = function (selector, minMedia = 0) {
-    if ($(window).width() < minMedia)  return false;
+    if ($(window).width() < minMedia) return false;
     const elementFullHeightList = $(selector);
     if (elementFullHeightList.length > 0) {
         const winHeight = $(window).height();
@@ -713,8 +712,6 @@ $(document).on('click', '.btn-open-modal-form', function (evt) {
 });
 
 
-
-
 $(document).on('click', '.btn-modal-outer-close', function (evt) {
     $('html')
         .removeClass('modal-menu-active')
@@ -724,14 +721,13 @@ $(document).on('click', '.btn-modal-outer-close', function (evt) {
 });
 
 
-
 const doTabs = function () {
     const tabWrap = $('.tab-wrap');
     if (tabWrap.length) {
 
         tabWrap.each(function (idx, item) {
             const $tabWrapper = $(item);
-            $tabWrapper.on('click', '.btn-tab', function() {
+            $tabWrapper.on('click', '.btn-tab', function () {
                 const thisBtnTab = $(this);
 
                 const selector = thisBtnTab.attr('data-tab-target');
@@ -751,7 +747,7 @@ const doTabs = function () {
 
                     const $sliders = $tabWrapper.find('.slick-slider');
                     if ($sliders.length) {
-                        $sliders.each(function(idx) {
+                        $sliders.each(function (idx) {
                             let setTime = setTimeout(function () {
                                 $sliders.eq(idx).slick('setPosition');
                             }, 30);
@@ -761,7 +757,7 @@ const doTabs = function () {
 
                     const $videoBoxList = $tabWrapper.find('.video-box');
                     if ($videoBoxList.length) {
-                        $videoBoxList.each(function(idx) {
+                        $videoBoxList.each(function (idx) {
                             stopVideoBox($(this));
                         });
                     }
@@ -774,7 +770,7 @@ const doTabs = function () {
 
 const doAccordionMenu = function () {
     const $mainMenuList = $('.main-menu-list');
-    if ($mainMenuList.length === 0)  {
+    if ($mainMenuList.length === 0) {
         return 0;
     }
     const $mainMenuItems = $mainMenuList.find('.main-menu-item');
@@ -792,7 +788,7 @@ const doAccordionMenu = function () {
             .stop()
             .slideUp(200);
 
-        if($thisMainMenuItem.hasClass('menu-accordion-active')) {
+        if ($thisMainMenuItem.hasClass('menu-accordion-active')) {
             $thisMainMenuItem
                 .removeClass('menu-accordion-active')
                 .find('.main-menu-item-body')
@@ -813,11 +809,10 @@ const doAccordionMenu = function () {
 }
 
 
-
 function initMaskPhoneInputs() {
     const inputPhones = $('input[type="tel"]');
 
-    if(inputPhones.length) {
+    if (inputPhones.length) {
         inputPhones.mask('+7 000 000 00 00');
         inputPhones.on('focus', function () {
             const $this = $(this);
@@ -834,7 +829,7 @@ function initMaskPhoneInputs() {
     }
 }
 
-function isValid (jqObj) {
+function isValid(jqObj) {
     const objects = jqObj.find('.validated-control');
     let mas = [];
     objects.each(function () {
@@ -845,18 +840,17 @@ function isValid (jqObj) {
         } else if (($this.attr('type') === "checkbox") && !$this.prop('checked')) {
             $this.addClass('invalid');
             mas.push("0");
-        } else if ($this.attr('type')=== "tel" && $this.val().length !== 16) {
+        } else if ($this.attr('type') === "tel" && $this.val().length !== 16) {
             $this.addClass('invalid');
             mas.push("0");
-        }
-        else{
+        } else {
             $this.removeClass('invalid');
         }
     });
     return (mas.length === 0);
 }
 
-function toggleThemeHeader () {
+function toggleThemeHeader() {
     const header = document.querySelector('.header-block');
     if (header.classList.contains('not-toggle')) {
         return;
@@ -865,11 +859,11 @@ function toggleThemeHeader () {
     const $header = $('.header-block').eq(0);
 
     const $mainFirstBlock = $('.main-first-block').eq(0);
-    if ($header.length === 0  || $mainFirstBlock === 0 ) return;
+    if ($header.length === 0 || $mainFirstBlock === 0) return;
     let mainFirstBlockHeight = $mainFirstBlock.height();
     let scrTop = $(window).scrollTop();
 
-    if (scrTop > mainFirstBlockHeight)  {
+    if (scrTop > mainFirstBlockHeight) {
         $header.addClass('dark');
     } else {
         $header.removeClass('dark');
@@ -909,7 +903,7 @@ function fixProjectsTileBox($wrap = null) {
                 const $item = $(this);
                 headerSizeList.push($item.height());
             });
-            const msxSizeHeight =  Math.max(...headerSizeList);
+            const msxSizeHeight = Math.max(...headerSizeList);
             $projectsTileUnitHeaderItems.css('min-height', msxSizeHeight + 'px');
         })
     }
@@ -929,7 +923,7 @@ function doFixProjectsTileBox() {
     }
 }
 
-function stopVideoBox ($videoBox) {
+function stopVideoBox($videoBox) {
     $videoBox.find('.video-frame-container').html('');
     $videoBox.removeClass('video-active');
 }
@@ -937,7 +931,7 @@ function stopVideoBox ($videoBox) {
 function doVideoBox() {
     const $videoBox = $('.video-box');
 
-    if($videoBox.length) {
+    if ($videoBox.length) {
         $(document).on('click', '.video-box-cover', function (evt) {
             const videoBoxCover = $(this);
             const videoLink = videoBoxCover.attr('data-video');
@@ -945,7 +939,7 @@ function doVideoBox() {
             const $videoContainer = $videoBox.find('.video-frame-container');
             $videoBox.addClass('video-active');
             const videoFrame = `
-    <iframe width="560" height="315" src="${videoLink}?autoplay=1"  frameborder="0" allow="accelerometer; autoplay;"" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="${ videoLink }?autoplay=1"  frameborder="0" allow="accelerometer; autoplay;"" allowfullscreen></iframe>
     `;
             $videoContainer.html(videoFrame);
         });
@@ -972,8 +966,8 @@ function slider() {
             slidesToScroll: 1,
             fade: false,
             autoplay: false,
-            pauseOnHover:false,
-            pauseOnFocus:false,
+            pauseOnHover: false,
+            pauseOnFocus: false,
             lazyLoad: 'ondemand',
             prevArrow: prevBtn,
             nextArrow: nextBtn
@@ -1020,65 +1014,173 @@ function animateOnHover() {
     }
 }
 
+function mapInit(mapElement, title, content) {
+    const lat = Number(mapElement.getAttribute('data-lat'));
+    const lng = Number(mapElement.getAttribute('data-lng'));
+    const pinURL = mapElement.getAttribute('data-pin');
+
+    if (!mapElement) return;
+    ymaps.ready(initContactsMap);
+
+    function initContactsMap() {
+        const pin = {
+            iconLayout: 'default#image',
+            iconImageHref: pinURL,
+            iconImageSize: [60, 60],
+            iconImageOffset: [0, 0]
+        };
+
+        const center = [lat, lng];
+
+        const pointsMapData = [{
+            coords: center,
+            title: title,
+            content: content
+        }];
+
+        const mapInstance = new ymaps.Map(mapElement, {
+            center: center,
+            zoom: 16,
+            controls: []
+        });
+
+        mapInstance.behaviors.disable('scrollZoom');
+
+        const MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
+            '<div class="popover top">' +
+            `<a class="close" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 329 329"><path fill="#fff" d="M194.64,164.77,322.75,36.66A21.31,21.31,0,0,0,292.61,6.52L164.5,134.63,36.39,6.52A21.31,21.31,0,0,0,6.25,36.66L134.36,164.77,6.25,292.88A21.31,21.31,0,0,0,36.39,323L164.5,194.91,292.61,323a21.31,21.31,0,0,0,30.14-30.14Z" /></svg></a>` +
+            '<div class="arrow"></div>' +
+            '<div class="popover-inner">' +
+            '$[[options.contentLayout observeSize minWidth=150 maxWidth=300 maxHeight=450]]' +
+            '</div>' +
+            '</div>',
+            {
+                build: function () {
+                    this.constructor.superclass.build.call(this);
+
+                    this._$element = $('.popover', this.getParentElement());
+
+                    this.applyElementOffset();
+
+                    this._$element.find('.close').on('click', $.proxy(this.onCloseClick, this));
+                },
+
+                clear: function () {
+                    this._$element.find('.close').off('click');
+
+                    this.constructor.superclass.clear.call(this);
+                },
+
+                onSublayoutSizeChange: function () {
+                    MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
+
+                    if (!this._isElement(this._$element)) {
+                        return;
+                    }
+
+                    this.applyElementOffset();
+
+                    this.events.fire('shapechange');
+                },
+                applyElementOffset: function () {
+                    this._$element.css({
+                        right: -(this._$element[0].offsetWidth) ,
+                        top: -(this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight)
+                    });
+                },
+
+                onCloseClick: function (e) {
+                    e.preventDefault();
+
+                    this.events.fire('userclose');
+                },
+
+                getShape: function () {
+                    if (!this._isElement(this._$element)) {
+                        return MyBalloonLayout.superclass.getShape.call(this);
+                    }
+
+                    var position = this._$element.position();
+
+                    return new ymaps.shape.Rectangle(
+                        new ymaps.geometry.pixel.Rectangle([
+                            [position.left, position.top],
+                            [
+                                position.left + this._$element[0].offsetWidth,
+                                position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight
+                            ]
+                        ])
+                    );
+                },
+
+                _isElement: function (element) {
+                    return element && element[0] && element.find('.arrow')[0];
+                }
+            }
+        );
+        // Создание вложенного макета содержимого балуна.
+        const MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div class="popover-container">' +
+            '<div class="popover-wrapper">' +
+            '<div class="popover-title">$[properties.balloonHeader]</div>' +
+            '<div class="popover-content">$[properties.balloonContent]</div>' +
+            '</div>'
+        );
+
+        const objectManager = new ymaps.ObjectManager({
+            clusterize: false,
+            clusterHasBalloon: false,
+            geoObjectOpenBalloonOnClick: true
+        });
+        mapInstance.geoObjects.add(objectManager);
+
+        pointsMapData.forEach(function (item) {
+            const objectToAdd = {
+                id: item.coords.join('-'),
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: item.coords
+                },
+                options: {
+                    ...pin,
+                    balloonShadow: false,
+                    balloonLayout: MyBalloonLayout,
+                    balloonContentLayout: MyBalloonContentLayout,
+                    balloonPanelMaxMapArea: 0,
+                    hideIconOnBalloonOpen: false,
+                    balloonOffset: [30, 0]
+                },
+                properties: {
+                    balloonContent: item.content,
+                    balloonHeader: item.title
+                }
+            };
+            objectManager.add(objectToAdd);
+            objectManager.objects.balloon.open(item.coords.join('-'));
+        });
+    }
+}
+
+
 function contactsMap() {
     const hostElem = document.querySelector('#contacts-page-host');
     if (hostElem) {
         const mapElemsArr = hostElem.querySelectorAll('.js-contacts-map');
-        mapElemsArr.forEach(mapElem => {
-            ymaps.ready(initialzeMap);
 
-            function initialzeMap() {
-                const lat = Number(mapElem.getAttribute('data-lat'));
-                const lng = Number(mapElem.getAttribute('data-lng'));
-                const pinURL = mapElem.getAttribute('data-pin');
+        mapElemsArr.forEach((mapElement, index) => {
+            switch (index) {
+                case 0:
+                    mapInit(mapElement, 'ЦЕНТРАЛЬНЫЙ ОФИС ', 'г. Москва, Алтуфьевское шоссе, д.44');
+                    break;
 
-                const center = [lat, lng];
+                case 1:
+                    mapInit(mapElement, 'КАЗАНСКИЙ ОФИС  ', 'г. Казань, ул. Павлюхина 99Б, офис 1009');
+                    break;
 
-                let pinOptions = {
-                    iconLayout: 'default#image',
-                    iconImageHref: pinURL,
-                    iconImageSize: [60, 60],
-                    iconImageOffset: [0, 0]
-                };
-
-                const mapInstance = new ymaps.Map(mapElem, {
-                    center: center,
-                    zoom: 16    ,
-                    controls: []
-                });
-
-                const myPlacemark = new ymaps.Placemark(center, {
-                    coords: center,
-                    hintContent: '111',
-                    iconLayout: 'default#image',
-                    iconImageHref: 'images/dist/icons/map-marker.svg',
-                    iconImageSize: [44, 44],
-                    iconImageOffset: [-22, -22],
-                });
-
-                mapInstance.behaviors.disable('scrollZoom');
-
-                const objectManager = new ymaps.ObjectManager({
-                    clusterize: false,
-                    clusterHasBalloon: false,
-                    geoObjectOpenBalloonOnClick: true,
-                    clusterIconColor: '#e62f48'
-                });
-                mapInstance.geoObjects.add(objectManager);
-
-                objectManager.add({
-                    id: 1,
-                    type: 'Feature',
-                    geometry: {
-                        type: 'Point',
-                        coordinates: center
-                    },
-                    options: {
-                        hideIconOnBalloonOpen: false,
-                        balloonCloseButton: false,
-                        ...pinOptions
-                    }
-                });
+                case 2:
+                    mapInit(mapElement, 'СКЛАД ', 'г. Москва, Алтуфьевское шоссе, 37строение 8');
+                    break;
             }
         })
     }
@@ -1122,7 +1224,7 @@ $(window).on('resize', function () {
 
 
 $(document).ready(function () {
-    $(document).on('focus change', 'input, textarea', function(){
+    $(document).on('focus change', 'input, textarea', function () {
         $(this).removeClass('invalid');
     });
 
