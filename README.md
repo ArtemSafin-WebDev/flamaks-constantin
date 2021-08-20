@@ -11,6 +11,7 @@
 * [Партнеры](https://melentq.github.io/flamaks-constantin/partners.html)
 * [История компании](https://melentq.github.io/flamaks-constantin/history.html)
 * [Сертификаты](https://melentq.github.io/flamaks-constantin/certificates.html)
+* [Статьи](https://melentq.github.io/flamaks-constantin/articles.html)
 
 # About
 
