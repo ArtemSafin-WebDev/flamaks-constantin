@@ -658,7 +658,7 @@ function toggleThemeHeader () {
     if (header.classList.contains('not-toggle')) {
         return;
     }
-    
+
     const $header = $('.header-block').eq(0);
 
     const $mainFirstBlock = $('.main-first-block').eq(0);
@@ -753,7 +753,7 @@ function doVideoBox() {
 
 function slider() {
     const sliderSection = document.querySelector('.slider-section');
-    
+
     if (sliderSection) {
         const slider = sliderSection.querySelector('.slider')
         const sliderBtns = sliderSection.querySelector('.slider-controls-wrap')
@@ -775,7 +775,7 @@ function slider() {
             prevArrow: prevBtn,
             nextArrow: nextBtn
         };
-    
+
         $('.slider').slick(sliderOptions);
     }
 }
@@ -809,7 +809,7 @@ function animateOnHover() {
         const card2 = container.querySelector('.stage-project-item_n_2');
         const card3 = container.querySelector('.stage-project-item_n_3');
         const card4 = container.querySelector('.stage-project-item_n_4');
-        
+
         setHoverEffect(line1, card1)
         setHoverEffect(line2, card2)
         setHoverEffect(line3, card3)
@@ -817,7 +817,72 @@ function animateOnHover() {
     }
 }
 
+function contactsMap() {
+    const hostElem = document.querySelector('#contacts-page-host');
+    if (hostElem) {
+        const mapElemsArr = hostElem.querySelectorAll('.js-contacts-map');
+        mapElemsArr.forEach(mapElem => {
+            ymaps.ready(initialzeMap);
+
+            function initialzeMap() {
+                const lat = Number(mapElem.getAttribute('data-lat'));
+                const lng = Number(mapElem.getAttribute('data-lng'));
+                const pinURL = mapElem.getAttribute('data-pin');
+
+                const center = [lat, lng];
+
+                let pinOptions = {
+                    iconLayout: 'default#image',
+                    iconImageHref: pinURL,
+                    iconImageSize: [60, 60],
+                    iconImageOffset: [0, 0]
+                };
+
+                const mapInstance = new ymaps.Map(mapElem, {
+                    center: center,
+                    zoom: 16    ,
+                    controls: []
+                });
+
+                const myPlacemark = new ymaps.Placemark(center, {
+                    coords: center,
+                    hintContent: '111',
+                    iconLayout: 'default#image',
+                    iconImageHref: 'images/dist/icons/map-marker.svg',
+                    iconImageSize: [44, 44],
+                    iconImageOffset: [-22, -22],
+                });
+
+                mapInstance.behaviors.disable('scrollZoom');
+
+                const objectManager = new ymaps.ObjectManager({
+                    clusterize: false,
+                    clusterHasBalloon: false,
+                    geoObjectOpenBalloonOnClick: true,
+                    clusterIconColor: '#e62f48'
+                });
+                mapInstance.geoObjects.add(objectManager);
+
+                objectManager.add({
+                    id: 1,
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: center
+                    },
+                    options: {
+                        hideIconOnBalloonOpen: false,
+                        balloonCloseButton: false,
+                        ...pinOptions
+                    }
+                });
+            }
+        })
+    }
+}
+
 $(document).ready(function () {
+    console.log(1211)
     fixVhBug();
     doFixProjectsTileBox();
     // doElementFullHeight('.block-full-height');
@@ -840,7 +905,7 @@ $(document).ready(function () {
 
     slider();
     animateOnHover();
-
+    contactsMap();
 });
 
 $(window).on('resize', function () {
