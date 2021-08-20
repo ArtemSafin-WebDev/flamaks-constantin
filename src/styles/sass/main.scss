@@ -3,10 +3,12 @@
 @import "_resolutions.scss";
 @import "_variables.scss";
 @import "_animations.scss";
+@import "_mixins.scss";
 
 @import "./articles/articles.scss";
 @import "./articles/article.scss";
 @import "./articles/page-num.scss";
+@import "./articles/media-contacts.scss";
 
 .block-full-height {
   height: 100vh;
@@ -96,16 +98,16 @@ body {
   text-transform: uppercase;
 }
 .u-text-t2 {
-  font: 500 2.2rem/ 1.27 $font-family-base;
+  font: 400 2.2rem/ 1.27 $font-family-base;
   font-size: 1.8rem;
 }
 .u-text-t3 {
-  font: 500 2rem/ 1.3 $font-family-base;
+  font: 400 2rem/ 1.3 $font-family-base;
   font-size: 1.7rem;
   line-height: 130%;
 }
 .u-text-t4 {
-  font: 500 1.7rem/ 1.29 $font-family-base;
+  font: 400 1.7rem/ 1.29 $font-family-base;
 }
 
 @media (max-width: $bp-1366) {

@@ -3,13 +3,13 @@
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 40px;
+  column-gap: 4rem;
 
   width: 100%;
 
   @media screen and(max-width: 992px) {
     grid-template-columns: repeat(1, 1fr);
-    row-gap: 80px;
+    row-gap: 8rem;
   }
 
   &__pseudo-line {
@@ -36,12 +36,12 @@
   &__stages-anim {
     position: relative;
 
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 
     @media screen and(max-width: 992px) {
-      margin-left: 40px;
+      margin-left: 4rem;
       margin-bottom: 0;
-      margin-right: 60px;
+      margin-right: 6rem;
       width: 1px;
       height: 100%;
     }
@@ -58,16 +58,16 @@
     justify-content: flex-end;
 
     width: 0;
-    height: 60px;
+    height: 6rem;
 
     @media screen and(max-width: 992px) {
       bottom: unset;
-      top: -60px;
+      top: -6rem;
     }
   }
 
   &__dot-icon {
-    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
 
     fill: transparent;
     stroke: #BE3D3D;
@@ -76,8 +76,8 @@
   &__dot {
     z-index: 2;
 
-    width: 8px;
-    height: 8px;
+    width: 0.8rem;
+    height: 0.8rem;
 
     border-radius: 50%;
     background-color: #BE3D3D;
@@ -89,7 +89,7 @@
     left: 0;
 
     height: 1px;
-    width: calc(100% + 40px);
+    width: calc(100% + 4rem);
 
     background-color: rgba(0,0,0,0.15);
 
@@ -97,7 +97,7 @@
       top: 0;
       
       width: 1px;
-      height: calc(100% + 80px);
+      height: calc(100% + 8rem);
     }
 
     &_last {
@@ -119,6 +119,6 @@
 
 @media screen and (max-width: 992px) {
   .stage-project-item {
-    max-width: 600px;
+    max-width: 60rem;
   }
 }

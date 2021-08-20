@@ -1,6 +1,6 @@
 .requisites {
-  --unit-title-fs: 20px;
-  --unit-desc-fs: 17px;
+  --unit-title-fs: 2rem;
+  --unit-desc-fs: 1.7rem;
 
   $bg-color: white;
 
@@ -10,13 +10,13 @@
   display: flex;
   justify-content: space-between;
 
-  padding-bottom: 180px;
+  padding-bottom: 18rem;
 
   background-color: $bg-color;
 
   @media screen and (max-width: 1023px) {
-    --unit-title-fs: 18px;
-    --unit-desc-fs: 14px;
+    --unit-title-fs: 1.8rem;
+    --unit-desc-fs: 1.4rem;
   }
 
   @media screen and (max-width: 767px) {
@@ -43,18 +43,18 @@
     &_place {
 
       &_req {
-        max-width: 540px;
-        margin-right: 40px;
+        max-width: 54rem;
+        margin-right: 4rem;
 
         @media screen and (max-width: 767px) {
           max-width: 100%;
           margin-right: 0;
-          margin-bottom: 40px;
+          margin-bottom: 4rem;
         }
       }
 
       &_contacts {
-        width: 460px;
+        width: 46rem;
 
         @media screen and (max-width: 767px) {
           width: 100%;
@@ -66,10 +66,10 @@
   &__unit {
     display: flex;
     flex-direction: column;
-    margin-bottom: 59px;
+    margin-bottom: 5.9rem;
 
     @media screen and (max-width: 767px) {
-      margin-bottom: 30px;
+      margin-bottom: 3rem;
     }
 
     &:last-of-type {
@@ -78,7 +78,7 @@
   }
 
   &__unit-title {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 
     font-size: var(--unit-title-fs);
     line-height: 1.1;
@@ -93,7 +93,7 @@
     font-family: "Intro", sans-serif;
     font-weight: 400;
 
-    margin-bottom: 14px;
+    margin-bottom: 1.4rem;
 
     &:last-of-type {
       margin-bottom: 0;
