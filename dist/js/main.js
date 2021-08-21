@@ -1020,6 +1020,79 @@ function animateOnHover() {
     }
 }
 
+function setPressSlider(DURATION = 15) {
+    const jSlider = $('.press-slider')
+
+    const sliderOptions = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        draggable: true,
+        speed: 1200,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        autoplay: false,
+        // autoplaySpeed:15000,
+        pauseOnHover:false,
+        pauseOnFocus:false,
+        lazyLoad: 'ondemand',
+    };
+
+    jSlider.slick(sliderOptions);
+
+    const slider = document.querySelector('.press-slider');
+
+    const fillLine = slider.querySelector('.press-slide__fill-line');
+
+    let currentAnimation;
+
+    currentAnimation = gsap.fromTo(fillLine, {left: '-100%'}, {
+        left: '0%',
+        duration: DURATION,
+        ease: 'linear',
+        onComplete: () => {
+            // Переключаем слайд
+            jSlider.slick('slickNext');
+        }
+    })
+
+    jSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        // currentSlide и nextSlide - номер слайдера
+        // получаем по шаблону класс текущего слайдера
+        // press-slide_n_${currentSlide}
+        // получаем объект, навешиваем на него gsap анимацию
+
+        const nextSlideElement = document.querySelector(`.press-slide_n_${nextSlide}`);
+
+        const currentSlideElement = document.querySelector(`.press-slide_n_${nextSlide}`);
+
+        if (!nextSlideElement || !currentSlideElement) {
+            console.log('Слайдер не найден. Возможно, не хватает класса .press-slide_n_X');
+            return;
+        }
+
+        const nextSlideLine = nextSlideElement.querySelector('.press-slide__fill-line');
+
+        const currentSlideLine = currentSlideElement.querySelector('.press-slide__fill-line');
+
+        // Удаляем текущую анимацию
+        currentAnimation.kill();
+
+        // GSAP
+        currentAnimation = gsap.fromTo(nextSlideLine, {left: '-100%'}, {
+            left: '0%',
+            duration: DURATION,
+            ease: 'linear',
+            onComplete: () => {
+                // Переключаем слайд
+                jSlider.slick('slickNext');
+            }
+        })
+    });
+
+}
+
 $(document).ready(function () {
     fixVhBug();
     doFixProjectsTileBox();
@@ -1044,6 +1117,7 @@ $(document).ready(function () {
     slider();
     animateOnHover();
 
+    setPressSlider();
 });
 
 $(window).on('resize', function () {

@@ -3,18 +3,18 @@
   &__container {
     display: flex;
     
-    margin-bottom: 150px;
+    margin-bottom: 15rem;
 
     box-sizing: border-box;
-    padding: 83px 68px 62px 80px;
+    padding: 8.3rem 6.8rem 6.2rem 8rem;
     background-color: #F3F5F8;
   }
 
   &__title {
-    max-width: 350px;
-    margin-right: 122px;
+    max-width: 3.5rem;
+    margin-right: 12.2rem;
 
-    font-size: 42px;
+    font-size: 4.2rem;
     line-height: 1.2;
     text-transform: uppercase;
     font-family: "Intro", sans-serif;
@@ -22,7 +22,7 @@
   }
 
   &__description {
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 1.4;
     font-family: "Intro", sans-serif;
     font-weight: 400;
