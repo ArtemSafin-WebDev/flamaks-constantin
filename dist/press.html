@@ -10,15 +10,14 @@
     <link rel="stylesheet" href="libs/light-modal/light-modal.css">
     <link rel="stylesheet" href="css/main.min.css">
 
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" > </script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=978d9dde-738d-4b87-8d8a-1de67b511402&lang=ru_RU" type="text/javascript"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" > </script> 
 </head>
 
 <body>
 
   <div class="main-wrap">
     <div class="main-body">
-      <header class="header-block light-fixed-element dark not-toggle">
+      <header class="header-block light-fixed-element">
     <div class="container">
         <div class="header">
             <div class="header-logo">
@@ -66,317 +65,128 @@
     </div>
 </header>
 
-      <img src="images/dist/bg-requisites.jpg" alt="" class="section__image">
-
-      <div class="container main-page-first-container main-first-block-pl">
-
-        <div class="section__title-block">
-          <a href="#" class="section__title-back-link" title="Назад">
-            <svg class="section__title-icon" viewBox="0 0 23 15">
-              <path d="M6.88 1L1 6.94m0 0l5.88 6.363M1 6.939h14.7c2.1 0 6.3.934 6.3 8.061"/>
+      <div class="section__main-title">
+        <div class="section__title-block section__title-block_theme_light section__title-block_fixed">
+          <a href="#" class="back-link-unit section__back-link" >
+            <svg width="23" height="15">
+              <use xlink:href="images/dist/icons/svg-icons-sprite.svg#back-arrow-icon"></use>
             </svg>
           </a>
-          <h1 class="main-page-first-title u-text-h1 section__title">Статьи</h1>
+          <h1 class="main-page-first-title u-text-h1">Пресс-центр</h1>
         </div>
+      </div>
 
+      <ul class="press-slider">
+        <li class="press-slide press-slide_n_0">
+          <img class="press-slide__image" src="./images/dist/press-main-2x.jpg" alt="">
+          <div class="press-slide__overlay"></div>
+
+          <div class="press-slide__container">
+
+            <div class="press-slide__content">
+              <div class="press-slide__toggle-line">
+                <div class="press-slide__fill-line"></div>
+              </div>
+
+              <div class="press-slide__text">
+                <time class="press-slide__time" datetime="2021-03-24 12:00">24 Марта 2021</time>
+
+                <h2 class="press-slide__title u-text-h4">ЗАВЕРШЕН МОНТАЖ ПОЖАРНЫХ 
+                  РЕЗЕРВУАРОВ FLAMAX НА РАСПРЕДЕЛИТЕЛЬНОМ ЦЕНТРЕ WILDBERRIES В ГОРОДЕ ЭЛЕКТРОСТАЛЬ</h2>
+
+                <a class="press-slide__link" title="Перейти к новости" target="_blank" rel="noopener" href="#">
+                  <svg class="press-slide__link-icon" viewBox="0 0 86 86">
+                    <path stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="press-slide press-slide_n_1">
+          <img class="press-slide__image" src="./images/dist/press-preview-2@2x.jpg" alt="">
+          <div class="press-slide__overlay"></div>
+
+          <div class="press-slide__container">
+
+            <div class="press-slide__content">
+              <div class="press-slide__toggle-line">
+                <div class="press-slide__fill-line"></div>
+              </div>
+
+              <div class="press-slide__text">
+                <time class="press-slide__time" datetime="2021-03-25 12:00">25 Марта 2021</time>
+
+                <h2 class="press-slide__title u-text-h4">ЗАВЕРШЕН МОНТАЖ ШАКАЛЬНЫХ 
+                  РЕЗЕРВУАРОВ FLAMAX НА РАСПРЕДЕЛИТЕЛЬНОМ ЦЕНТРЕ WILDBERRIES В ГОРОДЕ ЭЛЕКТРОСТАЛЬ</h2>
+
+                <a class="press-slide__link" title="Перейти к новости" target="_blank" rel="noopener" href="#">
+                  <svg class="press-slide__link-icon" viewBox="0 0 86 86">
+                    <path stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="container container_upper">
         <div class="page__sections">
-          <section class="section section_size_narrow articles">
-            <ul class="articles__list">
-              <li class="articles__list-item">
-                <article class="article">
-                  <div class="article__image-container">
-                    <img class="article__image" src="./images/dist/articles/article-1.jpg" alt="Изображение">
-                  </div>
-                  
-                  <div class="article__text">
-                    <time class="article__time" datetime="2021-03-24 12:00">24 марта 2021</time>
-
-                    <h2 class="article__title">Кондуктометрические и гидростатические датчики уровня воды в резервуарах FLAMAX</h2>
-
-                    <p class="article__description">В стандартных резервуарах FLAMAX для выполнения различных технологических процессов, связанных с эксплуатацией резервуара, необходимо фиксировать определенные уровни наполнения емкостей</p>
-                  </div>
-
-                  <a class="article__link" href="#" target="_blank" rel="noopener" title="Перейти на страницу статьи">
-                    <svg class="article__link-icon" fill="none" viewBox="0 0 86 86">
-                      <path stroke="#000" stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
-                    </svg>
+          <section class="section press">
+            <nav class="press__menu">
+              <ul class="press__menu-list">
+                <li class="press__menu-list-item">
+                  <a class="press__menu-link press__menu-link_active" href="#">
+                    Все публикации
+                    <svg class="press__menu-link-icon" width="7" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9l4-4-4-4" stroke="#BE3D3D" stroke-width="1.8"/></svg>
                   </a>
-                </article>
-              </li>
+                </li>
 
-              <li class="articles__list-item">
-                <article class="article">
-                  <div class="article__image-container">
-                    <img class="article__image" src="./images/dist/articles/article-2.jpg" alt="Изображение">
-                  </div>
-                  
-                  <div class="article__text">
-                    <time class="article__time" datetime="2021-03-24 12:00">24 марта 2021</time>
-
-                    <h2 class="article__title">Насосные станции в автоматических системах пожаротушения</h2>
-
-                    <p class="article__description">В данной статье мы рассмотрим типы систем пожаротушения 
-                      и какую роль в них играют насосные станции.</p>
-                  </div>
-
-                  <a class="article__link" href="#" target="_blank" rel="noopener" title="Перейти на страницу статьи">
-                    <svg class="article__link-icon" fill="none" viewBox="0 0 86 86">
-                      <path stroke="#000" stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
-                    </svg>
+                <li class="press__menu-list-item">
+                  <a class="press__menu-link" href="#">
+                    НОВОСТИ
+                    <svg class="press__menu-link-icon" width="7" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9l4-4-4-4" stroke="#BE3D3D" stroke-width="1.8"/></svg>
                   </a>
-                </article>
-              </li>
+                </li>
 
-              <li class="articles__list-item">
-                <article class="article">
-                  <div class="article__image-container">
-                    <img class="article__image" src="./images/dist/articles/article-3.jpg" alt="Изображение">
-                  </div>
-                  
-                  <div class="article__text">
-                    <time class="article__time" datetime="2021-03-24 12:00">24 марта 2021</time>
-
-                    <h2 class="article__title">Особенности проектирования пожарных насосных станций в компании FLAMAX</h2>
-
-                    <p class="article__description">Насосная станция пожаротушения (ПНС) – важная и обязательная часть водяной системы пожаробезопасности. Насосная станция позволяет...</p>
-                  </div>
-
-                  <a class="article__link" href="#" target="_blank" rel="noopener" title="Перейти на страницу статьи">
-                    <svg class="article__link-icon" fill="none" viewBox="0 0 86 86">
-                      <path stroke="#000" stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
-                    </svg>
+                <li class="press__menu-list-item">
+                  <a class="press__menu-link" href="#">
+                    СМИ О НАС
+                    <svg class="press__menu-link-icon" width="7" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9l4-4-4-4" stroke="#BE3D3D" stroke-width="1.8"/></svg>
                   </a>
-                </article>
-              </li>
+                </li>
 
-              <li class="articles__list-item">
-                <article class="article">
-                  <div class="article__image-container">
-                    <img class="article__image" src="./images/dist/articles/article-4.jpg" alt="Изображение">
-                  </div>
-                  
-                  <div class="article__text">
-                    <time class="article__time" datetime="2021-03-24 12:00">24 марта 2021</time>
-
-                    <h2 class="article__title">Из каких деталей состоит вертикальный стальной резервуар FLAMAX</h2>
-
-                    <p class="article__description">Насосная станция пожаротушения (ПНС) – важная и обязательная часть водяной системы пожаробезопасности. Насосная станция позволяет...</p>
-                  </div>
-
-                  <a class="article__link" href="#" target="_blank" rel="noopener" title="Перейти на страницу статьи">
-                    <svg class="article__link-icon" fill="none" viewBox="0 0 86 86">
-                      <path stroke="#000" stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
-                    </svg>
+                <li class="press__menu-list-item">
+                  <a class="press__menu-link" href="#">
+                    ПРЕСС-РЕЛИЗЫ
+                    <svg class="press__menu-link-icon" width="7" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9l4-4-4-4" stroke="#BE3D3D" stroke-width="1.8"/></svg>
                   </a>
-                </article>
-              </li>
+                </li>
 
-              <li class="articles__list-item">
-                <article class="article">
-                  <div class="article__image-container">
-                    <img class="article__image" src="./images/dist/articles/article-1.jpg" alt="Изображение">
-                  </div>
-                  
-                  <div class="article__text">
-                    <time class="article__time" datetime="2021-03-24 12:00">24 марта 2021</time>
-
-                    <h2 class="article__title">Кондуктометрические и гидростатические датчики уровня воды в резервуарах FLAMAX</h2>
-
-                    <p class="article__description">В стандартных резервуарах FLAMAX для выполнения различных технологических процессов, связанных с эксплуатацией резервуара, необходимо фиксировать определенные уровни наполнения емкостей</p>
-                  </div>
-
-                  <a class="article__link" href="#" target="_blank" rel="noopener" title="Перейти на страницу статьи">
-                    <svg class="article__link-icon" fill="none" viewBox="0 0 86 86">
-                      <path stroke="#000" stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
-                    </svg>
+                <li class="press__menu-list-item">
+                  <a class="press__menu-link" href="#">
+                    ВЫСТАВКИ
+                    <svg class="press__menu-link-icon" width="7" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9l4-4-4-4" stroke="#BE3D3D" stroke-width="1.8"/></svg>
                   </a>
-                </article>
-              </li>
+                </li>
 
-              <li class="articles__list-item">
-                <article class="article">
-                  <div class="article__image-container">
-                    <img class="article__image" src="./images/dist/articles/article-2.jpg" alt="Изображение">
-                  </div>
-                  
-                  <div class="article__text">
-                    <time class="article__time" datetime="2021-03-24 12:00">24 марта 2021</time>
-
-                    <h2 class="article__title">Насосные станции в автоматических системах пожаротушения</h2>
-
-                    <p class="article__description">В данной статье мы рассмотрим типы систем пожаротушения 
-                      и какую роль в них играют насосные станции.</p>
-                  </div>
-
-                  <a class="article__link" href="#" target="_blank" rel="noopener" title="Перейти на страницу статьи">
-                    <svg class="article__link-icon" fill="none" viewBox="0 0 86 86">
-                      <path stroke="#000" stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
-                    </svg>
+                <li class="press__menu-list-item">
+                  <a class="press__menu-link" href="#">
+                    Статьи
+                    <svg class="press__menu-link-icon" width="7" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9l4-4-4-4" stroke="#BE3D3D" stroke-width="1.8"/></svg>
                   </a>
-                </article>
-              </li>
-
-              <li class="articles__list-item">
-                <article class="article">
-                  <div class="article__image-container">
-                    <img class="article__image" src="./images/dist/articles/article-3.jpg" alt="Изображение">
-                  </div>
-                  
-                  <div class="article__text">
-                    <time class="article__time" datetime="2021-03-24 12:00">24 марта 2021</time>
-
-                    <h2 class="article__title">Особенности проектирования пожарных насосных станций в компании FLAMAX</h2>
-
-                    <p class="article__description">Насосная станция пожаротушения (ПНС) – важная и обязательная часть водяной системы пожаробезопасности. Насосная станция позволяет...</p>
-                  </div>
-
-                  <a class="article__link" href="#" target="_blank" rel="noopener" title="Перейти на страницу статьи">
-                    <svg class="article__link-icon" fill="none" viewBox="0 0 86 86">
-                      <path stroke="#000" stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
-                    </svg>
-                  </a>
-                </article>
-              </li>
-
-              <li class="articles__list-item">
-                <article class="article">
-                  <div class="article__image-container">
-                    <img class="article__image" src="./images/dist/articles/article-4.jpg" alt="Изображение">
-                  </div>
-                  
-                  <div class="article__text">
-                    <time class="article__time" datetime="2021-03-24 12:00">24 марта 2021</time>
-
-                    <h2 class="article__title">Из каких деталей состоит вертикальный стальной резервуар FLAMAX</h2>
-
-                    <p class="article__description">Насосная станция пожаротушения (ПНС) – важная и обязательная часть водяной системы пожаробезопасности. Насосная станция позволяет...</p>
-                  </div>
-
-                  <a class="article__link" href="#" target="_blank" rel="noopener" title="Перейти на страницу статьи">
-                    <svg class="article__link-icon" fill="none" viewBox="0 0 86 86">
-                      <path stroke="#000" stroke-opacity=".3" d="M15.3 86l49-49v39.1H86V0H9.9v21.7h39L0 70.7 15.3 86z"/>
-                    </svg>
-                  </a>
-                </article>
-              </li>
-            </ul>
-
-            <div class="page-num">
-              <ul class="page-num__list">
-                <li class="page-num__list-item">
-                  <a class="page-num__link page-num__link_active" href="#">1</a>
-                </li>
-                <li class="page-num__list-item">
-                  <a class="page-num__link" href="#">2</a>
-                </li>
-                <li class="page-num__list-item">
-                  <a class="page-num__link" href="#">3</a>
-                </li>
-                <li class="page-num__list-item">
-                  <a class="page-num__link" href="#">4</a>
-                </li>
-                <li class="page-num__list-item">
-                  <a class="page-num__link" href="#">5</a>
-                </li>
-                <li class="page-num__list-item">
-                  <a class="page-num__link" href="#">6</a>
-                </li>
-                <li class="page-num__list-item">
-                  <a class="page-num__link" href="#">7</a>
-                </li>
-                <li class="page-num__list-item">
-                  <a class="page-num__link" href="#">8</a>
-                </li>
-                <li class="page-num__list-item">
-                  <a class="page-num__link" href="#">9</a>
-                </li>
-                <li class="page-num__list-item">
-                  <a class="page-num__link" href="#">10</a>
                 </li>
               </ul>
-
-              <div class="page-num__btns">
-                <button class="page-num__btn page-num__btn_type_prev">
-                  <svg class="page-num__btn-icon" viewBox="0 0 10 16">
-                    <path stroke-width="1.8" d="M9 1L2 8l7 7"/>
-                  </svg>
-                </button>
-
-                <button class="page-num__btn page-num__btn_type_next">
-                  <svg class="page-num__btn-icon" viewBox="0 0 10 16">
-                    <path stroke-width="1.8" d="M1 15l7-7-7-7"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
+            </nav>
+            
           </section>
-
-          <section class="section section_size_narrow">
-            <div class="media-contacts">
-              <div class="media-contacts__text">
-                <h2 class="media-contacts__title">Контакты для СМИ</h2>
-
-                <p class="media-contacts__desc">Мы всегда готовы ответить на ваши вопросы и оказать содействие 
-                  в получении комментариев. Мы внимательно относимся к каждому вашему информационному запросу</p>
-              </div>
-
-              <div class="media-contacts__links">
-                <div class="media-contacts__mail-container">
-                  <span class="media-contacts__mail-label">Почта</span>
-
-                  <a class="media-contacts__mail-link" href="mailto:info@flamax.ru">info@flamax.ru</a>
-                </div>
-
-                <div class="media-contacts__socials">
-                  <span class="media-contacts__socials-label">Присоединяйтесь к нам 
-                    в социальных сетях</span>
-
-                    <ul class="media-contacts__socials-list">
-                      <li class="media-contacts__socials-list-item">
-                        <a class="media-contacts__socials-link" target="_blank" rel="noopener" title="VK" href="#">
-                          <svg class="media-contacts__socials-icon" width="16" height="9">
-                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-vk-icon"></use>
-                          </svg>
-                        </a>
-                      </li>
-
-                      <li class="media-contacts__socials-list-item">
-                        <a class="media-contacts__socials-link" target="_blank" rel="noopener" title="Instagram" href="#">
-                          <svg class="media-contacts__socials-icon" width="12" height="12">
-                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-inst-icon"></use>
-                          </svg>
-                        </a>
-                      </li>
-
-                      <li class="media-contacts__socials-list-item">
-                        <a class="media-contacts__socials-link" target="_blank" rel="noopener" title="Facebook" href="#">
-                          <svg class="media-contacts__socials-icon" width="7" height="14">
-                            <use xlink:href="images/dist/icons/svg-icons-sprite.svg#soc-fb-icon"></use>
-                          </svg>
-                        </a>
-                      </li>
-
-                      <li class="media-contacts__socials-list-item">
-                        <a class="media-contacts__socials-link" target="_blank" rel="noopener" title="YouTube" href="#">
-                          <svg class="media-contacts__socials-icon" width="16" height="11">
-                            <path d="M15.67 1.72A1.99 1.99 0 0014.26.34C13.01 0 8 0 8 0S3 0 1.74.32C1.07.5.51 1.05.33 1.72 0 2.95 0 5.5 0 5.5s0 2.56.33 3.78c.18.67.72 1.2 1.41 1.38C3 11 8 11 8 11s5 0 6.26-.32a1.99 1.99 0 001.41-1.39C16 8.06 16 5.51 16 5.51s.01-2.56-.33-3.79z"/>
-                            <path d="M6 8l5-2.5L6 3v5z" fill="#F3F5F8"/>
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
-                </div>
-                
-              </div>
-            </div>
-          </section>
-
         </div>
-
       </div>
+
     </div>
   </div>
-    
+
   <div class="footer-block-wrap main-edge">
     <div class="footer-block-layer light-fixed-element">
         
@@ -461,6 +271,7 @@
 </script>
 
 <div class="map-block footer-map-block" id="map"></div>
+
         <section class="footer-block">
             <div class="container">
                 <div class="footer">
@@ -650,7 +461,6 @@
         </section>
     </div>
 </div>
-
   <div class="page-modal-outer page-modal-menu" id="modal-menu">
     <div class="container page-modal-inner">
         <div class="page-modal-header fx-0">

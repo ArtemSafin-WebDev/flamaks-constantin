@@ -1,15 +1,15 @@
 .certificates {
-  --title-fs: 20px;
+  --title-fs: 2rem;
 
   display: flex;
   flex-direction: column;
 
   @media screen and (max-width: 1023px) {
-    --title-fs: 18px;
+    --title-fs: 1.8rem;
   }
 
   &__title {
-    margin-bottom: 22px;
+    margin-bottom: 2.2rem;
 
     text-transform: uppercase;
     font-family: "Intro", sans-serif;
@@ -25,9 +25,9 @@
   &__link {
     display: block;
 
-    margin-right: 13px;
-    width: 149px;
-    height: 214px;
+    margin-right: 1.3rem;
+    width: 14.9rem;
+    height: 21.4rem;
 
     background-color: #F3F5F8;
 
