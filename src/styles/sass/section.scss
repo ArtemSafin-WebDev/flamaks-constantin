@@ -64,7 +64,24 @@
 
   &__title-block {
     position: relative;
-    margin-bottom: 5.3rem;
+
+    margin-bottom: 53px;
+
+    @media screen and (max-width: 1200px) {
+      margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 576px) {
+      margin-bottom: 10px;
+    }
 
     &_theme {
 
@@ -78,6 +95,7 @@
       padding-top: 20rem;
       max-width: 120rem;
       margin: 0 auto;
+
     }
   }
 
@@ -170,6 +188,7 @@
     }
   }
 
+
   &__back-link {
     position: absolute;
     bottom: 10px;
@@ -185,3 +204,4 @@
     width: 100%;
   }
 }
+
