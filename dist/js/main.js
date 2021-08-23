@@ -1186,6 +1186,7 @@ function contactsMap() {
         })
     }
 }
+
 function setPressSlider(DURATION = 15) {
     const jSlider = $('.press-slider')
 
