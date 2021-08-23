@@ -1015,7 +1015,7 @@ function animateOnHover() {
 }
 
 
-function mapInit(mapElement, title, content) {
+function mapInit(mapElement, balloonMaps, zoom) {
     const lat = Number(mapElement.getAttribute('data-lat'));
     const lng = Number(mapElement.getAttribute('data-lng'));
     const pinURL = mapElement.getAttribute('data-pin');
@@ -1034,14 +1034,12 @@ function mapInit(mapElement, title, content) {
         const center = [lat, lng];
 
         const pointsMapData = [{
-            coords: center,
-            title: title,
-            content: content
+            coords: center
         }];
 
         const mapInstance = new ymaps.Map(mapElement, {
             center: center,
-            zoom: 16,
+            zoom: zoom,
             controls: []
         });
 
@@ -1085,7 +1083,7 @@ function mapInit(mapElement, title, content) {
                 },
                 applyElementOffset: function () {
                     this._$element.css({
-                        right: -(this._$element[0].offsetWidth) ,
+                        right: -(this._$element[0].offsetWidth),
                         top: -(this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight)
                     });
                 },
@@ -1120,12 +1118,21 @@ function mapInit(mapElement, title, content) {
             }
         );
         // Создание вложенного макета содержимого балуна.
-        const MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+        let htmlBalloon =
             '<div class="popover-container">' +
-            '<div class="popover-wrapper">' +
-            '<div class="popover-title">$[properties.balloonHeader]</div>' +
-            '<div class="popover-content">$[properties.balloonContent]</div>' +
-            '</div>'
+            '<div class="popover-wrapper">'
+        ;
+        balloonMaps.forEach(map => {
+            htmlBalloon +=
+                '<div class="popover-item">' +
+                `<div class="popover-title">${ map.title }</div>` +
+                `<div class="popover-content">${ map.content }</div>` +
+                '</div>'
+        })
+        htmlBalloon += '</div></div>';
+
+        const MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+            htmlBalloon
         );
 
         const objectManager = new ymaps.ObjectManager({
@@ -1172,15 +1179,24 @@ function contactsMap() {
         mapElemsArr.forEach((mapElement, index) => {
             switch (index) {
                 case 0:
-                    mapInit(mapElement, 'ЦЕНТРАЛЬНЫЙ ОФИС ', 'г. Москва, Алтуфьевское шоссе, д.44');
+                    mapInit(mapElement, [{
+                        title: 'ЦЕНТРАЛЬНЫЙ ОФИС ',
+                        content: 'г. Москва, Алтуфьевское шоссе, д.44'
+                    }],
+                        16);
                     break;
 
                 case 1:
-                    mapInit(mapElement, 'КАЗАНСКИЙ ОФИС  ', 'г. Казань, ул. Павлюхина 99Б, офис 1009');
+                    mapInit(mapElement, [{
+                        title: 'КАЗАНСКИЙ ОФИС  ',
+                        content: 'г. Казань, ул. Павлюхина 99Б, офис 1009'
+                    }],
+                        16);
                     break;
 
                 case 2:
-                    mapInit(mapElement, 'СКЛАД ', 'г. Москва, Алтуфьевское шоссе, 37строение 8');
+                    mapInit(mapElement, [{ title: 'СКЛАД', content: 'г. Москва, Алтуфьевское шоссе, 37строение 8' }],
+                        16);
                     break;
             }
         })
@@ -1201,8 +1217,8 @@ function setPressSlider(DURATION = 15) {
         fade: true,
         autoplay: false,
         // autoplaySpeed:15000,
-        pauseOnHover:false,
-        pauseOnFocus:false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
         lazyLoad: 'ondemand',
     };
 
@@ -1210,44 +1226,12 @@ function setPressSlider(DURATION = 15) {
 
     const slider = document.querySelector('.press-slider');
 
-    const fillLine = slider.querySelector('.press-slide__fill-line');
+    if (slider) {
+        const fillLine = slider.querySelector('.press-slide__fill-line');
 
-    let currentAnimation;
+        let currentAnimation;
 
-    currentAnimation = gsap.fromTo(fillLine, {left: '-100%'}, {
-        left: '0%',
-        duration: DURATION,
-        ease: 'linear',
-        onComplete: () => {
-            // Переключаем слайд
-            jSlider.slick('slickNext');
-        }
-    })
-
-    jSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        // currentSlide и nextSlide - номер слайдера
-        // получаем по шаблону класс текущего слайдера
-        // press-slide_n_${currentSlide}
-        // получаем объект, навешиваем на него gsap анимацию
-
-        const nextSlideElement = document.querySelector(`.press-slide_n_${nextSlide}`);
-
-        const currentSlideElement = document.querySelector(`.press-slide_n_${nextSlide}`);
-
-        if (!nextSlideElement || !currentSlideElement) {
-            console.log('Слайдер не найден. Возможно, не хватает класса .press-slide_n_X');
-            return;
-        }
-
-        const nextSlideLine = nextSlideElement.querySelector('.press-slide__fill-line');
-
-        const currentSlideLine = currentSlideElement.querySelector('.press-slide__fill-line');
-
-        // Удаляем текущую анимацию
-        currentAnimation.kill();
-
-        // GSAP
-        currentAnimation = gsap.fromTo(nextSlideLine, {left: '-100%'}, {
+        currentAnimation = gsap.fromTo(fillLine, { left: '-100%' }, {
             left: '0%',
             duration: DURATION,
             ease: 'linear',
@@ -1256,9 +1240,53 @@ function setPressSlider(DURATION = 15) {
                 jSlider.slick('slickNext');
             }
         })
-    });
 
+        jSlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            // currentSlide и nextSlide - номер слайдера
+            // получаем по шаблону класс текущего слайдера
+            // press-slide_n_${currentSlide}
+            // получаем объект, навешиваем на него gsap анимацию
 
+            const nextSlideElement = document.querySelector(`.press-slide_n_${ nextSlide }`);
+
+            const currentSlideElement = document.querySelector(`.press-slide_n_${ nextSlide }`);
+
+            if (!nextSlideElement || !currentSlideElement) {
+                console.log('Слайдер не найден. Возможно, не хватает класса .press-slide_n_X');
+                return;
+            }
+
+            const nextSlideLine = nextSlideElement.querySelector('.press-slide__fill-line');
+
+            const currentSlideLine = currentSlideElement.querySelector('.press-slide__fill-line');
+
+            // Удаляем текущую анимацию
+            currentAnimation.kill();
+
+            // GSAP
+            currentAnimation = gsap.fromTo(nextSlideLine, { left: '-100%' }, {
+                left: '0%',
+                duration: DURATION,
+                ease: 'linear',
+                onComplete: () => {
+                    // Переключаем слайд
+                    jSlider.slick('slickNext');
+                }
+            })
+        });
+    }
+}
+
+function projectMap() {
+    const hostElem = document.querySelector('#project-map-host');
+    if (hostElem) {
+        const mapElem = hostElem.querySelector('.js-contacts-map');
+        mapInit(mapElem, [
+            { title: 'Область применения: ', content: 'Пожарный запас воды' },
+            { title: 'Проект реализован', content: 'В работе' }
+        ],
+            9);
+    }
 }
 
 $(document).ready(function () {
@@ -1287,10 +1315,10 @@ $(document).ready(function () {
     animateOnHover();
 
     contactsMap();
+    projectMap();
 
 
     setPressSlider();
-
 });
 
 $(window).on('resize', function () {

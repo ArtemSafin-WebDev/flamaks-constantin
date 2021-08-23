@@ -9,7 +9,6 @@
   background-color: #F3F5F8;
 }
 .about__title {
-  max-width: 3.5rem;
   margin-right: 12.2rem;
   font-size: 4.2rem;
   line-height: 1.2;
@@ -11854,25 +11853,86 @@ production-links-block
     margin-bottom: 3rem;
   }
 }
-.on-map {
+.project__map {
   padding-bottom: 10rem;
 }
-.on-map__container {
+
+.project__map-container {
   padding-left: 20rem;
 }
-.on-map__map-wrapper {
+
+.project__map-wrapper {
   position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 50%;
+  height: 510px;
 }
-.on-map__map {
+.project__map-wrapper:after {
+  content: "";
+  display: block;
+  width: 100%;
+}
+.project__map-wrapper .popover-container {
   position: absolute;
-  top: 0;
+  width: 280px;
+  top: -8px;
+  left: 60px;
+}
+.project__map-wrapper .popover-container:before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-top-left-radius: 6px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 37%;
+  left: -7px;
+}
+@media screen and (max-width: 768px) {
+  .project__map-wrapper .popover-container {
+    top: 78px;
+    left: -160px;
+    width: 260px;
+  }
+  .project__map-wrapper .popover-container:before {
+    top: -8px;
+    left: auto;
+    right: 38%;
+  }
+}
+.project__map-wrapper .popover-wrapper {
+  background-color: #fff;
+  -webkit-box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  padding: 20px 18px;
+}
+.project__map-wrapper .popover-item {
+  margin-bottom: 20px;
+}
+.project__map-wrapper .popover-item:last-child {
+  margin-bottom: 0;
+}
+.project__map-wrapper .popover-title {
+  font-size: 10px;
+  color: #333333;
+  opacity: 0.45;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.project__map-wrapper .popover-content {
+  font-size: 12px;
+  line-height: 16px;
+  color: #2A2626;
+}
+
+.project__map-element {
+  position: absolute;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 255, 0.3);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: lightgrey;
 }
 .page__container {
   display: -webkit-box;
