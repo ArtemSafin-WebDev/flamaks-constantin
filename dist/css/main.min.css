@@ -12135,6 +12135,31 @@ production-links-block
 .project {
   padding-bottom: 11rem;
 }
+
+.project__slider-control {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.project__slider-control:hover .slider-control-svg {
+  fill: #000;
+}
+
+.slider-control-svg {
+  fill: rgba(0, 0, 0, 0.15);
+  -webkit-transition: fill 500ms;
+  -o-transition: fill 500ms;
+  transition: fill 500ms;
+}
 .requisites {
   --unit-title-fs: 2rem;
   --unit-desc-fs: 1.7rem;
